@@ -22,9 +22,6 @@
                         </div>
                     {{ /if }}
 
-                    <div class="sr-only" aria-hidden="true">
-                        <label>Leave this field empty <input type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"></label>
-                    </div>
                     <div class="space-y-5"
                          x-data
                          x-init="const p = new URLSearchParams(location.search);
@@ -129,9 +126,6 @@
                             </ul>
                         </div>
                     {{ /if }}
-                    <div class="sr-only" aria-hidden="true">
-                        <label>Leave this field empty <input type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"></label>
-                    </div>
                     <div class="space-y-5">
                         {{ if honeypot }}
                         <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
