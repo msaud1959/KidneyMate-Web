@@ -2,3 +2,301 @@
 @plugin "@tailwindcss/typography";
 @source "../views";
 @source "../../content";
+
+/* ------------------------------------------------------------------
+   KidneyMate design tokens
+   Cobalt primary, ink text, cloud fields, warm amber accent,
+   sage positive, careful red for errors only, six tracker tints.
+------------------------------------------------------------------- */
+@theme {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-cobalt-50: #eef2fd;
+  --color-cobalt-100: #dee6fa;
+  --color-cobalt-300: #7b93e8;
+  --color-cobalt-500: #2a4cc0;
+  --color-cobalt-600: #2342ab;
+  --color-cobalt-700: #1b2f7a;
+  --color-cobalt-900: #131f4d;
+
+  --color-ink-400: #6e7891;
+  --color-ink-600: #454f6b;
+  --color-ink-900: #161d33;
+
+  --color-cloud-50: #f6f8fc;
+  --color-cloud-100: #eef1f8;
+  --color-cloud-200: #dce2f0;
+
+  --color-amber-100: #fdf2df;
+  --color-amber-400: #e9a13b;
+  --color-amber-600: #a06413;
+  --color-sage-100: #e4f2ee;
+  --color-sage-500: #3e9c84;
+  --color-sage-700: #2c7263;
+  --color-error-600: #b3403b;
+  --color-error-50: #fbeeed;
+
+  /* Tracker tints: background / foreground pairs */
+  --color-fluid-tint: #eaf3fd;
+  --color-fluid-deep: #2e6cb5;
+  --color-food-tint: #edf6ea;
+  --color-food-deep: #478036;
+  --color-meds-tint: #fdeef0;
+  --color-meds-deep: #b5455a;
+  --color-symptoms-tint: #e8f4f4;
+  --color-symptoms-deep: #2c747d;
+  --color-sleep-tint: #f0edfb;
+  --color-sleep-deep: #6152b8;
+  --color-appts-tint: #fdf4e7;
+  --color-appts-deep: #9c6516;
+
+  --radius-card: 1.25rem;
+  --radius-glass: 1.5rem;
+
+  --shadow-lift: 0 20px 50px -24px rgb(27 47 122 / 0.18);
+  --shadow-lift-lg: 0 32px 70px -30px rgb(27 47 122 / 0.28);
+  --shadow-chip: 0 10px 30px -12px rgb(27 47 122 / 0.22);
+}
+
+/* ---------------------------------------------------------------
+   Fonts (self-hosted, variable, latin subset)
+---------------------------------------------------------------- */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-var.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/fonts/instrument-sans-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------
+   Base
+---------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cloud-50 font-sans text-ink-600 antialiased;
+    font-size: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+    line-height: 1.65;
+  }
+  h1, h2, h3 {
+    @apply font-display text-ink-900;
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 72;
+    text-wrap: balance;
+  }
+  h1 { line-height: 1.08; font-weight: 560; }
+  h2 { line-height: 1.15; font-weight: 550; }
+  h3 { line-height: 1.25; font-weight: 550; }
+  ::selection { background: var(--color-cobalt-100); color: var(--color-cobalt-900); }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+/* ---------------------------------------------------------------
+   Type scale helpers
+---------------------------------------------------------------- */
+@utility display-xl { font-size: clamp(2.5rem, 1.6rem + 3.8vw, 4.5rem); }
+@utility display-lg { font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.375rem); }
+@utility heading-md { font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.125rem); }
+@utility heading-sm { font-size: clamp(1.1875rem, 1.1rem + 0.35vw, 1.375rem); }
+@utility stat-numeral {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 1.9rem + 3.4vw, 5.25rem);
+  line-height: 1;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  color: var(--color-cobalt-700);
+}
+@utility eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-cobalt-500);
+}
+@utility measure { max-width: 68ch; }
+
+/* ---------------------------------------------------------------
+   Glass surfaces
+   Three levels. Long-form text always sits on solid surfaces.
+---------------------------------------------------------------- */
+@utility glass {
+  background: rgb(255 255 255 / 0.62);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  border-radius: var(--radius-glass);
+  box-shadow: var(--shadow-lift);
+}
+@utility glass-strong {
+  background: rgb(255 255 255 / 0.8);
+  backdrop-filter: blur(28px) saturate(1.5);
+  -webkit-backdrop-filter: blur(28px) saturate(1.5);
+  border: 1px solid rgb(255 255 255 / 0.75);
+  border-radius: var(--radius-glass);
+  box-shadow: var(--shadow-lift);
+}
+@utility glass-solid {
+  background: #ffffff;
+  border: 1px solid var(--color-cloud-200);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lift);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass { background: rgb(255 255 255 / 0.92); }
+  .glass-strong { background: rgb(255 255 255 / 0.96); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .glass-strong {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Gradient fields and grain
+---------------------------------------------------------------- */
+@utility field-gradient {
+  background:
+    radial-gradient(90rem 60rem at 85% -10%, #e9eeff 0%, transparent 55%),
+    radial-gradient(70rem 50rem at -10% 30%, #f4f0ff 0%, transparent 55%),
+    radial-gradient(80rem 60rem at 70% 110%, #fdf7ef 0%, transparent 50%),
+    var(--color-cloud-50);
+}
+@utility field-deep {
+  background:
+    radial-gradient(80rem 50rem at 80% -20%, rgb(123 147 232 / 0.25) 0%, transparent 60%),
+    linear-gradient(160deg, var(--color-cobalt-900) 0%, var(--color-cobalt-700) 100%);
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.12 0 0 0 0 0.3 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------
+   Buttons
+---------------------------------------------------------------- */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.625rem;
+  border-radius: 9999px;
+  background: var(--color-cobalt-500);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 12px 28px -14px rgb(42 76 192 / 0.55);
+}
+.btn-primary:hover { background: var(--color-cobalt-600); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.625rem;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.75);
+  border: 1px solid var(--color-cloud-200);
+  color: var(--color-cobalt-700);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.btn-secondary:hover { background: #fff; border-color: var(--color-cobalt-300); }
+
+@utility link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: 600;
+  color: var(--color-cobalt-500);
+}
+.link-arrow svg { transition: transform 150ms ease; }
+.link-arrow:hover svg { transform: translateX(3px); }
+
+/* ---------------------------------------------------------------
+   Motion: reveal on scroll (fires once, JS adds .is-revealed)
+---------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
+    transition-delay: calc(var(--reveal-index, 0) * 70ms);
+  }
+  [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+  .float-slow { animation: km-float 7s ease-in-out infinite; }
+  .float-slower { animation: km-float 9s ease-in-out infinite reverse; }
+  @keyframes km-float {
+    0%, 100% { transform: translateY(0) rotate(var(--float-rotate, 0deg)); }
+    50% { transform: translateY(-10px) rotate(var(--float-rotate, 0deg)); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; }
+  .float-slow, .float-slower { animation: none; }
+}
+
+/* No-JS safety: never hide content when the observer can't run */
+html.no-js [data-reveal] { opacity: 1; transform: none; }
+
+/* ---------------------------------------------------------------
+   Long-form prose defaults
+---------------------------------------------------------------- */
+.km-prose {
+  @apply prose prose-lg max-w-[68ch];
+  --tw-prose-body: var(--color-ink-600);
+  --tw-prose-headings: var(--color-ink-900);
+  --tw-prose-links: var(--color-cobalt-500);
+  --tw-prose-bold: var(--color-ink-900);
+  --tw-prose-quotes: var(--color-ink-900);
+  --tw-prose-quote-borders: var(--color-amber-400);
+}
+.km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+
+/* Accessible skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  transition: top 150ms ease;
+}
+.skip-link:focus { top: 1rem; }
