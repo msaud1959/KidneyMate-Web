@@ -53,9 +53,9 @@ Taps instead of tallies. Reminders that carry the remembering. A gentle note whe
 
 **Heading:** Yours, in every sense
 
-- **Your records belong to you.** Export them whenever you want. Delete them and they're gone.
+- **Your records belong to you.** Export them whenever you want, and request deletion of your account data whenever you choose.
 - **You choose who sees what.** Sharing with your care team is opt-in, visible and reversible.
-- **The core app will be free for patients.** The essentials of daily self-management shouldn't have a paywall in front of them.
+- **Built to stay accessible.** We intend to keep core self-management support within everyone's reach. Final pricing hasn't been announced.
 - **No ads, no data sales.** Not now, not ever. It's in our privacy commitments in writing.
 
 ---

@@ -18,7 +18,7 @@ KidneyMate turns the scattered work of daily self-management into one calm routi
 
 **Heading:** How the whole thing hangs together
 
-**Intro:** KidneyMate is built on a three-layer framework we published in peer-reviewed research. Here it is without the jargon.
+**Intro:** KidneyMate is built on a three-layer research framework, currently under peer review. Here it is without the jargon.
 
 **Layer 1: Your day, in your words.**
 You record the things that make up living with CKD: fluids, food, medications, symptoms, sleep, mood, activity, appointments, dialysis sessions. Alongside your records sits your personal context: your CKD stage, and the targets and notes your care team sets, so nothing gets judged against a generic average.
@@ -29,7 +29,7 @@ KidneyMate's analysis is rule-based and explainable. It checks your records agai
 **Layer 3: People decide.**
 Flags and summaries go to a clinician dashboard for review. Your care team confirms what's relevant, adds the context only humans have, and decides what happens: sometimes a tweak to your targets, sometimes a conversation, often simply "all good". Their feedback flows back in, so the system gets more personal to you over time.
 
-**Footnote:** Published as "A Conceptual Framework for Chronic Kidney Disease Self-Management Support" at HIKM 2026.
+**Footnote:** From our research paper, "A Conceptual Framework for Chronic Kidney Disease Self-Management Support", currently under peer review.
 
 ---
 
@@ -38,7 +38,7 @@ Flags and summaries go to a clinician dashboard for review. Your care team confi
 **Heading:** Not a pivot. A thesis.
 
 **Body:**
-Most health apps start with a product and look for evidence later. KidneyMate started as the evidence: a peer-reviewed framework for clinically responsible CKD self-management, built from the published literature on what patients carry, what clinicians miss, and why isolated health apps haven't closed the gap.
+Most health apps start with a product and look for evidence later. KidneyMate started as the research: a framework for clinically responsible CKD self-management, developed before the product was marketed and now under peer review, built from the published literature on what patients carry, what clinicians miss, and why isolated health apps haven't closed the gap.
 
 **Link:** Read the research →
 

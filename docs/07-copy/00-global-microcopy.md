@@ -82,8 +82,8 @@ Sentence case always. One verb, no cleverness.
 
 ## Announcement bar (examples, editable global)
 
-- "Our framework paper is being presented at HIKM 2026. Read the evidence →"
 - "Clinician pilot conversations are open. Register interest →"
+- "Our research framework paper has been published. Read it →" *(use only once publication is confirmed)*
 
 ## 404 page
 

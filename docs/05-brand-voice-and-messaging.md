@@ -34,21 +34,24 @@ The voice is one person; only the register shifts.
 
 | Pillar | Core message | Proof we may use |
 |--------|-------------|------------------|
-| One steady place | The daily work of CKD in one calm routine | Feature set across nine tracking domains; deck validation: patients asked for simpler daily management |
+| One steady place | The daily work of CKD in one calm routine | Feature set across nine tracking domains; stakeholder conversations: patients asked for simpler daily management |
 | Sense, not just numbers | Your records against your own baseline and your care team's targets, explained in plain language | The framework's rule-based analysis layer: rules, trends, anomaly flags; explainability by design |
-| Your care team, in the loop | Structured summaries and review flags a clinician can act on; people make every decision | The framework's clinician review layer and feedback loop; deck validation: clinicians asked for clearer regular data |
-| Trust built in | Privacy by design, explainable analysis, human oversight, research-first | APP alignment, peer-reviewed framework (HIKM 2026), staged validation roadmap |
+| Your care team, in the loop | Structured summaries and review flags a clinician can act on; people make every decision | The framework's clinician review layer and feedback loop; stakeholder conversations: clinicians asked for clearer regular data |
+| Trust built in | Privacy by design, explainable analysis, human oversight, research-first | Designed to align with the Australian Privacy Principles; research framework under peer review; staged validation roadmap |
 
 ## Key statistics (approved set)
 
 Use these, with sources, and no others without verification:
 
-- 2.7 million Australian adults, about 1 in 7, show signs of kidney disease (Australian Bureau of Statistics 2022 to 2024). Most do not know it.
-- 788 million adults worldwide were living with CKD in 2023, up from 378 million in 1990 (Global Burden of Disease study).
-- Global CKD mortality rose more than 40% between 1990 and 2017 (Global Burden of Disease study).
+- 2.7 million Australians aged 18 and over had biomedical signs of chronic kidney disease in 2022 to 2024, 14.2% of adults (Australian Bureau of Statistics). In prose, the softer form is: "About 2.7 million Australians live with signs of kidney disease, and many do not know it."
+- Only 7.4% of adults with biomedical markers of CKD self-reported having the condition (Australian Bureau of Statistics, 2022 to 2024). This is the approved way to express the awareness gap; do not use "most don't know it" as a standalone claim.
+- 788 million adults worldwide were living with CKD in 2023, up from 378 million in 1990 (Global Burden of Disease 2023 study, The Lancet). Cite the GBD/Lancet source directly on the site.
+- The global burden of CKD has risen sharply, with cases more than doubling since 1990 (Global Burden of Disease study). Do not use mortality percentages unless the exact GBD citation and measure (deaths, all-age rate, or age-standardised rate) are stated.
 - In one study of people on haemodialysis, 94% reported fatigue, 79% cramping, 76% body aches (Flythe et al. 2018).
 - Reported non-adherence to medication and diet plans in CKD ranges from 17% to 74% across studies.
 - A randomised study of app-supported self-management found higher self-efficacy and slower kidney function decline than usual care (Li et al. 2020). Attribute to the literature, never to KidneyMate.
+
+**Research status wording:** the framework is described as "a research framework currently under peer review". Never "published", never "peer-reviewed" as a done state, and never name the venue, until publication is confirmed. Say "we developed the research framework before marketing the product", not "we published before we marketed". Validation work is described as "around 50 stakeholder conversations" (or "multiple stakeholder conversations"), never "tested with patients and clinicians". Future research is "planned", not "scheduled".
 
 ## Vocabulary
 
@@ -84,6 +87,6 @@ Pattern: what was noticed, in your data, stated neutrally; why it might matter, 
 
 **One-liner:** KidneyMate is a daily companion for people living with chronic kidney disease, and a clearer window into daily life for the clinicians who care for them.
 
-**Short (waitlist, social):** Living with chronic kidney disease is daily work: fluids, food, medications, symptoms, sleep, mood. KidneyMate brings it into one calm place and, when you choose, turns it into clear summaries your care team can actually use. In development now, built on peer-reviewed research.
+**Short (waitlist, social):** Living with chronic kidney disease is daily work: fluids, food, medications, symptoms, sleep, mood. KidneyMate brings it into one calm place and, when you choose, turns it into clear summaries your care team can actually use. In development now, grounded in research.
 
-**Standard (about, press):** KidneyMate is a digital health platform in development for people living with chronic kidney disease. It brings the daily work of self-management into one place: fluid and food tracking, medication reminders, symptom logging, sleep and mood check-ins, appointments and dialysis sessions. Transparent, rule-based analysis turns those records into plain-language insights for patients and structured summaries and review flags for clinicians, who remain in charge of every clinical decision. KidneyMate began as university research in regional Victoria, is grounded in a peer-reviewed framework presented at HIKM 2026, and is on a staged pathway toward pilot programs and clinical validation. It is designed privacy-first under the Australian Privacy Principles.
+**Standard (about, press):** KidneyMate is a digital health platform in development for people living with chronic kidney disease. It brings the daily work of self-management into one place: fluid and food tracking, medication reminders, symptom logging, sleep and mood check-ins, appointments and dialysis sessions. Transparent, rule-based analysis turns those records into plain-language insights for patients and structured summaries and review flags for clinicians, who remain in charge of every clinical decision. KidneyMate began as university research in regional Victoria, is grounded in a research framework currently under peer review, and is on a staged pathway toward pilot programs and clinical validation. It is designed to align with the Australian Privacy Principles.

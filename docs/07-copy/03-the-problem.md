@@ -18,9 +18,9 @@ Not the diagnosis. Not the specialist visits. The ordinary days in between, when
 
 **Heading:** It builds quietly
 
-Chronic kidney disease develops gradually, often over years, and it's easy to miss. Kidney function declines with few early symptoms; many people feel nothing until the condition is advanced. In Australia, 2.7 million adults show signs of kidney disease, about one in seven, and most don't know it. Worldwide, 788 million adults were living with CKD in 2023, more than double the number in 1990.
+Chronic kidney disease develops gradually, often over years, and it's easy to miss. Kidney function declines with few early symptoms; many people feel nothing until the condition is advanced. In Australia, 2.7 million people aged 18 and over had biomedical signs of chronic kidney disease in 2022 to 2024, 14.2% of adults. Few of them know it: only 7.4% of adults with those biomedical markers self-reported having the condition. Worldwide, 788 million adults were living with CKD in 2023, more than double the number in 1990.
 
-By the time CKD is recognised, it asks a great deal: monitoring kidney function and blood pressure, adjusting medications, changing what you eat and drink, and watching for complications. It's progressive, it's linked with serious cardiovascular risk, and globally its mortality rate has risen more than 40% since 1990. The clinical stakes are real. But the clinical stakes are only half the story.
+By the time CKD is recognised, it asks a great deal: monitoring kidney function and blood pressure, adjusting medications, changing what you eat and drink, and watching for complications. It's progressive, it's linked with serious cardiovascular risk, and its global burden has risen sharply for three decades. The clinical stakes are real. But the clinical stakes are only half the story.
 
 ---
 
@@ -77,14 +77,14 @@ The patterns that matter most in a long-term condition are exactly the ones that
 
 **Stat band (style: deep):**
 - **1 in 7**
-  Australian adults show signs of kidney disease.
-  Source: Australian Bureau of Statistics, 2022 to 2024
+  Australian adults had biomedical signs of chronic kidney disease in 2022 to 2024.
+  Source: Australian Bureau of Statistics
 - **2x**
   Global CKD cases more than doubled between 1990 and 2023.
-  Source: Global Burden of Disease study
-- **+40%**
-  Rise in global CKD mortality since 1990.
-  Source: Global Burden of Disease study
+  Source: Global Burden of Disease 2023 study, The Lancet
+- **7.4%**
+  Only 7.4% of adults with biomedical markers of CKD self-reported having the condition.
+  Source: Australian Bureau of Statistics, 2022 to 2024
 
 **Body:**
 The visibility gap isn't an inconvenience. It's where early signals get missed: the adherence slide that could have prompted a call, the symptom trend that could have brought a review forward, the deterioration that could have been slowed. For people, that can mean avoidable decline toward dialysis or transplant. For a health system already stretched, it means the most resource-intensive end of kidney care keeps growing while the cheap, early interventions keep arriving late.

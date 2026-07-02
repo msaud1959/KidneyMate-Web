@@ -24,13 +24,13 @@ The site serves three audiences at once. It does this by leading with the patien
 
 ### Clinicians and health services
 - Recognise the clinical visibility gap as a real problem in their own practice.
-- See that KidneyMate is decision support with human accountability, built on a peer-reviewed framework, not an autonomous adviser or another alert-fatigue machine.
+- See that KidneyMate is decision support with human accountability, built on a documented research framework, not an autonomous adviser or another alert-fatigue machine.
 - See workflow respect: clinicians set targets, review flags, and stay in charge.
 - Act: register pilot interest.
 
 ### Investors, researchers and stakeholders
-- Grasp the scale (2.7 million Australian adults with signs of kidney disease, 788 million adults worldwide) and the timing (rising burden, maturing patient-generated health data practice, supportive evidence base).
-- See a credible, staged pathway: peer-reviewed framework, working prototype, validation with around 50 stakeholders, planned clinical validation research.
+- Grasp the scale (2.7 million Australians with biomedical signs of kidney disease, 788 million adults worldwide) and the timing (rising burden, maturing patient-generated health data practice, supportive evidence base).
+- See a credible, staged pathway: a research framework under peer review, working prototype, around 50 stakeholder conversations, planned clinical validation research.
 - See responsible design as a strategic asset, not a compliance afterthought.
 - Act: get in touch.
 
@@ -53,14 +53,14 @@ The honest competitive claim, taken from the pitch deck and defensible in public
 - CKD-specific by design: renal-relevant tracking domains and guideline-informed context (CKD stage, eGFR, clinician-set targets), not step counts with a kidney logo.
 - Longitudinal, not episodic: patterns against a personal baseline across weeks and months, exactly where single data points mislead.
 - Patient-to-clinician visibility: structured summaries and review flags, a pathway no consumer tracker offers.
-- A focused CKD ecosystem with a published framework behind it and a stated path to clinical validation.
+- A focused CKD ecosystem with a documented research framework behind it and a stated path to clinical validation.
 
 Competitors are never named on the website. The comparison is drawn against "generic trackers" and "the paper diary and memory" status quo.
 
 ## Honesty constraints (non-negotiable)
 
 - KidneyMate is in development. Present tense is allowed for what the prototype does; futures and conditionals for everything on the roadmap (clinician dashboard at scale, EHR and My Health Record integration, conversational guidance, AI features).
-- The framework is peer reviewed; the product is not yet clinically validated. The site says so plainly and treats the validation roadmap as a strength.
+- The framework is under peer review, and the site says exactly that: no "published" or "peer-reviewed" claims, and no venue named, until publication is confirmed. The product is not yet clinically validated, and the validation roadmap is treated as a strength.
 - No health outcome promises. Evidence from the literature (for example, supported self-management improving self-efficacy) is attributed to the literature, not to KidneyMate.
 - Not a medical device claim, not medical advice, not for emergencies. Standing disclaimer in the footer and on patient-facing pages.
 

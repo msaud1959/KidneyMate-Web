@@ -2,7 +2,7 @@
 
 Strategy, structure, copy and CMS architecture for the KidneyMate marketing website.
 
-KidneyMate is a digital health platform in development that supports people living with chronic kidney disease (CKD) through daily self-management: fluid and food tracking, medication reminders, symptom logging, sleep and mood tracking, and clinician-supported insights. It is grounded in a peer-reviewed conceptual framework (HIKM 2026) built on three layers: patient-generated health data, transparent rule-based analysis, and clinician review.
+KidneyMate is a digital health platform in development that supports people living with chronic kidney disease (CKD) through daily self-management: fluid and food tracking, medication reminders, symptom logging, sleep and mood tracking, and clinician-supported insights. It is grounded in a research framework currently under peer review, built on three layers: patient-generated health data, transparent rule-based analysis, and clinician review.
 
 This repository currently contains the complete website plan. The Statamic build follows in a second phase once the plan is approved.
 
@@ -23,7 +23,7 @@ This repository currently contains the complete website plan. The Statamic build
 
 ## Source material
 
-- `CKD_HIKM2026.pdf` on the `Research` branch: the conceptual framework paper. The three-layer model in that paper is the intellectual spine of the whole site.
+- `CKD_HIKM2026.pdf` on the `Research` branch: the conceptual framework paper (currently under peer review; the venue is not named on the website until publication is confirmed). The three-layer model in that paper is the intellectual spine of the whole site.
 - `FORGE-KidneyMate-PitchDeck.pdf` on the `Research` branch: brand starting points, problem framing, validation summary, roadmap.
 
 ## Ground rules baked into every document

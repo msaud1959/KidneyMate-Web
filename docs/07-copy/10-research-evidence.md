@@ -7,25 +7,23 @@
 **Eyebrow:** Research and evidence
 
 **Headline:**
-We published the thinking before we marketed the product
+We did the research before we marketed the product
 
 **Subheading:**
-KidneyMate is research-first by conviction, not by accident. This page holds our own peer-reviewed work, the wider evidence it stands on, and the validation plan we're accountable to.
+KidneyMate is research-first by conviction, not by accident. This page holds our research framework, currently under peer review, the wider evidence it stands on, and the validation plan we're accountable to.
 
 ---
 
-## 2. Our framework paper [paper_feature]
+## 2. Our research framework [paper_feature]
 
 **Paper title:** A Conceptual Framework for Chronic Kidney Disease Self-Management Support
 
-**Venue:** 19th Health Informatics Knowledge Management Conference (HIKM 2026), Australia
+**Status line:** Currently under peer review. A link to the paper will appear here once publication is confirmed.
 
 **Plain-language abstract:**
 Living with chronic kidney disease means continuous monitoring, lifestyle management, medication adherence and communication with clinicians, almost all of it happening outside the clinic. Existing digital tools address fragments: education here, reminders there, diet logging somewhere else. This paper proposes a framework that connects the fragments into a single, clinically responsible pathway with three layers. A data layer brings together patient-generated health data and a personalised, guideline-informed knowledge base. A rule-based analysis layer turns longitudinal records into transparent trends, patterns and review signals. A clinician review layer ensures human professionals interpret, validate and contextualise every output before feedback or action, with their decisions feeding back to personalise future analysis. The framework positions CKD self-management support as decision support, never autonomous clinical decision-making, and sets out the validation research needed next.
 
-**Download label:** Read the paper (PDF)
-
-*(Build note: confirm the final publication status line and the shareable PDF version against the conference's copyright terms before launch.)*
+**Download label:** *(none at launch: the download button and any venue name appear only once publication is confirmed and the shareable version is cleared against the publisher's terms)*
 
 ---
 
@@ -96,4 +94,4 @@ Living with chronic kidney disease means continuous monitoring, lifestyle manage
 **Heading:** Researchers and clinicians: this is the good stage to arrive
 **Text:** Validation partners, pilot sites and research collaborators shape KidneyMate most right now. If integrated CKD self-management support overlaps your work, let's talk.
 **Button:** Get in touch
-**Secondary link:** Read the paper first
+**Secondary link:** Read about the framework first

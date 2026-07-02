@@ -43,7 +43,7 @@ The potential gains are practical: earlier sight of deterioration and disengagem
 **Heading:** Early attention is the cheapest thing in kidney care
 
 **Body:**
-Kidney disease sits at a brutal cost gradient: supporting someone to stay stable costs little, while late-stage deterioration, crisis presentations and dialysis sit among the most resource-intensive parts of the health system. With 2.7 million Australian adults showing signs of kidney disease and the global burden more than doubling since 1990, the system-level question is simple: how many deteriorations could earlier signals help slow or soften?
+Kidney disease sits at a brutal cost gradient: supporting someone to stay stable costs little, while late-stage deterioration, crisis presentations and dialysis sit among the most resource-intensive parts of the health system. With 2.7 million Australians showing biomedical signs of kidney disease and the global burden more than doubling since 1990, the system-level question is simple: how many deteriorations could earlier signals help slow or soften?
 
 We won't put an invented dollar figure on that, and you should be wary of anyone who does this early. What we can say is where the mechanism points: fewer missed early signals, better-prepared consultations, more continuity between visits, and self-management support that scales without scaling clinic hours. Validation research will tell us how much of that potential is real.
 

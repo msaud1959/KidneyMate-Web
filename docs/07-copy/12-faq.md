@@ -17,16 +17,16 @@ The questions we hear most from patients, carers, clinicians and partners. If yo
 ## 2. About KidneyMate [faq_accordion, audience=general]
 
 **What is KidneyMate?**
-KidneyMate is a digital health platform in development for people living with chronic kidney disease. It brings daily self-management into one place (fluids, food, medications, symptoms, sleep, mood, appointments and dialysis sessions), turns those records into plain-language insights, and, with your consent, into structured summaries and review flags your care team can act on. It's built on a peer-reviewed framework in which clinicians review anything that matters.
+KidneyMate is a digital health platform in development for people living with chronic kidney disease. It brings daily self-management into one place (fluids, food, medications, symptoms, sleep, mood, appointments and dialysis sessions), turns those records into plain-language insights, and, with your consent, into structured summaries and review flags your care team can act on. It's built on a research framework, currently under peer review, in which clinicians review anything that matters.
 
 **Is KidneyMate available now?**
 Not yet. A working prototype exists and is being developed toward a first release and pilot programs. The waitlist is how you hear the moment early access opens, in signup order.
 
 **Who is building KidneyMate?**
-A small Australian multidisciplinary team spanning health informatics research, software engineering, and clinical and data advisory. KidneyMate began as university research in regional Victoria and its framework was peer reviewed for HIKM 2026. We keep the website about the work; people appear as pilots and partnerships formalise.
+A small Australian multidisciplinary team spanning health informatics research, software engineering, and clinical and data advisory. KidneyMate began as university research in regional Victoria and its framework is currently under peer review. We keep the website about the work; people appear as pilots and partnerships formalise.
 
 **Will KidneyMate cost anything?**
-The core self-management app will be free for patients. Beyond that, we haven't announced pricing, and we won't publish numbers before they're settled.
+We intend to keep core self-management support accessible for patients. Final pricing hasn't been announced, and we won't publish numbers before they're settled.
 
 **Is KidneyMate a medical device?**
 KidneyMate is being developed as a self-management support tool: it doesn't diagnose, treat or provide medical advice. We monitor Australian regulatory requirements (including TGA rules for software-based products) as the product evolves, and design conservatively so that safety never depends on a classification.
@@ -61,7 +61,7 @@ A structured dashboard (in development): longitudinal trends against each patien
 By doing the reconstruction before you walk in. The summary view is built to be read in under a minute: what changed, what's steady, what was flagged and why. Between visits, flags arrive as a batched review queue, not a pager.
 
 **What's the evidence base?**
-A peer-reviewed conceptual framework (HIKM 2026) grounded in the CKD self-management, patient-generated health data and clinical decision-support literature, plus early validation with around 50 stakeholders. Clinical validation research is scheduled next, and we make no outcome claims ahead of it. The Research page holds the paper and the full evidence library.
+A conceptual framework, currently under peer review, grounded in the CKD self-management, patient-generated health data and clinical decision-support literature, plus around 50 stakeholder conversations. Clinical validation research is planned next, and we make no outcome claims ahead of it. The Research page holds the framework summary and the full evidence library.
 
 **Who is accountable for reviewing flags?**
 That's defined explicitly in every deployment: flags route to named clinical roles under arrangements agreed with your service during pilot governance. The framework exists precisely because alerts without accountable review are worse than no alerts.
@@ -80,7 +80,7 @@ You, and only the people you explicitly choose: for most users that means their 
 Encrypted, in transit and at rest, with Australian-based hosting our intent for Australian users' health records. Our security posture is documented on the Privacy & Trust page and will grow more detailed as pilots formalise it.
 
 **Can I delete my data?**
-Yes. Export it anytime, delete it anytime, and deletion means deleted.
+You can export your records anytime, and request deletion of your active account data at any time. Our Privacy Policy will explain any backup, legal or research retention periods, in plain language.
 
 **Will my data be sold or used for advertising?**
 No. Never. There is no version of KidneyMate's business model where your health information is sold or advertised against.
@@ -93,7 +93,7 @@ Only with your explicit consent, appropriately de-identified, under formal resea
 ## 6. Research and pilots [faq_accordion, audience=research]
 
 **Where can I read the research?**
-The framework paper and our working evidence library are on the Research page, including a plain-language abstract if you'd rather skip the academic formatting.
+A plain-language summary of our framework and the working evidence library are on the Research page. The full paper is currently under peer review; a link will appear there once publication is confirmed.
 
 **When does clinical validation happen?**
 Our stated roadmap: MVP and pilot readiness through 2026, clinical validation research in 2027. Results will be published either way.

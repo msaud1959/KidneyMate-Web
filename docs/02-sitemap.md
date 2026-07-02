@@ -12,7 +12,7 @@
 | For Patients | `/for-patients` | Patients, carers | Life with KidneyMate; accessibility; free tier; beta invite |
 | For Clinicians | `/for-clinicians` | Clinicians, services | Visibility, workflow fit, governance, pilot interest |
 | Impact | `/impact` | Stakeholders, clinicians | What changes for patients, clinicians, the system, research |
-| Research & Evidence | `/research` | Clinicians, researchers, stakeholders | The paper, the evidence base, the validation plan |
+| Research & Evidence | `/research` | Clinicians, researchers, stakeholders | Our framework, the evidence base, the validation plan |
 | Privacy & Trust | `/privacy-and-trust` | Everyone | Data ownership, oversight, explainability, careful AI |
 | About KidneyMate | `/about` | Everyone | Origin story, values, roadmap, the team as a team |
 | FAQ | `/faq` | Everyone | Grouped questions; also surfaced contextually on other pages |

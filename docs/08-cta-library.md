@@ -30,7 +30,7 @@ One primary conversion sitewide (the waitlist, role-segmented at the form), one 
 | How It Works close | Explore the features | /features |
 | Features fork | For patients / For clinicians | /for-patients, /for-clinicians |
 | Impact close | Read the evidence | /research |
-| For Clinicians secondary | Read the framework paper | /research#paper |
+| For Clinicians secondary | Read about the framework | /research#paper |
 | Privacy & Trust close | Get in touch | /join#contact |
 | FAQ close | Get in touch | /join#contact |
 

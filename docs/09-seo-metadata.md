@@ -18,12 +18,12 @@ Titles at or under 60 characters, descriptions at or under 155. Australian Engli
 
 ### The Problem /the-problem
 - **Title:** Living with CKD is daily work | KidneyMate
-- **Description:** 2.7 million Australian adults show signs of kidney disease. The hardest part happens between appointments, where no one can see. Here's the problem we're solving.
+- **Description:** 2.7 million Australians have biomedical signs of kidney disease. The hardest part happens between appointments, where no one can see. The problem we're solving.
 - **Schema:** WebPage
 
 ### Our Solution /our-solution
 - **Title:** One supported routine for CKD | KidneyMate
-- **Description:** KidneyMate turns scattered CKD self-management into one routine, and turns your records into insights and summaries clinicians review. Built on published research.
+- **Description:** KidneyMate turns scattered CKD self-management into one routine, and turns your records into insights and summaries clinicians review. Grounded in research.
 - **Schema:** WebPage
 
 ### Features /features
@@ -38,7 +38,7 @@ Titles at or under 60 characters, descriptions at or under 155. Australian Engli
 
 ### For Patients /for-patients
 - **Title:** KidneyMate for patients and carers
-- **Description:** Built for real life with kidney disease: quick entries, gentle reminders, no guilt, and your records organised for every appointment. Core app free for patients.
+- **Description:** Built for real life with kidney disease: quick entries, gentle reminders, no guilt, and your records organised for every appointment you walk into.
 - **Schema:** WebPage
 
 ### For Clinicians /for-clinicians
@@ -53,8 +53,8 @@ Titles at or under 60 characters, descriptions at or under 155. Australian Engli
 
 ### Research & Evidence /research
 - **Title:** Research and evidence behind KidneyMate
-- **Description:** Our peer-reviewed CKD self-management framework (HIKM 2026), the wider evidence it stands on, and the clinical validation plan we're accountable to.
-- **Schema:** WebPage + ScholarlyArticle (the paper)
+- **Description:** Our CKD self-management framework, now under peer review, the wider evidence it stands on, and the clinical validation plan we're accountable to.
+- **Schema:** WebPage (add ScholarlyArticle markup only once the paper is published)
 
 ### Privacy & Trust /privacy-and-trust
 - **Title:** Privacy and trust at KidneyMate
@@ -63,7 +63,7 @@ Titles at or under 60 characters, descriptions at or under 155. Australian Engli
 
 ### About /about
 - **Title:** About KidneyMate | Built slowly, on purpose
-- **Description:** KidneyMate grew from university research in regional Victoria into a peer-reviewed framework and working prototype. Our story, principles and roadmap.
+- **Description:** KidneyMate grew from university research in regional Victoria into a research framework and working prototype. Our story, principles and roadmap.
 - **Schema:** AboutPage
 
 ### FAQ /faq

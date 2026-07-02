@@ -128,7 +128,7 @@ One Replicator field, `page_builder`, with these sets. Names match `03-page-stru
 | `testimonial_carousel` | heading, mode (auto by audience / manual), testimonials (entries) | Respects consent + feature flag |
 | `evidence_teaser` | heading, entries (entries from `evidence`, max 3), link_label | Research promos on other pages |
 | `evidence_list` | heading, intro, filter (evidence_types terms, optional) | The full library on /research |
-| `paper_feature` | entry (the `is_own_paper` evidence entry), plain_abstract (bard), download_label | The framework paper block |
+| `paper_feature` | entry (the `is_own_paper` evidence entry), status_line (text, e.g. "Currently under peer review"), plain_abstract (bard), download_label (shown only when `paper_file` exists) | The framework block; the download and any venue name appear only once publication is confirmed |
 | `faq_accordion` | heading, mode (by audience / manual), audience (term), faqs (entries), limit | Contextual FAQ selections |
 | `timeline` | heading, mode (all milestones / manual), milestones (entries) | Roadmap |
 | `cta_banner` | use_global (toggle, default on), heading, text, button_label, button_link, secondary_link | Waitlist closes |

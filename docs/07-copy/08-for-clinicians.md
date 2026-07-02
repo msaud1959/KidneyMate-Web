@@ -10,10 +10,10 @@
 You manage CKD through snapshots. Your patients live it in sequence.
 
 **Subheading:**
-KidneyMate is designed to give you the sequence: structured, longitudinal patient-reported data between consultations, organised for review rather than for reading. Built on a peer-reviewed decision-support framework in which clinical judgement stays exactly where it belongs.
+KidneyMate is designed to give you the sequence: structured, longitudinal patient-reported data between consultations, organised for review rather than for reading. Built on a decision-support research framework, currently under peer review, in which clinical judgement stays exactly where it belongs.
 
 **Primary CTA:** Register pilot interest
-**Secondary CTA:** Read the framework paper
+**Secondary CTA:** Read about the framework
 
 ---
 
@@ -32,7 +32,7 @@ Patient-generated health data was supposed to fix this. Mostly, it hasn't: consu
 - **94%**
   of surveyed haemodialysis patients reported fatigue; most symptom burden goes underreported between visits.
 - **~50**
-  patients, carers, GPs, specialists, nurses and clinic staff consulted in shaping KidneyMate so far.
+  stakeholder conversations, with patients, carers, GPs, specialists, nurses and clinic staff, have shaped KidneyMate so far.
 
 ---
 
@@ -64,9 +64,9 @@ Patient-generated health data was supposed to fix this. Mostly, it hasn't: consu
 
 **Heading:** The paperwork you'd want us to have
 
-- **A published framework.** KidneyMate implements "A Conceptual Framework for Chronic Kidney Disease Self-Management Support" (HIKM 2026): data layer, rule-based analysis layer, clinician review layer with a feedback loop.
+- **A documented framework.** KidneyMate implements "A Conceptual Framework for Chronic Kidney Disease Self-Management Support", our research paper currently under peer review: data layer, rule-based analysis layer, clinician review layer with a feedback loop.
 - **A validation pathway, stated publicly.** Expert review, pilot implementation, and evaluation against usability, interpretability, clinical relevance, transparency, workflow integration and stakeholder acceptance.
-- **Privacy by design.** Australian Privacy Principles alignment, consent-based sharing, encryption in transit and at rest, minimal collection. Detail on the Privacy & Trust page.
+- **Privacy by design.** Designed to align with the Australian Privacy Principles: consent-based sharing, encryption in transit and at rest, minimal collection. Detail on the Privacy & Trust page.
 - **Honest claims only.** KidneyMate is decision support in development. We make no outcome claims ahead of validation, and this website never will.
 
 **Link:** Read the research →
@@ -104,4 +104,4 @@ Pulls: "What do clinicians actually see?", "Is this a medical device?", "How doe
 **Heading:** Bring the between-appointments picture to your clinic
 **Text:** Pilot conversations are open now for Australian clinics, renal units and dialysis services. No commitment in a conversation.
 **Button:** Register pilot interest
-**Secondary link:** Read the framework paper first
+**Secondary link:** Read about the framework first

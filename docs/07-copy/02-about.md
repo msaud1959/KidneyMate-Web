@@ -20,9 +20,9 @@ KidneyMate didn't start as a startup idea. It started as a research question: ho
 
 It began at a university in regional Victoria, in a research project on patient-generated health data: the records people keep about their own health outside the clinic walls. The deeper we went into the evidence on chronic kidney disease, the clearer one pattern became. There were plenty of apps. There were education tools, food diaries, reminder apps, symptom trackers. What didn't exist was a responsible way to connect all of that daily effort back to the people clinically accountable for a person's care.
 
-So we built the missing piece first, on paper: a framework for CKD self-management support with three connected layers. A person's daily records and their care team's targets. A transparent, rule-based analysis that finds trends and changes worth noticing. And clinician review before anything becomes action. That framework was peer reviewed and presented at HIKM 2026, the Australian health informatics conference.
+So we built the missing piece first, on paper: a framework for CKD self-management support with three connected layers. A person's daily records and their care team's targets. A transparent, rule-based analysis that finds trends and changes worth noticing. And clinician review before anything becomes action. That framework has been written up as a research paper and is currently under peer review.
 
-Then we started building it for real. Through a regional pre-accelerator program we tested the thinking with around 50 people: patients, carers, GPs, specialists, nurses, clinic and dialysis centre staff. Their answers shaped the prototype that exists today, and their scepticism shaped it just as much as their enthusiasm.
+Then we started building it for real. Through a regional pre-accelerator program we talked the thinking through in around 50 stakeholder conversations: with patients, carers, GPs, specialists, nurses, clinic and dialysis centre staff. Their answers shaped the prototype that exists today, and their scepticism shaped it just as much as their enthusiasm.
 
 ---
 
@@ -56,7 +56,7 @@ Living with kidney disease comes with experts: nephrologists, GPs, nurses, dieti
 - **Honesty about stage.** We're a prototype heading for pilots and clinical validation. You'll never catch this website pretending otherwise.
 - **Your story is yours.** The person living with the condition owns their records and chooses what's shared.
 - **Clinicians stay in charge.** KidneyMate prepares information. People make decisions. That line never moves.
-- **Evidence before claims.** We published the framework before we marketed the product, and we'll validate before we promise outcomes.
+- **Evidence before claims.** We developed the research framework before marketing the product, and we'll validate before we promise outcomes.
 
 ---
 
@@ -65,7 +65,7 @@ Living with kidney disease comes with experts: nephrologists, GPs, nurses, dieti
 **Heading:** The road, honestly
 
 - **2025. Research foundations.** University research into patient-generated health data becomes the seed of KidneyMate. *(complete)*
-- **2026. Framework and prototype.** Our conceptual framework is peer reviewed for HIKM 2026. The working prototype takes shape, tested with patients and clinicians. *(current)*
+- **2026. Framework and prototype.** Our conceptual framework is written up and submitted for peer review. The working prototype takes shape, informed by stakeholder conversations. *(current)*
 - **2026. MVP and pilot readiness.** First MVP, hardened for real-world pilots with clinics and dialysis services. *(planned)*
 - **2027. Clinical validation research.** Formal studies of usability, interpretability, clinical relevance and workflow fit. *(planned)*
 - **2027 to 2028. Clinician dashboard integration.** The clinician view matures toward health-system integration, guided by what validation teaches us. *(planned)*

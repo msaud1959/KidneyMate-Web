@@ -125,7 +125,7 @@ Gradient fields as fixed-position or section-scoped radial gradients with a 1 to
 ## 12. Pre-launch checklist
 
 - [ ] Legal: Privacy Policy and Terms drafted and reviewed by counsel; noindex removed.
-- [ ] Verify claims: paper publication status line, stakeholder count, ABS statistic wording, adherence range citation.
+- [ ] Verify claims: paper peer-review status (site says "currently under peer review" and names no venue until publication is confirmed), stakeholder-conversation wording, ABS statistic wording (2.7 million / 14.2% / 7.4% self-reported), adherence range citation, GBD/Lancet citation for the 788 million figure.
 - [ ] Testimonials: publish only entries with `consent_confirmed`; otherwise keep flag off.
 - [ ] Contact email live and monitored; waitlist confirmation email sending.
 - [ ] 404 page, favicon set, OG default card, robots.txt, XML sitemap submitted to Search Console.

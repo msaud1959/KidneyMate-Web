@@ -10,7 +10,7 @@
 Three layers. No black boxes.
 
 **Subheading:**
-KidneyMate is built on a peer-reviewed framework with one rule running through it: information can be automated, judgement can't. Here's the whole system, in plain language.
+KidneyMate is built on a research framework with one rule running through it: information can be automated, judgement can't. Here's the whole system, in plain language.
 
 ---
 

@@ -19,7 +19,7 @@ KidneyMate asks people to record the private texture of their lives: what they d
 **Heading:** Four commitments, in writing
 
 - **You choose what's shared.** Your records are a private diary first. Sharing with your care team is opt-in, specific, visible in the app, and reversible at any time.
-- **You can take it all with you.** Export your records whenever you like. Ask for deletion and your data is deleted, not archived into a euphemism.
+- **You can take it all with you.** Export your records whenever you like, and request deletion of your active account data at any time. Our Privacy Policy will explain any backup, legal or research retention periods plainly, with no euphemisms.
 - **Never sold, never advertised against.** Your health information will not be sold, rented or used for advertising. There is no version of our business model where that changes.
 - **We collect the minimum.** If a piece of data doesn't serve your self-management or your care, KidneyMate doesn't ask for it.
 
@@ -29,7 +29,7 @@ KidneyMate asks people to record the private texture of their lives: what they d
 
 **Heading:** Built to Australian standards, from the first sketch
 
-KidneyMate is designed around the Australian Privacy Principles, the standard that governs health information in Australia, and we treat that as a floor rather than a ceiling. In practice that means: encryption of your data in transit and at rest, access controls so only the right people see the right things, Australian-based hosting as our intent for Australian users' health records, and consent that's granular and revocable rather than a 40-page checkbox.
+KidneyMate is designed to align with the Australian Privacy Principles, the standard that governs health information in Australia, and we treat that as a floor rather than a ceiling. In practice that means: encryption of your data in transit and at rest, access controls so only the right people see the right things, Australian-based hosting as our intent for Australian users' health records, and consent that's granular and revocable rather than a 40-page checkbox.
 
 Where data is ever used for research, it happens only with explicit consent and appropriate de-identification, under the governance arrangements pilots and studies require. As we move through pilots, our privacy and security posture will be documented publicly here, including the independent testing we undertake.
 
@@ -42,7 +42,7 @@ Where data is ever used for research, it happens only with explicit consent and 
 **Heading:** The most important safety feature is a person
 
 **Body:**
-Plenty of health tech quietly removes humans from the loop and calls it efficiency. KidneyMate's framework does the opposite, on purpose. Nothing the system notices becomes clinical action without a clinician reviewing it, weighing it against your history, and deciding. That's not a limitation we tolerate; it's the architecture we published.
+Plenty of health tech quietly removes humans from the loop and calls it efficiency. KidneyMate's framework does the opposite, on purpose. Nothing the system notices becomes clinical action without a clinician reviewing it, weighing it against your history, and deciding. That's not a limitation we tolerate; it's the architecture our research framework sets out.
 
 For you, it means the app never plays doctor. For your clinician, it means accountability has a clear home. For your family, it means the thing helping you is itself supervised by people whose job is your care.
 
@@ -67,7 +67,7 @@ If a future feature can't meet that bar, it doesn't ship. Explainability here is
 
 **Heading:** Our AI position, without the hype
 
-Today, KidneyMate's analysis is transparent rules, trends against your own baseline, and anomaly flags: methods a clinician can inspect end to end. We chose this deliberately for an early-stage clinical tool, and our published research says why: value comes from integration and accountable review, not from algorithmic complexity, and careless AI integration in health tools creates exactly the privacy and safety risks we designed against.
+Today, KidneyMate's analysis is transparent rules, trends against your own baseline, and anomaly flags: methods a clinician can inspect end to end. We chose this deliberately for an early-stage clinical tool, and our research framework says why: value comes from integration and accountable review, not from algorithmic complexity, and careless AI integration in health tools creates exactly the privacy and safety risks we designed against.
 
 AI features are on our roadmap, led by conversational guidance for everyday questions within safe, clearly bounded limits. When they arrive, they'll obey the same house rules as everything else: explainable, privacy-preserving, never diagnosing, never contradicting your care plan, and always with human review between analysis and action. If we can't meet those conditions, the feature waits until we can.
 

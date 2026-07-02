@@ -16,7 +16,7 @@ KidneyMate brings the daily work of living with kidney disease into one calm pla
 **Secondary CTA:** See how it works
 
 **Honesty line (small, under CTAs):**
-In development now. Built on peer-reviewed research, shaped with patients and clinicians.
+In development now. Grounded in research, shaped through conversations with patients and clinicians.
 
 **Visual:** stylised app dashboard in phone frame, floating chips (fluid ring, medication tick, insight snippet).
 **Alt text:** Illustration of the KidneyMate app home screen showing daily trackers for medication, fluid, sleep and mood.
@@ -25,10 +25,10 @@ In development now. Built on peer-reviewed research, shaped with patients and cl
 
 ## 2. Trust strip [logo_trust_strip]
 
-- Grounded in a peer-reviewed framework
-- Shaped with around 50 patients, carers and clinicians
+- Grounded in a research framework under peer review
+- Shaped through around 50 stakeholder conversations
 - Clinicians stay in charge of every decision
-- Privacy by design, under Australian privacy law
+- Designed to align with the Australian Privacy Principles
 
 ---
 
@@ -61,11 +61,11 @@ For millions of people, these questions repeat every day, between appointments t
 
 **Stat band:**
 - **2.7 million**
-  Australian adults showing signs of kidney disease, about 1 in 7. Most don't know it.
-  Source: Australian Bureau of Statistics, 2022 to 2024
+  Australians aged 18 and over had biomedical signs of chronic kidney disease in 2022 to 2024, 14.2% of adults.
+  Source: Australian Bureau of Statistics
 - **788 million**
   Adults worldwide living with chronic kidney disease in 2023, more than double the 1990 figure.
-  Source: Global Burden of Disease study
+  Source: Global Burden of Disease 2023 study, The Lancet
 - **17% to 74%**
   The reported range of people with CKD who struggle to keep up with medication and diet plans.
   Source: published adherence studies
@@ -97,7 +97,7 @@ When you choose to share, your records become clear summaries and review flags f
 
 **Layer 3: Your care team reviews what matters.** Clinicians see organised summaries and flags, add their judgement, and decide what happens next. Always people, never software alone.
 
-**Footnote:** This is the framework from our peer-reviewed research, built into the product from day one.
+**Footnote:** This is the framework from our research, built into the product from day one.
 **Link:** See the full picture →
 
 ---
@@ -132,7 +132,7 @@ You set the targets. You review the flags. Nothing reaches a clinical decision w
 **Heading:** Research first. Then the product. Then the proof.
 
 **Body:**
-KidneyMate is built on a conceptual framework for clinically responsible CKD self-management, peer reviewed and presented at HIKM 2026, Australia's health informatics conference. The framework is published. The prototype is working. Clinical validation research is the next milestone on our roadmap, and we won't claim outcomes before we've earned them.
+KidneyMate is built on a conceptual framework for clinically responsible CKD self-management, developed before the product was ever marketed and currently under peer review. The framework is written. The prototype is working. Clinical validation research is the next milestone on our roadmap, and we won't claim outcomes before we've earned them.
 
 **Link:** Read the evidence →
 
@@ -155,10 +155,10 @@ KidneyMate is built on a conceptual framework for clinically responsible CKD sel
 
 **Heading:** Trust isn't a page on this site. It's the design brief.
 
-- **Your data is yours.** You choose what's shared and with whom. Export it or delete it anytime.
+- **Your data is yours.** You choose what's shared and with whom. Export your records anytime, and request deletion whenever you choose.
 - **Explainable by design.** Every insight can show the rule behind it in plain language.
 - **Humans review.** Clinicians look at what matters before anything changes in your care.
-- **Private by law and by intent.** Designed around the Australian Privacy Principles. Never sold, never used for advertising.
+- **Private by law and by intent.** Designed to align with the Australian Privacy Principles. Never sold, never used for advertising.
 
 **Link:** How we earn trust →
 
