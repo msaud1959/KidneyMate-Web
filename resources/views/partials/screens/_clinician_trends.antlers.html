@@ -1,0 +1,59 @@
+{{# Clinician trends dashboard: 90-day view, review flag with reasoning. #}}
+<div class="flex items-center justify-between gap-3 flex-wrap">
+    <div>
+        <p class="text-[14px] font-bold text-ink-900">Sam T. · CKD stage 3b</p>
+        <p class="text-[11.5px] text-ink-400">90-day view · targets last updated 12 Mar</p>
+    </div>
+    <div class="flex gap-1.5 text-[10.5px] font-semibold">
+        <span class="rounded-full bg-cloud-100 px-2.5 py-1 text-ink-600">30d</span>
+        <span class="rounded-full bg-cobalt-500 px-2.5 py-1 text-white">90d</span>
+        <span class="rounded-full bg-cloud-100 px-2.5 py-1 text-ink-600">12m</span>
+    </div>
+</div>
+
+<div class="mt-3 rounded-xl border border-cloud-200 bg-cloud-50 p-3">
+    <div class="flex gap-4 text-[10.5px] font-semibold">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background: var(--color-fluid-deep)"></span>Fluid vs target</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background: var(--color-symptoms-deep)"></span>Fatigue score</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background: var(--color-meds-deep)"></span>Adherence</span>
+    </div>
+    <svg viewBox="0 0 320 110" class="mt-2 w-full" aria-hidden="true">
+        <line x1="0" y1="27" x2="320" y2="27" stroke="#dce2f0" stroke-width="1"/>
+        <line x1="0" y1="55" x2="320" y2="55" stroke="#dce2f0" stroke-width="1"/>
+        <line x1="0" y1="83" x2="320" y2="83" stroke="#dce2f0" stroke-width="1"/>
+        <path d="M0 50 C30 46 55 55 85 52 S150 42 180 47 S250 58 320 50" fill="none" stroke="var(--color-fluid-deep)" stroke-width="2.25" stroke-linecap="round"/>
+        <path d="M0 72 C40 70 70 68 100 66 S170 60 200 52 S270 40 320 34" fill="none" stroke="var(--color-symptoms-deep)" stroke-width="2.25" stroke-linecap="round"/>
+        <path d="M0 30 C50 32 90 30 130 34 S210 52 250 58 S300 60 320 62" fill="none" stroke="var(--color-meds-deep)" stroke-width="2.25" stroke-dasharray="1 5" stroke-linecap="round"/>
+        <circle cx="252" cy="58" r="4" fill="var(--color-meds-deep)"/>
+    </svg>
+    <div class="flex justify-between text-[9.5px] text-ink-400"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span></div>
+</div>
+
+<div class="mt-3 rounded-xl border p-3" style="background: var(--color-meds-tint); border-color: rgb(197 79 98 / 0.25)">
+    <div class="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+            <p class="text-[11px] font-bold" style="color: var(--color-meds-deep)">Review flag · medication adherence</p>
+            <p class="mt-1 text-[11.5px] text-ink-900 font-semibold">Three missed evening doses in the last seven days.</p>
+            <p class="mt-1 text-[10.5px] text-ink-600">Rule: missed doses of 3 or more in 7 days, weighted by blood pressure notes. Baseline: near-complete adherence over 90 days. For your review; no action has been suggested to the patient.</p>
+        </div>
+        <div class="flex gap-1.5 shrink-0">
+            <span class="rounded-full bg-white px-3 py-1.5 text-[10.5px] font-semibold text-ink-900 border border-cloud-200">Review</span>
+            <span class="rounded-full bg-white px-3 py-1.5 text-[10.5px] font-semibold text-ink-400 border border-cloud-200">Not relevant</span>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3 grid grid-cols-3 gap-2 text-center">
+    <div class="rounded-xl bg-cloud-50 border border-cloud-200 p-2.5">
+        <p class="text-[14px] font-bold text-ink-900">86%</p>
+        <p class="text-[9.5px] text-ink-400">days within fluid target</p>
+    </div>
+    <div class="rounded-xl bg-cloud-50 border border-cloud-200 p-2.5">
+        <p class="text-[14px] font-bold text-ink-900">4.2</p>
+        <p class="text-[9.5px] text-ink-400">avg fatigue, up from 3.4</p>
+    </div>
+    <div class="rounded-xl bg-cloud-50 border border-cloud-200 p-2.5">
+        <p class="text-[14px] font-bold text-ink-900">92%</p>
+        <p class="text-[9.5px] text-ink-400">check-ins completed</p>
+    </div>
+</div>

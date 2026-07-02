@@ -1,0 +1,18 @@
+{{#
+    Dispatcher: renders a screens-collection entry inside its frame.
+    Expects `screen` (entry). All inner content is decorative; the
+    wrapper carries the accessible description.
+#}}
+{{ screen }}
+    <figure role="img" aria-label="{{ caption ?? title }}" class="not-prose">
+        {{ if frame == 'browser' }}
+            {{ partial:screens/frame_browser }}
+                {{ partial src="screens/{partial_handle}" }}
+            {{ /partial:screens/frame_browser }}
+        {{ else }}
+            {{ partial:screens/frame_phone }}
+                {{ partial src="screens/{partial_handle}" }}
+            {{ /partial:screens/frame_phone }}
+        {{ /if }}
+    </figure>
+{{ /screen }}

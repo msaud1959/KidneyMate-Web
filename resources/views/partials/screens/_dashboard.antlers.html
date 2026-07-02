@@ -1,0 +1,50 @@
+{{# Home dashboard: greeting, streak, to-do, four tracker tiles, tab bar. #}}
+<div class="flex items-center justify-between">
+    <div>
+        <p class="text-[15px] font-bold text-ink-900">Good evening, Sam</p>
+        <p class="text-[11.5px] text-ink-400">Small steps, steady days.</p>
+    </div>
+    <span class="inline-flex items-center gap-1 rounded-full bg-white/80 border border-white px-2.5 py-1 text-[10.5px] font-semibold text-cobalt-700 shadow-chip">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5l2.3 2.3L8.5 3" stroke="#3e9c84" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Synced 5:24 pm
+    </span>
+</div>
+
+<div class="mt-3 flex gap-2">
+    <span class="rounded-xl bg-white/85 border border-white px-3 py-2 text-[11px] font-semibold text-ink-900 shadow-chip">7-day streak</span>
+    <span class="rounded-xl bg-white/85 border border-white px-3 py-2 text-[11px] text-ink-600 shadow-chip flex-1">To do: evening check-in, 9 pm tablets</span>
+</div>
+
+<p class="mt-4 mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-400">Today</p>
+<div class="grid grid-cols-2 gap-2.5">
+    <div class="rounded-2xl p-3 shadow-chip" style="background: var(--color-meds-tint)">
+        <p class="text-[11px] font-semibold" style="color: var(--color-meds-deep)">Medication</p>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900">3 of 4</p>
+        <p class="text-[10.5px] text-ink-400">taken · 9 pm to go</p>
+    </div>
+    <div class="rounded-2xl p-3 shadow-chip" style="background: var(--color-fluid-tint)">
+        <p class="text-[11px] font-semibold" style="color: var(--color-fluid-deep)">Fluid</p>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900">1,050 mL</p>
+        <p class="text-[10.5px] text-ink-400">of 1,500 mL target</p>
+    </div>
+    <div class="rounded-2xl p-3 shadow-chip" style="background: var(--color-sleep-tint)">
+        <p class="text-[11px] font-semibold" style="color: var(--color-sleep-deep)">Sleep</p>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900">7h 10m</p>
+        <p class="text-[10.5px] text-ink-400">last night · patchy</p>
+    </div>
+    <div class="rounded-2xl p-3 shadow-chip" style="background: var(--color-symptoms-tint)">
+        <p class="text-[11px] font-semibold" style="color: var(--color-symptoms-deep)">Symptoms</p>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900">1 note</p>
+        <p class="text-[10.5px] text-ink-400">tiredness, mild</p>
+    </div>
+</div>
+
+<div class="mt-3 rounded-2xl bg-white/85 border border-white p-3 shadow-chip">
+    <p class="text-[11px] font-semibold" style="color: var(--color-appts-deep)">Thursday 10:30 am</p>
+    <p class="text-[12px] font-semibold text-ink-900 mt-0.5">Dr Patel, nephrology review</p>
+    <p class="text-[10.5px] text-ink-400">Summary ready to share</p>
+</div>
+
+<div class="absolute bottom-3 left-4 right-4 rounded-2xl bg-white/90 border border-white shadow-chip flex justify-around py-2 text-[10px] font-semibold text-ink-400">
+    <span class="text-cobalt-600">Home</span><span>Trackers</span><span>Insights</span><span>Profile</span>
+</div>
