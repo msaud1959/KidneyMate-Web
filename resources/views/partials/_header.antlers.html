@@ -6,16 +6,14 @@
     @keydown.escape.window="open = null; mobile = false"
     class="sticky top-0 z-50"
 >
-    {{ feature_flags in="globals" }}
-        {{ if show_announcement && announcement:message }}
-            <div class="bg-cobalt-700 text-white text-center text-[0.9375rem] px-4 py-2">
-                {{ announcement:message }}
-                {{ if announcement:link_label }}
-                    <a href="{{ announcement:link_target }}" class="underline underline-offset-2 font-semibold ms-1">{{ announcement:link_label }}</a>
-                {{ /if }}
-            </div>
-        {{ /if }}
-    {{ /feature_flags }}
+    {{ if feature_flags:show_announcement && announcement:message }}
+        <div class="bg-cobalt-700 text-white text-center text-[0.9375rem] px-4 py-2">
+            {{ announcement:message }}
+            {{ if announcement:link_label }}
+                <a href="{{ announcement:link_target }}" class="underline underline-offset-2 font-semibold ms-1">{{ announcement:link_label }}</a>
+            {{ /if }}
+        </div>
+    {{ /if }}
 
     <div class="px-3 sm:px-4 pt-3">
         <div

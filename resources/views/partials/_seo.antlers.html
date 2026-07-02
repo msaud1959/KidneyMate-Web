@@ -1,13 +1,18 @@
 {{# Editable SEO with sensible fallbacks. #}}
-{{ title_out = seo_title ?? (title ? title . ' | KidneyMate' : 'KidneyMate | Daily support for life with kidney disease') }}
-<title>{{ title_out | sanitize }}</title>
+{{ if seo_title }}
+    <title>{{ seo_title | sanitize }}</title>
+{{ elseif title && url != '/' }}
+    <title>{{ title | sanitize }} | KidneyMate</title>
+{{ else }}
+    <title>KidneyMate | Daily support for life with kidney disease</title>
+{{ /if }}
 {{ if seo_description }}<meta name="description" content="{{ seo_description | sanitize }}">{{ /if }}
 {{ if noindex }}<meta name="robots" content="noindex, nofollow">{{ /if }}
 <link rel="canonical" href="{{ canonical_url ?? permalink ?? site:url }}">
 
 <meta property="og:site_name" content="KidneyMate">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ og_title ?? title_out | sanitize }}">
+<meta property="og:title" content="{{ og_title ?? seo_title ?? title ?? 'KidneyMate' | sanitize }}">
 {{ if og_description ?? seo_description }}<meta property="og:description" content="{{ og_description ?? seo_description | sanitize }}">{{ /if }}
 <meta property="og:url" content="{{ permalink ?? site:url }}">
 {{ if og_image }}

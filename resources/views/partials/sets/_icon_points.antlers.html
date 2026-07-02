@@ -1,4 +1,5 @@
-{{ partial:section :background="background" :section_id="section_id" :tight="style == 'compact'" }}
+{{ if style == 'compact' }}{{ is_tight = true }}{{ else }}{{ is_tight = false }}{{ /if }}
+{{ partial:section :background="background" :section_id="section_id" :tight="is_tight" }}
     <div class="mx-auto max-w-6xl px-6">
         {{ if heading }}<h2 class="heading-md max-w-[26ch] {{ if style == 'compact' }}sr-only{{ /if }}" data-reveal>{{ heading }}</h2>{{ /if }}
         {{ if intro }}<p class="mt-4 text-[1.125rem] measure" data-reveal>{{ intro }}</p>{{ /if }}

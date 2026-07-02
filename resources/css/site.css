@@ -291,6 +291,11 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
 }
 .km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
 
+/* Layered framework stagger */
+@media (min-width: 64rem) {
+  .km-layer { transform: translateY(calc(var(--layer-offset, 0) * 0.75rem)); }
+}
+
 /* ---------------------------------------------------------------
    Form controls
 ---------------------------------------------------------------- */

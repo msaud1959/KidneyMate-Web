@@ -1,5 +1,5 @@
-{{ deep = style == 'deep' }}
-{{ partial:section :background="deep ? 'deep' : background" :section_id="section_id" }}
+{{ if style == 'deep' }}{{ deep = true }}{{ band_bg = 'deep' }}{{ else }}{{ deep = false }}{{ band_bg = background }}{{ /if }}
+{{ partial:section :background="band_bg" :section_id="section_id" }}
     <div class="mx-auto max-w-6xl px-6">
         {{ if intro }}<p class="eyebrow {{ if deep }}!text-cobalt-300{{ /if }}" data-reveal>{{ intro }}</p>{{ /if }}
         <dl class="mt-8 grid gap-10 sm:grid-cols-3">

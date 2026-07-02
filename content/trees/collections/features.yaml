@@ -1,0 +1,23 @@
+tree:
+- entry: feature-fluid-intake
+- entry: feature-food-and-diet
+- entry: feature-medications
+- entry: feature-symptoms
+- entry: feature-sleep
+- entry: feature-mood-and-emotions
+- entry: feature-physical-activity
+- entry: feature-appointments
+- entry: feature-dialysis-sessions
+- entry: feature-personalised-reminders
+- entry: feature-trends-dashboard
+- entry: feature-personal-baseline
+- entry: feature-plain-language-insights
+- entry: feature-explainable-insights
+- entry: feature-gentle-by-design
+- entry: feature-appointment-summaries
+- entry: feature-clinician-review-flags
+- entry: feature-care-team-targets
+- entry: feature-clinician-dashboard
+- entry: feature-health-app-integration
+- entry: feature-conversational-guidance
+- entry: feature-health-system-integration

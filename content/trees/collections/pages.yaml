@@ -1,3 +1,16 @@
 tree:
-  -
-    entry: home
+- entry: home
+- entry: page-the-problem
+- entry: page-our-solution
+- entry: page-features
+- entry: page-how-it-works
+- entry: page-for-patients
+- entry: page-for-clinicians
+- entry: page-impact
+- entry: page-research
+- entry: page-privacy-trust
+- entry: page-about
+- entry: page-faq
+- entry: page-join
+- entry: page-privacy-policy
+- entry: page-terms
