@@ -1,15 +1,22 @@
 <!doctype html>
-<html lang="{{ site:short_locale }}">
+<html lang="en-AU" class="no-js">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ (title ?? site:name) | sanitize }}</title>
+        {{ partial:seo }}
+        <link rel="preload" href="/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
-    <body class="bg-zinc-100 dark:bg-zinc-900 font-sans leading-normal text-zinc-800 dark:text-zinc-400">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+    <body class="min-h-screen flex flex-col">
+        <a href="#main" class="skip-link btn-primary">Skip to content</a>
+
+        {{ partial:header }}
+
+        <main id="main" class="flex-1">
             {{ template_content }}
-        </div>
+        </main>
+
+        {{ partial:footer }}
     </body>
 </html>

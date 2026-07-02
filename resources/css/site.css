@@ -291,6 +291,9 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
 }
 .km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
 
+/* Alpine cloak */
+[x-cloak] { display: none !important; }
+
 /* Accessible skip link */
 .skip-link {
   position: absolute;

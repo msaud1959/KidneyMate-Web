@@ -1,9 +1,11 @@
 import Alpine from 'alpinejs';
+import focus from '@alpinejs/focus';
 
 // Mark JS availability so reveal styles never hide content without JS.
 document.documentElement.classList.remove('no-js');
 
 window.Alpine = Alpine;
+Alpine.plugin(focus);
 
 // Reveal-on-scroll: fires once per element, respects reduced motion via CSS.
 const revealables = document.querySelectorAll('[data-reveal]');

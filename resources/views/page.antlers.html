@@ -1,0 +1,21 @@
+{{# Every page renders from the page_builder replicator. #}}
+{{ page_builder }}
+    {{ partial src="sets/{type}" }}
+{{ /page_builder }}
+
+{{# Site-wide waitlist banner unless the page opts out or closes itself. #}}
+{{ unless hide_default_cta }}
+    {{ last_set = page_builder | last }}
+    {{ unless last_set:type == 'cta_banner' }}
+        {{ partial:sets/cta_banner use_global="true" }}
+    {{ /unless }}
+{{ /unless }}
+
+{{ if requires_legal_review }}
+    <div class="mx-auto max-w-3xl px-6 pb-16">
+        <div class="glass-solid !border-amber-400 p-5 text-[1rem]">
+            <strong class="text-ink-900">Draft for review.</strong>
+            This page holds placeholder wording and requires legal review before launch.
+        </div>
+    </div>
+{{ /if }}

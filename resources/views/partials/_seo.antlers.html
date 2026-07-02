@@ -1,0 +1,19 @@
+{{# Editable SEO with sensible fallbacks. #}}
+{{ title_out = seo_title ?? (title ? title . ' | KidneyMate' : 'KidneyMate | Daily support for life with kidney disease') }}
+<title>{{ title_out | sanitize }}</title>
+{{ if seo_description }}<meta name="description" content="{{ seo_description | sanitize }}">{{ /if }}
+{{ if noindex }}<meta name="robots" content="noindex, nofollow">{{ /if }}
+<link rel="canonical" href="{{ canonical_url ?? permalink ?? site:url }}">
+
+<meta property="og:site_name" content="KidneyMate">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ og_title ?? title_out | sanitize }}">
+{{ if og_description ?? seo_description }}<meta property="og:description" content="{{ og_description ?? seo_description | sanitize }}">{{ /if }}
+<meta property="og:url" content="{{ permalink ?? site:url }}">
+{{ if og_image }}
+    <meta property="og:image" content="{{ og_image | url }}">
+{{ elseif site_identity:og_default }}
+    <meta property="og:image" content="{{ site_identity:og_default | url }}">
+{{ /if }}
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">

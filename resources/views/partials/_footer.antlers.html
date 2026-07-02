@@ -1,0 +1,52 @@
+<footer class="field-deep relative text-white mt-24">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+        <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr_0.8fr]">
+            <div>
+                <a href="/" aria-label="KidneyMate home" class="inline-block rounded-lg bg-white/95 px-3 py-2">{{ partial:logo }}</a>
+                <p class="mt-4 text-cobalt-100 max-w-xs text-[1rem]">{{ site_identity:tagline }}</p>
+            </div>
+
+            <nav aria-label="Product">
+                <h2 class="font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-cobalt-300">Product</h2>
+                <ul class="mt-3 space-y-2">
+                    {{ nav handle="footer_product" }}
+                        <li><a href="{{ url }}" class="text-cobalt-100 hover:text-white transition text-[1rem]">{{ title }}</a></li>
+                    {{ /nav }}
+                </ul>
+            </nav>
+
+            <nav aria-label="Why KidneyMate">
+                <h2 class="font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-cobalt-300">Why KidneyMate</h2>
+                <ul class="mt-3 space-y-2">
+                    {{ nav handle="footer_why" }}
+                        <li><a href="{{ url }}" class="text-cobalt-100 hover:text-white transition text-[1rem]">{{ title }}</a></li>
+                    {{ /nav }}
+                </ul>
+            </nav>
+
+            <nav aria-label="Company">
+                <h2 class="font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-cobalt-300">Company</h2>
+                <ul class="mt-3 space-y-2">
+                    {{ nav handle="footer_company" }}
+                        <li><a href="{{ url }}" class="text-cobalt-100 hover:text-white transition text-[1rem]">{{ title }}</a></li>
+                    {{ /nav }}
+                </ul>
+            </nav>
+
+            <nav aria-label="Legal">
+                <h2 class="font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-cobalt-300">Legal</h2>
+                <ul class="mt-3 space-y-2">
+                    {{ nav handle="footer_legal" }}
+                        <li><a href="{{ url }}" class="text-cobalt-100 hover:text-white transition text-[1rem]">{{ title }}</a></li>
+                    {{ /nav }}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="mt-14 border-t border-white/15 pt-8 space-y-4 text-[0.9375rem] text-cobalt-100">
+            <p class="max-w-3xl font-medium text-white/90">{{ trust_disclaimers:medical_disclaimer }}</p>
+            <p class="max-w-3xl">{{ trust_disclaimers:acknowledgement }}</p>
+            <p>&copy; {{ now format="Y" }} KidneyMate. All rights reserved. ABN {{ site_identity:abn }}.</p>
+        </div>
+    </div>
+</footer>
