@@ -1,0 +1,8 @@
+{{ partial:section :background="background" :section_id="section_id" tight="true" }}
+    <div class="mx-auto max-w-3xl px-6">
+        <div class="glass-solid p-6 {{ if style == 'safety' }}!border-amber-400 border-s-4{{ /if }}" data-reveal role="note">
+            {{ if heading }}<h2 class="font-sans font-bold text-[1.125rem] text-ink-900">{{ heading }}</h2>{{ /if }}
+            <div class="km-prose mt-2 !text-[1rem]">{{ content }}</div>
+        </div>
+    </div>
+{{ /partial:section }}

@@ -1,0 +1,21 @@
+{{ partial:section :background="background" :section_id="section_id" }}
+    <div class="mx-auto max-w-3xl px-6">
+        {{ if heading }}<h2 class="heading-md" data-reveal>{{ heading }}</h2>{{ /if }}
+        <div class="mt-8 space-y-3">
+            {{ if mode == 'manual' }}
+                {{ faqs }}
+                    {{ partial:sets/faq_item :index="index" }}
+                {{ /faqs }}
+            {{ else }}
+                {{ aud_filter = audience }}
+                {{ collection:faqs }}
+                    {{ show_faq = false }}
+                    {{ audiences }}{{ if value == aud_filter }}{{ show_faq = true }}{{ /if }}{{ /audiences }}
+                    {{ if show_faq }}
+                        {{ partial:sets/faq_item :index="index" }}
+                    {{ /if }}
+                {{ /collection:faqs }}
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:section }}

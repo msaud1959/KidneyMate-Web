@@ -1,0 +1,18 @@
+{{ partial:section :background="background" :section_id="section_id" }}
+    <div class="mx-auto max-w-4xl px-6">
+        {{ if heading }}<h2 class="heading-md" data-reveal>{{ heading }}</h2>{{ /if }}
+        <ol class="mt-10 relative border-s-2 border-cloud-200 space-y-8 ps-8">
+            {{ collection:milestones }}
+                <li class="relative" data-reveal style="--reveal-index: {{ index }}">
+                    <span aria-hidden="true" class="absolute -start-[2.45rem] top-1.5 w-4 h-4 rounded-full border-2
+                        {{ if milestone_status == 'complete' }}bg-sage-500 border-sage-500
+                        {{ elseif milestone_status == 'current' }}bg-white border-cobalt-500 ring-4 ring-cobalt-100
+                        {{ else }}bg-white border-cloud-200{{ /if }}"></span>
+                    <p class="eyebrow">{{ period_label }}{{ if milestone_status == 'current' }} · where we are now{{ /if }}</p>
+                    <h3 class="mt-1 font-sans font-bold text-[1.1875rem] text-ink-900">{{ title }}</h3>
+                    <p class="mt-1.5 text-[1.0625rem] text-ink-600 max-w-xl">{{ description }}</p>
+                </li>
+            {{ /collection:milestones }}
+        </ol>
+    </div>
+{{ /partial:section }}

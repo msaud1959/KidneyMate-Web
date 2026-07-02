@@ -1,0 +1,25 @@
+{{ partial:section :background="background" :section_id="section_id" }}
+    <div class="mx-auto max-w-5xl px-6">
+        {{ if heading }}<h2 class="heading-md" data-reveal>{{ heading }}</h2>{{ /if }}
+        <div class="mt-8 grid gap-5 md:grid-cols-2 md:gap-6">
+            <div class="glass-solid p-7" data-reveal>
+                <h3 class="heading-sm font-sans font-bold text-sage-700 flex items-center gap-2">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#3e9c84" stroke-width="1.75"/><path d="M6 10.3l2.6 2.6 5.2-5.2" stroke="#3e9c84" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    {{ left_heading }}
+                </h3>
+                <ul class="mt-5 space-y-4">
+                    {{ rows }}<li class="text-[1.0625rem] text-ink-600 border-b border-cloud-100 pb-4 last:border-0 last:pb-0">{{ left }}</li>{{ /rows }}
+                </ul>
+            </div>
+            <div class="glass-solid p-7 !bg-cloud-50" data-reveal style="--reveal-index: 1">
+                <h3 class="heading-sm font-sans font-bold text-ink-400 flex items-center gap-2">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#6e7891" stroke-width="1.75"/><path d="M7 7l6 6M13 7l-6 6" stroke="#6e7891" stroke-width="1.75" stroke-linecap="round"/></svg>
+                    {{ right_heading }}
+                </h3>
+                <ul class="mt-5 space-y-4">
+                    {{ rows }}<li class="text-[1.0625rem] text-ink-400 border-b border-cloud-200 pb-4 last:border-0 last:pb-0">{{ right }}</li>{{ /rows }}
+                </ul>
+            </div>
+        </div>
+    </div>
+{{ /partial:section }}

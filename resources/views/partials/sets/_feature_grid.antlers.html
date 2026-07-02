@@ -1,0 +1,18 @@
+{{ partial:section :background="background" :section_id="section_id" }}
+    <div class="mx-auto max-w-6xl px-6">
+        {{ if heading }}<h2 class="heading-md max-w-[26ch]" data-reveal>{{ heading }}</h2>{{ /if }}
+        {{ if intro }}<p class="mt-4 text-[1.125rem] measure" data-reveal>{{ intro }}</p>{{ /if }}
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 {{ if columns != '2' }}lg:grid-cols-3{{ /if }}">
+            {{ if mode == 'manual' }}
+                {{ features }}
+                    {{ partial:sets/feature_card :show_status="show_status" :index="index" }}
+                {{ /features }}
+            {{ else }}
+                {{ collection:features :category:is="category" }}
+                    {{ partial:sets/feature_card :show_status="show_status" :index="index" }}
+                {{ /collection:features }}
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:section }}

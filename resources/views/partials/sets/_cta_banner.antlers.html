@@ -1,0 +1,33 @@
+{{#
+    Waitlist close. Uses the global banner by default; a page can
+    override with its own heading, text and buttons.
+#}}
+{{ if use_global !== false }}
+    {{ b_heading = waitlist_cta:heading }}
+    {{ b_text = waitlist_cta:text }}
+    {{ b_button_label = waitlist_cta:button_label }}
+    {{ b_button_link = waitlist_cta:button_link }}
+    {{ b_secondary_label = waitlist_cta:secondary_label }}
+    {{ b_secondary_link = waitlist_cta:secondary_link }}
+{{ else }}
+    {{ b_heading = heading }}
+    {{ b_text = text }}
+    {{ b_button_label = button_label }}
+    {{ b_button_link = button_link }}
+    {{ b_secondary_label = secondary_label }}
+    {{ b_secondary_link = secondary_link }}
+{{ /if }}
+
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="py-10 sm:py-14">
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="field-deep grain relative overflow-hidden rounded-[2rem] px-8 py-14 sm:px-14 sm:py-16 text-center" data-reveal>
+            <h2 class="display-lg !text-white mx-auto max-w-[20ch]">{{ b_heading }}</h2>
+            <p class="mt-5 text-[1.125rem] text-cobalt-100 mx-auto max-w-2xl">{{ b_text }}</p>
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <a href="{{ b_button_link }}" class="btn-primary !bg-white !text-cobalt-700 hover:!bg-cloud-100">{{ b_button_label }}</a>
+                {{ if b_secondary_label }}<a href="{{ b_secondary_link }}" class="font-semibold text-cobalt-100 underline underline-offset-4 hover:text-white">{{ b_secondary_label }}</a>{{ /if }}
+            </div>
+            <p class="mt-6 text-[0.9375rem] text-cobalt-300">Free to join. Leave anytime.</p>
+        </div>
+    </div>
+</section>

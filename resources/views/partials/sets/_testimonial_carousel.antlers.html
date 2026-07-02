@@ -1,0 +1,24 @@
+{{#
+    Voices. Double gate: the global feature flag must be on AND each
+    entry must have consent_confirmed, or nothing renders.
+#}}
+{{ feature_flags in="globals" }}
+{{ if show_testimonials }}
+    {{ partial:section :background="background" :section_id="section_id" }}
+        <div class="mx-auto max-w-6xl px-6">
+            {{ if heading }}<h2 class="heading-md" data-reveal>{{ heading }}</h2>{{ /if }}
+            <div class="mt-8 grid gap-5 md:grid-cols-2">
+                {{ if testimonials }}
+                    {{ testimonials }}
+                        {{ if consent_confirmed }}{{ partial:sets/testimonial_card :index="index" }}{{ /if }}
+                    {{ /testimonials }}
+                {{ else }}
+                    {{ collection:testimonials }}
+                        {{ if consent_confirmed }}{{ partial:sets/testimonial_card :index="index" }}{{ /if }}
+                    {{ /collection:testimonials }}
+                {{ /if }}
+            </div>
+        </div>
+    {{ /partial:section }}
+{{ /if }}
+{{ /feature_flags }}

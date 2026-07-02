@@ -1,0 +1,66 @@
+{{ if variant == 'home' }}
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative field-gradient grain overflow-hidden">
+    <div class="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:pt-24 sm:pb-28 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+            {{ if eyebrow }}<p class="eyebrow" data-reveal>{{ eyebrow }}</p>{{ /if }}
+            <h1 class="display-xl mt-4 max-w-[15ch]" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
+            {{ if subheading }}<p class="mt-6 text-[1.1875rem] leading-relaxed measure" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
+            <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal style="--reveal-index: 3">
+                {{ if primary_label }}<a href="{{ primary_link }}" class="btn-primary">{{ primary_label }}</a>{{ /if }}
+                {{ if secondary_label }}<a href="{{ secondary_link }}" class="btn-secondary">{{ secondary_label }}</a>{{ /if }}
+            </div>
+            {{ if honesty_line }}<p class="mt-5 text-[0.9375rem] text-ink-400" data-reveal style="--reveal-index: 4">{{ honesty_line }}</p>{{ /if }}
+        </div>
+
+        {{ if media_type == 'screen' && screen }}
+            <div class="relative flex justify-center lg:justify-end" data-reveal style="--reveal-index: 2">
+                <div class="float-slow" style="--float-rotate: 2deg">
+                    {{ partial:screens/screen :screen="screen" }}
+                </div>
+                {{# Floating glass chips beside the phone #}}
+                <div aria-hidden="true" class="absolute -left-2 top-16 hidden md:block glass !rounded-2xl px-4 py-3 float-slower shadow-chip">
+                    <p class="text-[0.75rem] font-semibold" style="color: var(--color-fluid-deep)">Fluid</p>
+                    <p class="text-[0.9375rem] font-bold text-ink-900">70% of target</p>
+                </div>
+                <div aria-hidden="true" class="absolute -right-3 bottom-24 hidden md:block glass !rounded-2xl px-4 py-3 float-slower shadow-chip" style="animation-delay: 1.2s">
+                    <p class="text-[0.75rem] font-semibold" style="color: var(--color-meds-deep)">Medication</p>
+                    <p class="text-[0.9375rem] font-bold text-ink-900">Evening dose ✓</p>
+                </div>
+            </div>
+        {{ /if }}
+    </div>
+</section>
+
+{{ elseif variant == 'conversion' }}
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative field-gradient grain">
+    <div class="mx-auto max-w-3xl px-6 pt-16 pb-12 sm:pt-24 sm:pb-16 text-center">
+        {{ if eyebrow }}<p class="eyebrow" data-reveal>{{ eyebrow }}</p>{{ /if }}
+        <h1 class="display-lg mt-4" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
+        {{ if subheading }}<p class="mt-6 text-[1.125rem] leading-relaxed measure mx-auto" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
+        {{ if honesty_line }}<p class="mt-4 text-[0.9375rem] text-ink-400" data-reveal style="--reveal-index: 3">{{ honesty_line }}</p>{{ /if }}
+    </div>
+</section>
+
+{{ else }}
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative field-gradient grain">
+    <div class="mx-auto max-w-6xl px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 {{ if media_type == 'screen' && screen }}grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center{{ /if }}">
+        <div>
+            {{ if eyebrow }}<p class="eyebrow" data-reveal>{{ eyebrow }}</p>{{ /if }}
+            <h1 class="display-lg mt-4 max-w-[18ch]" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
+            {{ if subheading }}<p class="mt-6 text-[1.125rem] leading-relaxed measure" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
+            {{ if primary_label || secondary_label }}
+                <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal style="--reveal-index: 3">
+                    {{ if primary_label }}<a href="{{ primary_link }}" class="btn-primary">{{ primary_label }}</a>{{ /if }}
+                    {{ if secondary_label }}<a href="{{ secondary_link }}" class="btn-secondary">{{ secondary_label }}</a>{{ /if }}
+                </div>
+            {{ /if }}
+            {{ if honesty_line }}<p class="mt-5 text-[0.9375rem] text-ink-400">{{ honesty_line }}</p>{{ /if }}
+        </div>
+        {{ if media_type == 'screen' && screen }}
+            <div class="flex justify-center lg:justify-end" data-reveal style="--reveal-index: 2">
+                {{ partial:screens/screen :screen="screen" }}
+            </div>
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}

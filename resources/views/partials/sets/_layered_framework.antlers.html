@@ -1,0 +1,27 @@
+{{ partial:section :background="background ?? 'gradient'" :section_id="section_id" }}
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="max-w-2xl">
+            {{ if heading }}<h2 class="heading-md" data-reveal>{{ heading }}</h2>{{ /if }}
+            {{ if intro }}<p class="mt-4 text-[1.125rem]" data-reveal>{{ intro }}</p>{{ /if }}
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-3 lg:gap-0 lg:items-stretch">
+            {{ layers }}
+                <div class="relative lg:px-4 first:lg:ps-0 last:lg:pe-0" data-reveal style="--reveal-index: {{ index }}">
+                    <div class="glass p-7 h-full lg:translate-y-[calc({{ index }}*0.75rem)]">
+                        <p class="eyebrow">{{ label }}</p>
+                        <h3 class="heading-sm mt-3 font-sans font-bold">{{ title }}</h3>
+                        <p class="mt-3 text-[1.0625rem]">{{ text }}</p>
+                    </div>
+                    {{ unless last }}
+                        <div aria-hidden="true" class="hidden lg:flex absolute -right-3 top-1/2 z-10 w-7 h-7 items-center justify-center rounded-full bg-white shadow-chip">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="#2a4cc0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    {{ /unless }}
+                </div>
+            {{ /layers }}
+        </div>
+
+        {{ if footnote }}<p class="mt-10 text-[0.9375rem] text-ink-400 max-w-2xl" data-reveal>{{ footnote }}</p>{{ /if }}
+    </div>
+{{ /partial:section }}

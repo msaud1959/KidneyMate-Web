@@ -1,0 +1,7 @@
+{{# One consented voice. Expects a testimonial entry in scope. #}}
+<figure class="glass p-7" data-reveal style="--reveal-index: {{ index ?? 0 }}">
+    <blockquote class="font-display text-[1.25rem] leading-snug text-ink-900">&ldquo;{{ quote }}&rdquo;</blockquote>
+    <figcaption class="mt-4 text-[0.9375rem] text-ink-400">
+        {{ attribution_role }}{{ if context_label }} · {{ context_label | lower }}{{ /if }}
+    </figcaption>
+</figure>

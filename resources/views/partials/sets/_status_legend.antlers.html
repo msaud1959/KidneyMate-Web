@@ -1,0 +1,21 @@
+{{ partial:section :background="background" :section_id="section_id" tight="true" }}
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="glass-solid p-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between" data-reveal>
+            {{ if intro }}<p class="text-[1rem] text-ink-600 max-w-xl">{{ intro }}</p>{{ /if }}
+            <dl class="flex flex-wrap gap-x-6 gap-y-2 text-[0.9375rem]">
+                <div class="flex items-center gap-2">
+                    <dt><span class="rounded-full px-2.5 py-1 text-[0.75rem] font-semibold bg-sage-100 text-sage-700">In prototype</span></dt>
+                    <dd class="text-ink-600">working in our development build</dd>
+                </div>
+                <div class="flex items-center gap-2">
+                    <dt><span class="rounded-full px-2.5 py-1 text-[0.75rem] font-semibold bg-amber-100 text-amber-600">In development</span></dt>
+                    <dd class="text-ink-600">being built for the first release</dd>
+                </div>
+                <div class="flex items-center gap-2">
+                    <dt><span class="rounded-full px-2.5 py-1 text-[0.75rem] font-semibold bg-cloud-100 text-ink-400">Planned</span></dt>
+                    <dd class="text-ink-600">on the roadmap, some parts subject to validation research</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+{{ /partial:section }}

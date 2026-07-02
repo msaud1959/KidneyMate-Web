@@ -1,0 +1,18 @@
+{{ partial:section :background="background ?? 'gradient'" :section_id="section_id" }}
+    <div class="mx-auto max-w-4xl px-6">
+        <div class="glass-strong p-8 sm:p-12" data-reveal>
+            {{ if heading }}<p class="eyebrow">{{ heading }}</p>{{ /if }}
+            <h2 class="heading-md mt-3">{{ paper_title }}</h2>
+            {{ if status_line }}
+                <p class="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-2 text-[0.9375rem] font-semibold text-amber-600">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3.2l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    {{ status_line }}
+                </p>
+            {{ /if }}
+            <div class="km-prose mt-6">{{ abstract }}</div>
+            {{ if download && download_label }}
+                <a href="{{ download | url }}" class="btn-secondary mt-8">{{ download_label }}</a>
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:section }}

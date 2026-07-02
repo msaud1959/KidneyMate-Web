@@ -1,0 +1,19 @@
+{{# One accessible accordion item. Expects a faq entry in scope. #}}
+<div class="glass-solid overflow-hidden" x-data="{ openFaq: false }" data-reveal>
+    <h3 class="font-sans">
+        <button
+            type="button"
+            class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left font-bold text-[1.0625rem] text-ink-900"
+            @click="openFaq = !openFaq"
+            :aria-expanded="openFaq ? 'true' : 'false'"
+        >
+            {{ title }}
+            <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true" :class="openFaq && 'rotate-180'" class="shrink-0 text-cobalt-500 transition-transform">
+                <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </h3>
+    <div x-cloak x-show="openFaq" x-collapse>
+        <div class="km-prose !text-[1rem] px-6 pb-6">{{ answer }}</div>
+    </div>
+</div>

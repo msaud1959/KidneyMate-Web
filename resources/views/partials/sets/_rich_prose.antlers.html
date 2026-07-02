@@ -1,0 +1,6 @@
+{{ partial:section :background="background" :section_id="section_id" }}
+    <div class="mx-auto max-w-3xl px-6">
+        {{ if heading }}<h2 class="heading-md" data-reveal>{{ heading }}</h2>{{ /if }}
+        <div class="km-prose mt-6" data-reveal style="--reveal-index: 1">{{ content }}</div>
+    </div>
+{{ /partial:section }}

@@ -1,0 +1,13 @@
+{{ partial:section :background="background" :section_id="section_id" }}
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="glass p-8 sm:p-12 lg:flex lg:items-center lg:justify-between lg:gap-12" data-reveal>
+            <div class="max-w-2xl">
+                {{ if heading }}<h2 class="heading-md">{{ heading }}</h2>{{ /if }}
+                <div class="km-prose mt-4">{{ text }}</div>
+            </div>
+            {{ if link_label }}
+                <a href="{{ link_target }}" class="btn-secondary mt-8 lg:mt-0 shrink-0">{{ link_label }}</a>
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:section }}
