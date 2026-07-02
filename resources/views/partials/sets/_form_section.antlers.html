@@ -27,6 +27,12 @@
                          x-init="const p = new URLSearchParams(location.search);
                                  const r = p.get('role'); if (r) { const el = document.getElementById('wl-role'); if (el && [...el.options].some(o => o.value === r)) el.value = r; }
                                  const i = p.get('interest'); if (i) { const cb = document.querySelector(`input[name='interests[]'][value='${CSS.escape(i)}']`); if (cb) cb.checked = true; }">
+                        {{ if honeypot }}
+                        <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+                            <label for="wl-{{ honeypot }}">Leave this field blank</label>
+                            <input type="text" name="{{ honeypot }}" id="wl-{{ honeypot }}" tabindex="-1" autocomplete="off">
+                        </div>
+                        {{ /if }}
                         <div class="grid gap-5 sm:grid-cols-2">
                             <div>
                                 <label for="wl-first-name" class="field-label">First name</label>
@@ -121,6 +127,12 @@
                         </div>
                     {{ /if }}
                     <div class="space-y-5">
+                        {{ if honeypot }}
+                        <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+                            <label for="ct-{{ honeypot }}">Leave this field blank</label>
+                            <input type="text" name="{{ honeypot }}" id="ct-{{ honeypot }}" tabindex="-1" autocomplete="off">
+                        </div>
+                        {{ /if }}
                         <div class="grid gap-5 sm:grid-cols-2">
                             <div>
                                 <label for="ct-name" class="field-label">Name</label>

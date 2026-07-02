@@ -198,9 +198,10 @@ export function initOrganScroll(root) {
 
     // Render loop, paused off screen -----------------------------------------
     let running = false, raf = 0;
-    const clock = new THREE.Clock();
+    const timer = new THREE.Timer();
     function frame() {
-        const t = clock.getElapsedTime();
+        timer.update();
+        const t = timer.getElapsed();
         // morph begins after the organs have had their moment
         const m = ease(Math.min(1, Math.max(0, (progress - 0.38) / 0.44)));
         const pos = geo.attributes.position.array;
