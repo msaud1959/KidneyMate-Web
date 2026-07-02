@@ -2,7 +2,7 @@
 <p class="text-[15px] font-bold text-ink-900">Insights</p>
 <p class="text-[11.5px] text-ink-400">Plain language, no alarm bells</p>
 
-<div class="mt-4 rounded-2xl bg-white/90 border border-white p-4 shadow-chip" x-data="{ why: false }">
+<div class="mt-4 rounded-lg bg-white/90 border border-white p-4 shadow-chip" x-data="{ why: false }">
     <div class="flex items-start gap-2.5">
         <span class="mt-0.5 w-7 h-7 shrink-0 rounded-full flex items-center justify-center" style="background: var(--color-symptoms-tint)">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="var(--color-symptoms-deep)" stroke-width="1.5"/><path d="M7 4.5V7l1.8 1.4" stroke="var(--color-symptoms-deep)" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -19,12 +19,12 @@
         <svg width="10" height="10" viewBox="0 0 12 12" fill="none" :class="why && 'rotate-180'" class="transition-transform"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
 
-    <div x-cloak x-show="why" x-collapse class="mt-2 rounded-xl bg-cloud-50 border border-cloud-200 p-3">
+    <div x-cloak x-show="why" x-collapse class="mt-2 rounded-md bg-cloud-50 border border-cloud-200 p-3">
         <p class="text-[11px] text-ink-600 leading-relaxed">You rated tiredness 6 or 7 on four of the last five afternoons. Your usual range over the past month is 3 to 4. This note comes from a simple rule comparing this week with your own baseline. If you have chosen to share, your care team can review it. Nothing changes in your care without them.</p>
     </div>
 </div>
 
-<div class="mt-3 rounded-2xl bg-white/85 border border-white p-4 shadow-chip">
+<div class="mt-3 rounded-lg bg-white/85 border border-white p-4 shadow-chip">
     <div class="flex items-start gap-2.5">
         <span class="mt-0.5 w-7 h-7 shrink-0 rounded-full flex items-center justify-center" style="background: var(--color-fluid-tint)">
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1.8S3.2 6 3.2 8.7a3.8 3.8 0 007.6 0C10.8 6 7 1.8 7 1.8z" stroke="var(--color-fluid-deep)" stroke-width="1.5" stroke-linejoin="round"/></svg>

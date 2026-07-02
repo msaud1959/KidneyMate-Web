@@ -17,8 +17,8 @@
 
     <div class="px-3 sm:px-4 pt-3">
         <div
-            class="mx-auto max-w-6xl flex items-center justify-between gap-3 rounded-full border px-4 sm:px-5 py-2.5 transition-shadow duration-200"
-            :class="scrolled ? 'glass-strong !rounded-full shadow-lift' : 'glass !rounded-full'"
+            class="mx-auto max-w-6xl flex items-center justify-between gap-3 rounded-xl border px-4 sm:px-5 py-2.5 transition-shadow duration-200"
+            :class="scrolled ? 'glass-strong !rounded-xl shadow-lift' : 'glass !rounded-xl'"
         >
             <a href="/" class="rounded-full" aria-label="KidneyMate home">
                 {{ partial:logo }}
@@ -31,7 +31,7 @@
                         <div class="relative" @click.outside="open === '{{ title | slugify }}' && (open = null)">
                             <button
                                 type="button"
-                                class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 font-semibold text-[1rem] text-ink-900 hover:bg-white/70 transition"
+                                class="inline-flex items-center gap-1.5 rounded-md px-3.5 py-2 font-semibold text-[1rem] text-ink-900 hover:bg-white/70 transition"
                                 @click="open = (open === '{{ title | slugify }}' ? null : '{{ title | slugify }}')"
                                 :aria-expanded="open === '{{ title | slugify }}' ? 'true' : 'false'"
                             >
@@ -52,7 +52,7 @@
                                 class="absolute left-0 top-full mt-2 w-80 glass-menu p-2"
                             >
                                 {{ children }}
-                                    <a href="{{ url }}" class="block rounded-2xl px-4 py-3 hover:bg-white/80 transition" @click="open = null">
+                                    <a href="{{ url }}" class="block rounded-lg px-4 py-3 hover:bg-white/80 transition" @click="open = null">
                                         <span class="block font-semibold text-ink-900">{{ nav_title ?? title }}</span>
                                         {{ if description }}<span class="block text-[0.9375rem] text-ink-400 mt-0.5">{{ description }}</span>{{ /if }}
                                     </a>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     {{ else }}
-                        <a href="{{ url }}" class="rounded-full px-3.5 py-2 font-semibold text-[1rem] text-ink-900 hover:bg-white/70 transition">{{ nav_title ?? title }}</a>
+                        <a href="{{ url }}" class="rounded-md px-3.5 py-2 font-semibold text-[1rem] text-ink-900 hover:bg-white/70 transition">{{ nav_title ?? title }}</a>
                     {{ /if }}
                 {{ /nav }}
             </nav>
@@ -71,7 +71,7 @@
                 {{# Mobile menu button #}}
                 <button
                     type="button"
-                    class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full hover:bg-white/70 transition"
+                    class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-md hover:bg-white/70 transition"
                     @click="mobile = true"
                     aria-label="Open menu"
                     :aria-expanded="mobile ? 'true' : 'false'"
@@ -103,7 +103,7 @@
         <div class="flex flex-col min-h-full px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="/" aria-label="KidneyMate home">{{ partial:logo }}</a>
-                <button type="button" class="inline-flex items-center justify-center w-11 h-11 rounded-full hover:bg-white/80" @click="mobile = false" aria-label="Close menu">
+                <button type="button" class="inline-flex items-center justify-center w-11 h-11 rounded-md hover:bg-white/80" @click="mobile = false" aria-label="Close menu">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                         <path d="M5 5l10 10M15 5L5 15" stroke="#161d33" stroke-width="2" stroke-linecap="round"/>
                     </svg>

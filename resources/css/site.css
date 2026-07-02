@@ -9,16 +9,19 @@
    sage positive, careful red for errors only, six tracker tints.
 ------------------------------------------------------------------- */
 @theme {
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
-  --color-cobalt-50: #eef2fd;
-  --color-cobalt-100: #dee6fa;
-  --color-cobalt-300: #7b93e8;
-  --color-cobalt-500: #2a4cc0;
-  --color-cobalt-600: #2342ab;
-  --color-cobalt-700: #1b2f7a;
-  --color-cobalt-900: #131f4d;
+  /* Brand colours sampled from the KidneyMate logo */
+  --color-cobalt-50: #edf1fa;
+  --color-cobalt-100: #dbe3f6;
+  --color-cobalt-300: #7e97e0;
+  --color-cobalt-500: #2b4ea3;
+  --color-cobalt-600: #24418c;
+  --color-cobalt-700: #1b306b;
+  --color-cobalt-900: #111f47;
+  --color-brand-red: #ce1126;
+  --color-brand-red-soft: #fbe9eb;
 
   --color-ink-400: #6e7891;
   --color-ink-600: #454f6b;
@@ -51,8 +54,8 @@
   --color-appts-tint: #fdf4e7;
   --color-appts-deep: #9c6516;
 
-  --radius-card: 1.25rem;
-  --radius-glass: 1.5rem;
+  --radius-card: 0.5rem;
+  --radius-glass: 0.625rem;
 
   --shadow-lift: 0 20px 50px -24px rgb(27 47 122 / 0.18);
   --shadow-lift-lg: 0 32px 70px -30px rgb(27 47 122 / 0.28);
@@ -60,25 +63,7 @@
 }
 
 /* ---------------------------------------------------------------
-   Fonts (self-hosted, variable, latin subset)
----------------------------------------------------------------- */
-@font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/fraunces-var.woff2") format("woff2");
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Instrument Sans";
-  src: url("/fonts/instrument-sans-var.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ---------------------------------------------------------------
-   Base
+   Base (system Arial: zero font downloads, zero layout shift)
 ---------------------------------------------------------------- */
 @layer base {
   html {
@@ -92,13 +77,12 @@
   }
   h1, h2, h3 {
     @apply font-display text-ink-900;
-    letter-spacing: -0.015em;
-    font-variation-settings: "opsz" 72;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
-  h1 { line-height: 1.08; font-weight: 560; }
-  h2 { line-height: 1.15; font-weight: 550; }
-  h3 { line-height: 1.25; font-weight: 550; }
+  h1 { line-height: 1.04; font-weight: 800; }
+  h2 { line-height: 1.1; font-weight: 800; }
+  h3 { line-height: 1.2; font-weight: 700; }
   ::selection { background: var(--color-cobalt-100); color: var(--color-cobalt-900); }
 
   :focus-visible {
@@ -123,8 +107,8 @@
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 1.9rem + 3.4vw, 5.25rem);
   line-height: 1;
-  font-weight: 560;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.04em;
   color: var(--color-cobalt-700);
 }
 @utility eyebrow {
@@ -221,7 +205,7 @@
   gap: 0.5rem;
   min-height: 3rem;
   padding: 0.75rem 1.625rem;
-  border-radius: 9999px;
+  border-radius: 0.5rem;
   background: var(--color-cobalt-500);
   color: #fff;
   font-weight: 600;
@@ -239,7 +223,7 @@
   gap: 0.5rem;
   min-height: 3rem;
   padding: 0.75rem 1.625rem;
-  border-radius: 9999px;
+  border-radius: 0.5rem;
   background: rgb(255 255 255 / 0.75);
   border: 1px solid var(--color-cloud-200);
   color: var(--color-cobalt-700);
@@ -300,7 +284,7 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
   --tw-prose-quotes: var(--color-ink-900);
   --tw-prose-quote-borders: var(--color-amber-400);
 }
-.km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+.km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 800; }
 
 /* Layered framework stagger */
 @media (min-width: 64rem) {
@@ -308,11 +292,44 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
 }
 
 /* ---------------------------------------------------------------
+   Organ-to-kidney scroll sequence
+---------------------------------------------------------------- */
+.organ-scroll { height: 300vh; }
+.organ-captions { min-height: 18rem; }
+.organ-caption {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms ease, transform 500ms ease;
+  pointer-events: none;
+}
+.organ-caption.is-active { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .organ-hint { animation: km-hint 2.2s ease-in-out infinite; }
+  @keyframes km-hint {
+    0%, 100% { transform: translate(-50%, 0); opacity: 0.7; }
+    50% { transform: translate(-50%, 8px); opacity: 1; }
+  }
+}
+/* Without JS or with reduced motion: no scrolljack, everything readable */
+html.no-js .organ-scroll { height: auto; }
+html.no-js .organ-stage { position: relative; height: auto; padding: 6rem 0; }
+html.no-js .organ-caption { position: static; opacity: 1; transform: none; margin-bottom: 3rem; }
+html.no-js .organ-hint { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .organ-scroll { height: auto; }
+  .organ-stage { position: relative; height: auto; padding: 6rem 0; }
+  .organ-caption { position: static; opacity: 1; transform: none; margin-bottom: 3rem; }
+  .organ-hint { display: none; }
+}
+
+/* ---------------------------------------------------------------
    Form controls
 ---------------------------------------------------------------- */
 @utility input-base {
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--color-cloud-200);
   background: #fff;
   padding: 0.8125rem 1rem;

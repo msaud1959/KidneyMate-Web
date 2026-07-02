@@ -8,7 +8,7 @@
         <ol class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
             {{ moments }}
                 <li class="glass p-5 h-full" data-reveal style="--reveal-index: {{ index }}">
-                    <span class="inline-block rounded-full px-3 py-1 text-[0.8125rem] font-bold"
+                    <span class="inline-block rounded px-3 py-1 text-[0.8125rem] font-bold"
                           {{ if tint && tint != 'none' }}style="background: var(--color-{{ tint }}-tint); color: var(--color-{{ tint }}-deep)"{{ else }}style="background: var(--color-cobalt-50); color: var(--color-cobalt-700)"{{ /if }}>
                         {{ time_label }}
                     </span>

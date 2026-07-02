@@ -1,13 +1,13 @@
 {{# One feature card. Expects a feature entry in scope. #}}
 <div class="glass-solid p-6 h-full flex flex-col" data-reveal style="--reveal-index: {{ index ?? 0 }}">
     <div class="flex items-start justify-between gap-3">
-        <span class="inline-flex w-10 h-10 items-center justify-center rounded-2xl"
+        <span class="inline-flex w-10 h-10 items-center justify-center rounded-lg"
               {{ if tint && tint != 'none' }}style="background: var(--color-{{ tint }}-tint)"{{ else }}style="background: var(--color-cobalt-50)"{{ /if }}
               aria-hidden="true">
             <span class="w-3.5 h-3.5 rounded-full" {{ if tint && tint != 'none' }}style="background: var(--color-{{ tint }}-deep)"{{ else }}style="background: var(--color-cobalt-500)"{{ /if }}></span>
         </span>
         {{ if show_status !== false && build_status }}
-            <span class="rounded-full px-2.5 py-1 text-[0.75rem] font-semibold
+            <span class="rounded px-2.5 py-1 text-[0.75rem] font-semibold
                 {{ if build_status == 'prototype' }}bg-sage-100 text-sage-700
                 {{ elseif build_status == 'development' }}bg-amber-100 text-amber-600
                 {{ else }}bg-cloud-100 text-ink-400{{ /if }}">

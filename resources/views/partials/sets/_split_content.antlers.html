@@ -13,7 +13,7 @@
             </div>
         {{ elseif media_type == 'image' && image }}
             <div class="{{ if reverse }}lg:order-1{{ /if }}" data-reveal style="--reveal-index: 1">
-                <img src="{{ image | url }}" alt="{{ image_alt }}" loading="lazy" class="rounded-3xl shadow-lift w-full">
+                <img src="{{ image | url }}" alt="{{ image_alt }}" loading="lazy" class="rounded-lg shadow-lift w-full">
             </div>
         {{ /if }}
     </div>

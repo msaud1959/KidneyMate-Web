@@ -28,4 +28,14 @@ if ('IntersectionObserver' in window && revealables.length) {
     revealables.forEach((el) => el.classList.add('is-revealed'));
 }
 
+// 3D organ-to-kidney scroll sequence: lazy chunk, only when wanted and possible.
+const organRoot = document.querySelector('[data-organ-scroll]');
+if (
+    organRoot &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+    (() => { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch { return false; } })()
+) {
+    import('./organ-scroll.js').then(({ initOrganScroll }) => initOrganScroll(organRoot)).catch(() => {});
+}
+
 Alpine.start();

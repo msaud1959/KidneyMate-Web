@@ -46,6 +46,33 @@ fields:
                   import: media
                 -
                   import: section_settings
+            organ_scroll:
+              display: '3D organ scroll sequence'
+              instructions: 'The cinematic scroll moment: organs form in particles, the kidney emerges. Three stages.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Eyebrow }
+                -
+                  handle: stages
+                  field:
+                    type: grid
+                    display: Stages
+                    mode: stacked
+                    min_rows: 3
+                    max_rows: 3
+                    fields:
+                      - handle: label
+                        field: { type: text, display: 'Stage label' }
+                      - handle: title
+                        field: { type: text, display: Title }
+                      - handle: text
+                        field: { type: textarea, display: Text, rows: 3 }
+                -
+                  handle: footnote
+                  field: { type: text, display: 'Screen-reader footnote' }
+                -
+                  import: section_settings
             audience_router:
               display: 'Audience router'
               fields:
