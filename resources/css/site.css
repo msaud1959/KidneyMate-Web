@@ -99,7 +99,11 @@
 /* ---------------------------------------------------------------
    Type scale helpers
 ---------------------------------------------------------------- */
-@utility display-xl { font-size: clamp(2.5rem, 1.6rem + 3.8vw, 4.5rem); }
+@utility display-xl {
+  font-size: clamp(2.5rem, 1.6rem + 3.8vw, 4.75rem);
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
 @utility display-lg { font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.375rem); }
 @utility heading-md { font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.125rem); }
 @utility heading-sm { font-size: clamp(1.1875rem, 1.1rem + 0.35vw, 1.375rem); }
@@ -114,11 +118,13 @@
 @utility eyebrow {
   display: inline-block;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-cobalt-500);
 }
+.eyebrow::before { content: "[ "; color: var(--color-brand-red); font-weight: 800; }
+.eyebrow::after { content: " ]"; color: var(--color-brand-red); font-weight: 800; }
 @utility measure { max-width: 68ch; }
 
 /* ---------------------------------------------------------------
@@ -181,6 +187,14 @@
     radial-gradient(80rem 60rem at 70% 110%, #fdf7ef 0%, transparent 50%),
     var(--color-cloud-50);
 }
+@utility field-hero {
+  background:
+    radial-gradient(70rem 46rem at 82% 0%, rgb(206 17 38 / 0.16) 0%, transparent 55%),
+    radial-gradient(80rem 55rem at 8% 25%, rgb(126 151 224 / 0.22) 0%, transparent 60%),
+    radial-gradient(60rem 40rem at 55% 110%, rgb(43 78 163 / 0.5) 0%, transparent 60%),
+    linear-gradient(165deg, #0c1531 0%, var(--color-cobalt-900) 55%, #1a2c60 100%);
+}
+
 @utility field-deep {
   background:
     radial-gradient(80rem 50rem at 80% -20%, rgb(123 147 232 / 0.25) 0%, transparent 60%),
@@ -215,6 +229,40 @@
 }
 .btn-primary:hover { background: var(--color-cobalt-600); transform: translateY(-1px); }
 .btn-primary:active { transform: translateY(0); }
+
+@utility btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.625rem;
+  border-radius: 0.5rem;
+  background: var(--color-brand-red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  transition: background-color 150ms ease, transform 150ms ease;
+  box-shadow: 0 14px 30px -14px rgb(206 17 38 / 0.55);
+}
+.btn-accent:hover { background: #b30e21; transform: translateY(-1px); }
+
+@utility btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.625rem;
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.3);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.btn-ghost-light:hover { background: rgb(255 255 255 / 0.16); border-color: rgb(255 255 255 / 0.5); }
 
 @utility btn-secondary {
   display: inline-flex;
@@ -294,7 +342,7 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
 /* ---------------------------------------------------------------
    Organ-to-kidney scroll sequence
 ---------------------------------------------------------------- */
-.organ-scroll { height: 300vh; }
+.organ-scroll { height: 260vh; }
 .organ-captions { min-height: 18rem; }
 .organ-caption {
   position: absolute;

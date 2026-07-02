@@ -1,15 +1,16 @@
 {{ if variant == 'home' }}
-<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative field-gradient grain overflow-hidden">
-    <div class="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:pt-24 sm:pb-28 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+{{# Cinematic hero: deep navy field, restrained red and cobalt glow, white type. #}}
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative field-hero grain overflow-hidden text-white">
+    <div class="mx-auto max-w-6xl px-6 pt-20 pb-24 sm:pt-28 sm:pb-32 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-            {{ if eyebrow }}<p class="eyebrow" data-reveal>{{ eyebrow }}</p>{{ /if }}
-            <h1 class="display-xl mt-4 max-w-[15ch]" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
-            {{ if subheading }}<p class="mt-6 text-[1.1875rem] leading-relaxed measure" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
-            <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal style="--reveal-index: 3">
-                {{ if primary_label }}<a href="{{ primary_link }}" class="btn-primary">{{ primary_label }}</a>{{ /if }}
-                {{ if secondary_label }}<a href="{{ secondary_link }}" class="btn-secondary">{{ secondary_label }}</a>{{ /if }}
+            {{ if eyebrow }}<p class="eyebrow !text-cobalt-300" data-reveal>{{ eyebrow }}</p>{{ /if }}
+            <h1 class="display-xl mt-5 max-w-[15ch] !text-white" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
+            {{ if subheading }}<p class="mt-7 text-[1.1875rem] leading-relaxed measure text-cobalt-100" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
+            <div class="mt-9 flex flex-wrap items-center gap-3" data-reveal style="--reveal-index: 3">
+                {{ if primary_label }}<a href="{{ primary_link }}" class="btn-accent">{{ primary_label }}</a>{{ /if }}
+                {{ if secondary_label }}<a href="{{ secondary_link }}" class="btn-ghost-light">{{ secondary_label }}</a>{{ /if }}
             </div>
-            {{ if honesty_line }}<p class="mt-5 text-[0.9375rem] text-ink-400" data-reveal style="--reveal-index: 4">{{ honesty_line }}</p>{{ /if }}
+            {{ if honesty_line }}<p class="mt-6 text-[0.9375rem] text-cobalt-300" data-reveal style="--reveal-index: 4">{{ honesty_line }}</p>{{ /if }}
         </div>
 
         {{ if media_type == 'screen' && screen }}

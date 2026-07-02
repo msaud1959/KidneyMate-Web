@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 
 const BLUE = { frame: '#7e97e0', stomach: '#5f7fd9', liver: '#3d5da8', bowel: '#8fa5e6', torso: '#41598f' };
-const RED = ['#ce1126', '#e63946', '#ff6b6b'];
+const RED = ['#d9455b', '#e87c8a', '#f2b3b9'];
 
 function sampleShape(drawFn, count, w = 640, h = 640) {
     const c = document.createElement('canvas');
@@ -96,7 +96,7 @@ export function initOrganScroll(root) {
     if (fallback) fallback.hidden = true;
     canvas.removeAttribute('hidden');
 
-    const N = window.innerWidth < 768 ? 1500 : 2800;
+    const N = window.innerWidth < 768 ? 1000 : 2800;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 20);
     camera.position.z = 3.1;
@@ -159,11 +159,11 @@ export function initOrganScroll(root) {
     sctx.fillRect(0, 0, 64, 64);
 
     const material = new THREE.PointsMaterial({
-        size: 0.032,
+        size: window.innerWidth < 768 ? 0.026 : 0.032,
         map: new THREE.CanvasTexture(spriteCanvas),
         vertexColors: true,
         transparent: true,
-        opacity: 0.95,
+        opacity: 0.88,
         depthWrite: false,
         sizeAttenuation: true,
     });

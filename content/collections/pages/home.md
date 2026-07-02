@@ -41,14 +41,14 @@ page_builder:
   heading: Why kidneys, why now
   stages:
   - label: Stage one
-    title: Inside every body, two quiet organs
-    text: Your kidneys sit deep among the organs of your abdomen, filtering your blood many times a day. Most people never think about them. Until they have to.
+    title: Two quiet workers
+    text: Deep in your middle sit two small organs, filtering and balancing, hour after hour. Most of us never give them a thought. Until we have to.
   - label: Stage two
-    title: When kidneys struggle, daily life carries the load
-    text: Fluid limits, renal diets, medications, symptoms, sleep, mood. The organ can't be seen. The daily effort of supporting it is everywhere.
+    title: When they need help, life feels it
+    text: Fluid limits. Careful eating. Medications. Tiredness that's hard to explain. The kidneys stay invisible. The daily effort doesn't.
   - label: Stage three
-    title: KidneyMate is built around one organ, and the person attached to it
-    text: A daily companion that brings the invisible work into one calm place, and turns it into a picture you and your care team can actually see.
+    title: Meet the organ this whole idea is built around
+    text: KidneyMate takes that daily effort and turns it into a clear, calm picture, for you, and for the people who care for you.
   footnote: An animated sequence shows particles forming abdominal organs, then converging into a kidney as you scroll.
 - type: audience_router
   heading: Start where you are

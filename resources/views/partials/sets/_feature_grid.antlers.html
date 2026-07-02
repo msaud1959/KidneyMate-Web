@@ -1,5 +1,6 @@
 {{ partial:section :background="background" :section_id="section_id" }}
     <div class="mx-auto max-w-6xl px-6">
+        {{ if mode == 'category' && category }}<p class="eyebrow mb-3" data-reveal>{{ category }}</p>{{ /if }}
         {{ if heading }}<h2 class="heading-md max-w-[26ch]" data-reveal>{{ heading }}</h2>{{ /if }}
         {{ if intro }}<p class="mt-4 text-[1.125rem] measure" data-reveal>{{ intro }}</p>{{ /if }}
 
