@@ -1,0 +1,57 @@
+title: Feature
+tabs:
+  main:
+    display: Feature
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Title, required: true, validate: [required] }
+          -
+            handle: one_liner
+            field:
+              type: text
+              display: 'One-liner'
+              character_limit: 120
+          -
+            handle: description
+            field: { type: markdown, display: Description }
+          -
+            handle: category
+            field:
+              type: select
+              display: Category
+              required: true
+              validate: [required]
+              options: { track: Track, understand: Understand, connect: Connect }
+          -
+            import: status_label
+          -
+            handle: tint
+            field:
+              type: select
+              display: 'Tracker tint'
+              default: none
+              options:
+                none: Neutral
+                fluid: Fluid
+                food: Food
+                meds: Medications
+                symptoms: Symptoms
+                sleep: 'Sleep and mood'
+                appts: 'Appointments and dialysis'
+          -
+            handle: audiences
+            field:
+              type: select
+              display: Audiences
+              multiple: true
+              options: { patients: Patients, clinicians: Clinicians }
+          -
+            handle: screen
+            field:
+              type: entries
+              display: 'Related app screen'
+              collections: [screens]
+              max_items: 1

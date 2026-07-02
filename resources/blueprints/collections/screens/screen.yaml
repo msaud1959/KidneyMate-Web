@@ -1,0 +1,37 @@
+title: 'App screen'
+tabs:
+  main:
+    display: Screen
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Title, required: true, validate: [required] }
+          -
+            handle: partial_handle
+            field:
+              type: select
+              display: 'Screen component'
+              required: true
+              validate: [required]
+              options:
+                dashboard: 'Dashboard (home screen)'
+                fluid: 'Fluid tracker'
+                medication: 'Medication tracker'
+                insight: 'Insight card'
+                mood_sleep: 'Mood and sleep check-in'
+                clinician_trends: 'Clinician trends dashboard'
+          -
+            handle: frame
+            field:
+              type: select
+              display: Frame
+              default: phone
+              options: { phone: Phone, browser: Browser }
+          -
+            handle: caption
+            field:
+              type: text
+              display: 'Accessible description'
+              instructions: 'Read by screen readers. Describe what the screen shows.'

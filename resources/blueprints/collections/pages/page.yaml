@@ -1,0 +1,37 @@
+title: Page
+tabs:
+  main:
+    display: Content
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              required: true
+              validate: [required]
+          -
+            handle: hide_default_cta
+            field:
+              type: toggle
+              display: 'Hide the site-wide waitlist banner'
+              default: false
+              instructions: 'Turn on when the page builds its own closing call to action.'
+          -
+            handle: requires_legal_review
+            field:
+              type: toggle
+              display: 'Copy requires legal review'
+              default: false
+              instructions: 'For legal pages holding placeholder text. Shows a notice on the page until turned off.'
+          -
+            import: page_builder
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: seo

@@ -1,0 +1,57 @@
+title: SEO
+fields:
+  -
+    handle: seo_section
+    field:
+      type: section
+      display: 'Search and sharing'
+      instructions: 'Leave blank to fall back to sensible defaults. Avoid clinical outcome claims in titles and descriptions.'
+  -
+    handle: seo_title
+    field:
+      type: text
+      display: 'SEO title'
+      character_limit: 60
+      instructions: 'About 60 characters. Falls back to the page title.'
+  -
+    handle: seo_description
+    field:
+      type: textarea
+      display: 'Meta description'
+      character_limit: 155
+      instructions: 'About 155 characters.'
+  -
+    handle: og_title
+    field:
+      type: text
+      display: 'Social title'
+      character_limit: 70
+      instructions: 'Falls back to the SEO title.'
+  -
+    handle: og_description
+    field:
+      type: textarea
+      display: 'Social description'
+      character_limit: 200
+      instructions: 'Falls back to the meta description.'
+  -
+    handle: og_image
+    field:
+      type: assets
+      display: 'Social image'
+      container: assets
+      max_files: 1
+      instructions: '1200 by 630 pixels. Falls back to the site default card.'
+  -
+    handle: canonical_url
+    field:
+      type: text
+      display: 'Canonical URL'
+      input_type: url
+      instructions: 'Only set when this page duplicates content that lives elsewhere.'
+  -
+    handle: noindex
+    field:
+      type: toggle
+      display: 'Hide from search engines'
+      default: false

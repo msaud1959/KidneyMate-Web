@@ -1,0 +1,47 @@
+tree:
+  -
+    title: 'Why KidneyMate'
+    children:
+      -
+        entry: page-the-problem
+        data:
+          description: 'Why living with kidney disease is daily work'
+      -
+        entry: page-our-solution
+        data:
+          description: 'One supported routine, reviewed by real clinicians'
+      -
+        entry: page-impact
+        data:
+          description: 'What could change for patients, clinicians and the system'
+  -
+    title: Product
+    children:
+      -
+        entry: page-features
+        data:
+          description: 'Everything KidneyMate does, honestly labelled'
+      -
+        entry: page-how-it-works
+        data:
+          description: 'Three layers, no black boxes'
+      -
+        entry: page-for-patients
+        data:
+          description: 'What your day could feel like'
+      -
+        entry: page-for-clinicians
+        data:
+          description: 'See between appointments'
+  -
+    entry: page-research
+    data:
+      nav_title: Research
+  -
+    entry: page-privacy-trust
+    data:
+      nav_title: Trust
+  -
+    entry: page-about
+    data:
+      nav_title: About

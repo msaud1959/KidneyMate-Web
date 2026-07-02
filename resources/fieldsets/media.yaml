@@ -1,0 +1,39 @@
+title: Media
+fields:
+  -
+    handle: media_type
+    field:
+      type: select
+      display: 'Media type'
+      default: none
+      options:
+        none: 'No media'
+        screen: 'App screen (built-in mockup)'
+        image: 'Image'
+  -
+    handle: screen
+    field:
+      type: entries
+      display: 'App screen'
+      collections:
+        - screens
+      max_items: 1
+      if:
+        media_type: 'equals screen'
+  -
+    handle: image
+    field:
+      type: assets
+      display: Image
+      container: assets
+      max_files: 1
+      if:
+        media_type: 'equals image'
+  -
+    handle: image_alt
+    field:
+      type: text
+      display: 'Image alt text'
+      instructions: 'Describe the image for screen readers. Leave empty only if purely decorative.'
+      if:
+        media_type: 'equals image'

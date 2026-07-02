@@ -1,0 +1,27 @@
+title: FAQ
+tabs:
+  main:
+    display: Question
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Question, required: true, validate: [required] }
+          -
+            handle: answer
+            field: { type: markdown, display: Answer, validate: [required] }
+          -
+            handle: audiences
+            field:
+              type: select
+              display: Audiences
+              multiple: true
+              required: true
+              validate: [required]
+              options:
+                general: General
+                patients: 'Patients and carers'
+                clinicians: Clinicians
+                privacy: 'Privacy and data'
+                research: 'Research and pilots'

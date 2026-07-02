@@ -1,0 +1,24 @@
+title: Buttons
+fields:
+  -
+    handle: primary_label
+    field:
+      type: text
+      display: 'Primary button label'
+      instructions: 'Sentence case, one verb. For example: Join the waitlist'
+  -
+    handle: primary_link
+    field:
+      type: text
+      display: 'Primary button link'
+      instructions: 'Relative path, for example /join'
+  -
+    handle: secondary_label
+    field:
+      type: text
+      display: 'Secondary link label'
+  -
+    handle: secondary_link
+    field:
+      type: text
+      display: 'Secondary link target'

@@ -1,0 +1,13 @@
+title: Announcement
+tabs:
+  main:
+    display: Announcement
+    sections:
+      -
+        fields:
+          - handle: message
+            field: { type: text, display: Message }
+          - handle: link_label
+            field: { type: text, display: 'Link label' }
+          - handle: link_target
+            field: { type: text, display: 'Link target' }

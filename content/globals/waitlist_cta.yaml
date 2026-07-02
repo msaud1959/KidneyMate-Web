@@ -1,0 +1,8 @@
+title: 'Waitlist banner'
+data:
+  heading: 'Be part of KidneyMate from the start'
+  text: "We're building KidneyMate now, with patients and clinicians shaping every step. Join the waitlist and you'll hear when milestones land, and you'll be first in line when early access opens."
+  button_label: 'Join the waitlist'
+  button_link: /join
+  secondary_label: 'Questions first? Read the FAQ'
+  secondary_link: /faq

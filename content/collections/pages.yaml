@@ -1,4 +1,6 @@
 title: Pages
+template: page
+layout: layout
 structure:
   root: true
 route: '{parent_uri}/{slug}'

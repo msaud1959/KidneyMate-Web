@@ -1,0 +1,19 @@
+title: 'Site identity'
+tabs:
+  main:
+    display: Identity
+    sections:
+      -
+        fields:
+          - handle: tagline
+            field: { type: text, display: Tagline }
+          - handle: contact_email
+            field: { type: text, display: 'Contact email', input_type: email }
+          - handle: abn
+            field: { type: text, display: ABN }
+          - handle: og_default
+            field:
+              type: assets
+              display: 'Default social card'
+              container: assets
+              max_files: 1

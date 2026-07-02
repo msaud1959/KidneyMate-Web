@@ -1,0 +1,19 @@
+title: 'Waitlist banner'
+tabs:
+  main:
+    display: Banner
+    sections:
+      -
+        fields:
+          - handle: heading
+            field: { type: text, display: Heading }
+          - handle: text
+            field: { type: textarea, display: Text, rows: 3 }
+          - handle: button_label
+            field: { type: text, display: 'Button label' }
+          - handle: button_link
+            field: { type: text, display: 'Button link' }
+          - handle: secondary_label
+            field: { type: text, display: 'Secondary link label' }
+          - handle: secondary_link
+            field: { type: text, display: 'Secondary link target' }

@@ -1,0 +1,21 @@
+title: 'Section settings'
+fields:
+  -
+    handle: section_id
+    field:
+      type: text
+      display: 'Anchor ID'
+      instructions: 'Optional. Lets links jump straight to this section, for example waitlist.'
+      width: 50
+  -
+    handle: background
+    field:
+      type: select
+      display: Background
+      default: default
+      width: 50
+      options:
+        default: 'Cloud (default)'
+        gradient: 'Soft gradient field'
+        solid: 'Solid white'
+        deep: 'Deep cobalt'

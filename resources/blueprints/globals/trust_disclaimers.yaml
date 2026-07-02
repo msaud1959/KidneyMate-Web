@@ -1,0 +1,22 @@
+title: 'Trust and disclaimers'
+tabs:
+  main:
+    display: Disclaimers
+    sections:
+      -
+        fields:
+          - handle: medical_disclaimer
+            field:
+              type: textarea
+              display: 'Medical disclaimer'
+              rows: 3
+              instructions: 'Shown in the footer and on safety notes. Do not weaken without clinical review.'
+          - handle: screens_note
+            field:
+              type: text
+              display: 'Illustrative screens note'
+          - handle: acknowledgement
+            field:
+              type: textarea
+              display: 'Acknowledgement of Country'
+              rows: 3

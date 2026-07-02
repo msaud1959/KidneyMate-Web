@@ -1,0 +1,36 @@
+title: Profile
+tabs:
+  main:
+    display: Profile
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Name, required: true, validate: [required] }
+          -
+            handle: role_title
+            field: { type: text, display: Role }
+          -
+            handle: credentials
+            field: { type: text, display: Credentials }
+          -
+            handle: bio
+            field: { type: markdown, display: Bio }
+          -
+            handle: photo
+            field: { type: assets, display: Photo, container: assets, max_files: 1 }
+          -
+            handle: profile_type
+            field:
+              type: select
+              display: Type
+              default: team
+              options: { team: Team, advisor: Advisor }
+          -
+            handle: consent_confirmed
+            field:
+              type: toggle
+              display: 'Consent confirmed'
+              default: false
+              instructions: 'Profiles never render publicly without this, and the team grid is also disabled site-wide by default.'

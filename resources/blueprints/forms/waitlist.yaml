@@ -1,0 +1,63 @@
+title: Waitlist
+fields:
+  -
+    handle: first_name
+    field:
+      type: text
+      display: 'First name'
+      validate: [required]
+  -
+    handle: email
+    field:
+      type: text
+      input_type: email
+      display: Email
+      validate: [required, email]
+  -
+    handle: role
+    field:
+      type: select
+      display: 'I am a...'
+      validate: [required]
+      options:
+        patient_or_carer: 'Person living with kidney disease, or a carer'
+        clinician_or_health_service: 'Clinician or health service'
+        researcher_partner_or_investor: 'Researcher, partner or investor'
+  -
+    handle: state_or_territory
+    field:
+      type: select
+      display: 'Where are you based?'
+      options:
+        act: ACT
+        nsw: NSW
+        nt: NT
+        qld: QLD
+        sa: SA
+        tas: TAS
+        vic: VIC
+        wa: WA
+        outside_australia: 'Outside Australia'
+  -
+    handle: interests
+    field:
+      type: checkboxes
+      display: "I'm interested in..."
+      options:
+        beta_testing: 'Early access to the patient app'
+        clinician_pilot: 'Clinician dashboard pilot'
+        research_collaboration: 'Research collaboration'
+        updates_only: 'Just keep me updated'
+  -
+    handle: message
+    field:
+      type: textarea
+      display: "Anything you'd like to tell us? (optional)"
+  -
+    handle: privacy_consent
+    field:
+      type: checkboxes
+      display: 'Privacy consent'
+      validate: [required]
+      options:
+        agreed: "I'm happy for KidneyMate to store these details and contact me about KidneyMate, as described in the Privacy Policy."

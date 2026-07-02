@@ -1,0 +1,13 @@
+title: 'Status label'
+fields:
+  -
+    handle: status
+    field:
+      type: select
+      display: Status
+      default: development
+      instructions: 'Only mark In prototype when the capability genuinely works in the current build.'
+      options:
+        prototype: 'In prototype'
+        development: 'In development'
+        planned: 'Planned'

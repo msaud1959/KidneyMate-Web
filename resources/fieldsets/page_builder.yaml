@@ -1,0 +1,560 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page builder'
+      collapse: accordion
+      button_label: 'Add section'
+      sets:
+        structure:
+          display: Structure
+          sets:
+            hero:
+              display: Hero
+              instructions: 'Every page opens with one of these.'
+              fields:
+                -
+                  handle: variant
+                  field:
+                    type: select
+                    display: Variant
+                    default: interior
+                    options:
+                      home: 'Home (largest, with floating screen)'
+                      interior: 'Interior page'
+                      conversion: 'Conversion (waitlist page)'
+                -
+                  handle: eyebrow
+                  field: { type: text, display: Eyebrow }
+                -
+                  handle: heading
+                  field: { type: textarea, display: Heading, rows: 2 }
+                -
+                  handle: subheading
+                  field: { type: textarea, display: Subheading, rows: 3 }
+                -
+                  import: buttons
+                -
+                  handle: honesty_line
+                  field:
+                    type: text
+                    display: 'Honesty line'
+                    instructions: 'Small line under the buttons, for example: In development now.'
+                -
+                  import: media
+                -
+                  import: section_settings
+            audience_router:
+              display: 'Audience router'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: cards
+                  field:
+                    type: grid
+                    display: Cards
+                    mode: stacked
+                    min_rows: 2
+                    max_rows: 3
+                    fields:
+                      - handle: title
+                        field: { type: text, display: Title }
+                      - handle: text
+                        field: { type: textarea, display: Text, rows: 2 }
+                      - handle: link
+                        field: { type: text, display: Link }
+                -
+                  import: section_settings
+            cta_banner:
+              display: 'Call to action banner'
+              fields:
+                -
+                  handle: use_global
+                  field:
+                    type: toggle
+                    display: 'Use the site-wide waitlist banner'
+                    default: true
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+                    if: { use_global: 'equals false' }
+                -
+                  handle: text
+                  field:
+                    type: textarea
+                    display: Text
+                    rows: 3
+                    if: { use_global: 'equals false' }
+                -
+                  handle: button_label
+                  field:
+                    type: text
+                    display: 'Button label'
+                    if: { use_global: 'equals false' }
+                -
+                  handle: button_link
+                  field:
+                    type: text
+                    display: 'Button link'
+                    if: { use_global: 'equals false' }
+                -
+                  handle: secondary_label
+                  field:
+                    type: text
+                    display: 'Secondary link label'
+                    if: { use_global: 'equals false' }
+                -
+                  handle: secondary_link
+                  field:
+                    type: text
+                    display: 'Secondary link target'
+                    if: { use_global: 'equals false' }
+                -
+                  import: section_settings
+        content:
+          display: Content
+          sets:
+            rich_prose:
+              display: 'Rich prose'
+              instructions: 'Long-form storytelling text. Rendered on a readable solid surface.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: content
+                  field: { type: markdown, display: Content }
+                -
+                  import: section_settings
+            split_content:
+              display: 'Split content'
+              instructions: 'Text beside an app screen, image or nothing.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: content
+                  field: { type: markdown, display: Content }
+                -
+                  import: media
+                -
+                  handle: reverse
+                  field:
+                    type: toggle
+                    display: 'Media on the left'
+                    default: false
+                -
+                  handle: tint
+                  field:
+                    type: select
+                    display: 'Tracker tint'
+                    options:
+                      none: None
+                      fluid: Fluid
+                      food: Food
+                      meds: Medications
+                      symptoms: Symptoms
+                      sleep: 'Sleep and mood'
+                      appts: 'Appointments and dialysis'
+                    default: none
+                -
+                  import: section_settings
+            icon_points:
+              display: 'Point grid'
+              instructions: 'Promise lists, principles, numbered steps or a compact trust strip.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: icons
+                    options:
+                      icons: 'Icon cards'
+                      numbered: 'Numbered steps'
+                      compact: 'Compact strip'
+                -
+                  handle: columns
+                  field:
+                    type: select
+                    display: Columns
+                    default: '3'
+                    options: { '2': '2', '3': '3', '4': '4' }
+                -
+                  handle: points
+                  field:
+                    type: grid
+                    display: Points
+                    mode: stacked
+                    fields:
+                      - handle: title
+                        field: { type: text, display: Title }
+                      - handle: text
+                        field: { type: textarea, display: Text, rows: 3 }
+                      - handle: tint
+                        field:
+                          type: select
+                          display: Tint
+                          default: none
+                          options:
+                            none: None
+                            fluid: Fluid
+                            food: Food
+                            meds: Medications
+                            symptoms: Symptoms
+                            sleep: 'Sleep and mood'
+                            appts: 'Appointments and dialysis'
+                -
+                  import: section_settings
+            comparison_table:
+              display: 'Comparison table'
+              instructions: 'What it is versus what it is not, or before versus after.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: left_heading
+                  field: { type: text, display: 'Left column heading' }
+                -
+                  handle: right_heading
+                  field: { type: text, display: 'Right column heading' }
+                -
+                  handle: rows
+                  field:
+                    type: grid
+                    display: Rows
+                    fields:
+                      - handle: left
+                        field: { type: textarea, display: Left, rows: 2 }
+                      - handle: right
+                        field: { type: textarea, display: Right, rows: 2 }
+                -
+                  import: section_settings
+            stat_band:
+              display: 'Statistics band'
+              fields:
+                -
+                  handle: intro
+                  field: { type: text, display: Intro }
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: quiet
+                    options: { quiet: Quiet, deep: 'Deep cobalt' }
+                -
+                  handle: stats
+                  field:
+                    type: grid
+                    display: Statistics
+                    mode: stacked
+                    max_rows: 4
+                    fields:
+                      - handle: value
+                        field: { type: text, display: Value }
+                      - handle: label
+                        field: { type: textarea, display: Label, rows: 2 }
+                      - handle: source_label
+                        field: { type: text, display: Source }
+                      - handle: source_url
+                        field: { type: text, display: 'Source URL', input_type: url }
+                -
+                  import: section_settings
+            layered_framework:
+              display: 'Three-layer framework'
+              instructions: 'The signature diagram: your day, sense made, people review.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  handle: layers
+                  field:
+                    type: grid
+                    display: Layers
+                    mode: stacked
+                    min_rows: 3
+                    max_rows: 3
+                    fields:
+                      - handle: label
+                        field: { type: text, display: 'Layer label' }
+                      - handle: title
+                        field: { type: text, display: Title }
+                      - handle: text
+                        field: { type: textarea, display: Text, rows: 3 }
+                -
+                  handle: footnote
+                  field: { type: text, display: Footnote }
+                -
+                  import: section_settings
+            day_timeline:
+              display: 'A day with KidneyMate'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  handle: moments
+                  field:
+                    type: grid
+                    display: Moments
+                    mode: stacked
+                    fields:
+                      - handle: time_label
+                        field: { type: text, display: Time }
+                      - handle: title
+                        field: { type: text, display: Title }
+                      - handle: text
+                        field: { type: textarea, display: Text, rows: 3 }
+                      - handle: tint
+                        field:
+                          type: select
+                          display: Tint
+                          default: none
+                          options:
+                            none: None
+                            fluid: Fluid
+                            food: Food
+                            meds: Medications
+                            symptoms: Symptoms
+                            sleep: 'Sleep and mood'
+                            appts: 'Appointments and dialysis'
+                -
+                  handle: footnote
+                  field: { type: textarea, display: Footnote, rows: 2 }
+                -
+                  import: section_settings
+            disclaimer_note:
+              display: 'Disclaimer note'
+              fields:
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: info
+                    options: { info: Information, safety: Safety }
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: content
+                  field: { type: markdown, display: Content }
+                -
+                  import: section_settings
+            status_legend:
+              display: 'Status legend'
+              instructions: 'Explains the In prototype / In development / Planned labels.'
+              fields:
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  import: section_settings
+        data:
+          display: 'From collections'
+          sets:
+            feature_grid:
+              display: 'Feature grid'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  handle: mode
+                  field:
+                    type: select
+                    display: Mode
+                    default: category
+                    options:
+                      category: 'All features in a category'
+                      manual: 'Hand-picked features'
+                -
+                  handle: category
+                  field:
+                    type: select
+                    display: Category
+                    options: { track: Track, understand: Understand, connect: Connect }
+                    if: { mode: 'equals category' }
+                -
+                  handle: features
+                  field:
+                    type: entries
+                    display: Features
+                    collections: [features]
+                    if: { mode: 'equals manual' }
+                -
+                  handle: show_status
+                  field:
+                    type: toggle
+                    display: 'Show status labels'
+                    default: true
+                -
+                  handle: columns
+                  field:
+                    type: select
+                    display: Columns
+                    default: '3'
+                    options: { '2': '2', '3': '3' }
+                -
+                  import: section_settings
+            faq_accordion:
+              display: 'FAQ accordion'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: mode
+                  field:
+                    type: select
+                    display: Mode
+                    default: audience
+                    options:
+                      audience: 'All questions for an audience'
+                      manual: 'Hand-picked questions'
+                -
+                  handle: audience
+                  field:
+                    type: select
+                    display: Audience
+                    options:
+                      general: General
+                      patients: 'Patients and carers'
+                      clinicians: Clinicians
+                      privacy: 'Privacy and data'
+                      research: 'Research and pilots'
+                    if: { mode: 'equals audience' }
+                -
+                  handle: faqs
+                  field:
+                    type: entries
+                    display: Questions
+                    collections: [faqs]
+                    if: { mode: 'equals manual' }
+                -
+                  import: section_settings
+            evidence_teaser:
+              display: 'Evidence teaser'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: markdown, display: Text }
+                -
+                  handle: link_label
+                  field: { type: text, display: 'Link label' }
+                -
+                  handle: link_target
+                  field: { type: text, display: 'Link target', default: /research }
+                -
+                  import: section_settings
+            paper_feature:
+              display: 'Research framework feature'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: paper_title
+                  field: { type: text, display: 'Paper title' }
+                -
+                  handle: status_line
+                  field:
+                    type: text
+                    display: 'Publication status'
+                    instructions: 'Say exactly where it stands. Never write published or peer-reviewed until confirmed.'
+                -
+                  handle: abstract
+                  field: { type: markdown, display: 'Plain-language abstract' }
+                -
+                  handle: download
+                  field:
+                    type: assets
+                    display: 'Paper PDF'
+                    container: assets
+                    max_files: 1
+                    instructions: 'Only attach once publication is confirmed and sharing is cleared.'
+                -
+                  handle: download_label
+                  field: { type: text, display: 'Download label' }
+                -
+                  import: section_settings
+            evidence_list:
+              display: 'Evidence library'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  import: section_settings
+            testimonial_carousel:
+              display: 'Voices'
+              instructions: 'Only testimonials with confirmed consent will ever render.'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: testimonials
+                  field:
+                    type: entries
+                    display: Testimonials
+                    collections: [testimonials]
+                    instructions: 'Leave empty to show all consented entries.'
+                -
+                  import: section_settings
+            timeline:
+              display: 'Roadmap timeline'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  import: section_settings
+            form_section:
+              display: Form
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  handle: form
+                  field:
+                    type: form
+                    display: Form
+                    max_items: 1
+                -
+                  import: section_settings

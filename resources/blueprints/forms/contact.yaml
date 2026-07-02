@@ -1,0 +1,33 @@
+title: Contact
+fields:
+  -
+    handle: name
+    field: { type: text, display: Name, validate: [required] }
+  -
+    handle: email
+    field: { type: text, input_type: email, display: Email, validate: [required, email] }
+  -
+    handle: organisation
+    field: { type: text, display: 'Organisation (optional)' }
+  -
+    handle: topic
+    field:
+      type: select
+      display: Topic
+      options:
+        general: General
+        media: Media
+        partnership: Partnership
+        investment: Investment
+        something_else: 'Something else'
+  -
+    handle: message
+    field: { type: textarea, display: Message, validate: [required] }
+  -
+    handle: privacy_consent
+    field:
+      type: checkboxes
+      display: 'Privacy consent'
+      validate: [required]
+      options:
+        agreed: "I'm happy for KidneyMate to store these details to respond to my message, as described in the Privacy Policy."

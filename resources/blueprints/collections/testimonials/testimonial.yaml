@@ -1,0 +1,37 @@
+title: Testimonial
+tabs:
+  main:
+    display: Testimonial
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: 'Internal label'
+              required: true
+              validate: [required]
+              instructions: 'Never shown publicly.'
+          -
+            handle: quote
+            field: { type: textarea, display: Quote, rows: 3, validate: [required] }
+          -
+            handle: attribution_role
+            field:
+              type: text
+              display: 'Attribution role'
+              instructions: 'Role only, never a name. For example: Person living with CKD, regional Victoria.'
+          -
+            handle: context_label
+            field:
+              type: text
+              display: 'Context label'
+              default: 'Heard during our stakeholder conversations'
+          -
+            handle: consent_confirmed
+            field:
+              type: toggle
+              display: 'Consent confirmed'
+              default: false
+              instructions: 'The quote will not appear anywhere on the site until this is on. Keep a record of the consent.'

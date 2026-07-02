@@ -1,0 +1,23 @@
+title: Milestone
+tabs:
+  main:
+    display: Milestone
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Title, required: true, validate: [required] }
+          -
+            handle: period_label
+            field: { type: text, display: Period, instructions: 'For example: 2026' }
+          -
+            handle: description
+            field: { type: textarea, display: Description, rows: 3 }
+          -
+            handle: milestone_status
+            field:
+              type: select
+              display: Status
+              default: planned
+              options: { complete: Complete, current: 'Where we are now', planned: Planned }

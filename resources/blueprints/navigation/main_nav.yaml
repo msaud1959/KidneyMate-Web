@@ -1,0 +1,7 @@
+title: 'Main navigation'
+fields:
+  - handle: description
+    field:
+      type: text
+      display: Description
+      instructions: 'One line shown under this link in the dropdown.'

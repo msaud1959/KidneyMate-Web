@@ -1,0 +1,21 @@
+title: 'Feature flags'
+tabs:
+  main:
+    display: Flags
+    sections:
+      -
+        fields:
+          - handle: show_team_grid
+            field:
+              type: toggle
+              display: 'Show team profiles'
+              default: false
+              instructions: 'Off until every published profile has confirmed consent.'
+          - handle: show_testimonials
+            field:
+              type: toggle
+              display: 'Show testimonials'
+              default: false
+              instructions: 'Off until quotes are confirmed against records and consent.'
+          - handle: show_announcement
+            field: { type: toggle, display: 'Show announcement bar', default: false }

@@ -1,0 +1,50 @@
+title: 'Evidence entry'
+tabs:
+  main:
+    display: Evidence
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, display: Title, required: true, validate: [required] }
+          -
+            handle: entry_type
+            field:
+              type: select
+              display: Type
+              default: peer_reviewed
+              options:
+                peer_reviewed: 'Peer-reviewed study'
+                guideline: 'Clinical guideline'
+                report: Report
+                dataset: Dataset
+                our_research: 'Our research'
+          -
+            handle: authors_label
+            field: { type: text, display: Authors, instructions: 'For example: Flythe et al.' }
+          -
+            handle: year
+            field: { type: integer, display: Year }
+          -
+            handle: source_name
+            field: { type: text, display: 'Source or journal' }
+          -
+            handle: link
+            field: { type: text, display: Link, input_type: url }
+          -
+            handle: plain_summary
+            field:
+              type: textarea
+              display: 'Plain-language summary'
+              rows: 3
+              instructions: 'One or two sentences. What the study found, without jargon.'
+          -
+            handle: relevance
+            field:
+              type: textarea
+              display: 'What this means for KidneyMate'
+              rows: 3
+          -
+            handle: featured
+            field: { type: toggle, display: Featured, default: false }
