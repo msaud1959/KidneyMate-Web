@@ -7,6 +7,7 @@ seo_description: KidneyMate grew from university research in regional Victoria i
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: About KidneyMate
   heading: Built slowly, on purpose
   subheading: 'KidneyMate didn''t start as a startup idea. It started as a research question: how do you turn the scattered daily work of living with kidney disease into something a care team can actually see and act on, without taking the human judgement out of it?'

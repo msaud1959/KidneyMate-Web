@@ -7,6 +7,7 @@ seo_description: Our CKD self-management framework, now under peer review, the w
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: Research and evidence
   heading: We did the research before we marketed the product
   subheading: KidneyMate is research-first by conviction, not by accident. This page holds our research framework, currently under peer review, the wider evidence it stands on, and the validation plan we're accountable to.
@@ -60,6 +61,14 @@ page_builder:
   - title: Clinics want trust and fit
     text: Privacy, reliability and workflow integration decide adoption, long before feature lists do.
     tint: appts
+- type: image_band
+  kicker: The evidence base
+  heading: Built on a framework, currently under peer review
+  text: The guidance model comes from a decision-support research framework in which clinical judgement always stays with your care team.
+  image_path: /assets/KD_Assets/web/heartbeat-graph-cottonbro-6203473-2000.jpg
+  image_alt: Built on a framework, currently under peer review
+  height: default
+  align: center
 - type: cta_banner
   use_global: false
   heading: 'Researchers and clinicians: this is the good stage to arrive'

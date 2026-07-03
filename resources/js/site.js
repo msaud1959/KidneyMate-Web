@@ -79,14 +79,20 @@ if (dustCanvas && !prefersStill) {
     }).observe(dustCanvas);
 }
 
+// WebGL + motion gate, shared by the 3D features below.
+const wantsMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasWebGL = (() => { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch { return false; } })();
+
 // 3D organ-to-kidney scroll sequence: lazy chunk, only when wanted and possible.
 const organRoot = document.querySelector('[data-organ-scroll]');
-if (
-    organRoot &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-    (() => { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch { return false; } })()
-) {
+if (organRoot && wantsMotion && hasWebGL) {
     import('./organ-scroll.js').then(({ initOrganScroll }) => initOrganScroll(organRoot)).catch(() => {});
+}
+
+// Ambient 3D particle field behind interior heroes: same gate, shared three.js.
+const ambientCanvas = document.querySelector('canvas[data-ambient-field]');
+if (ambientCanvas && wantsMotion && hasWebGL) {
+    import('./ambient-field.js').then(({ initAmbientField }) => initAmbientField(ambientCanvas)).catch(() => {});
 }
 
 Alpine.start();

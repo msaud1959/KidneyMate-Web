@@ -7,6 +7,7 @@ seo_description: Fluid, food, medications, symptoms, sleep and mood tracking for
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: Features
   heading: Everything KidneyMate does, honestly labelled
   subheading: 'KidneyMate is in active development. So alongside every feature you''ll see its real status: working in our prototype, being built now, or planned on the roadmap. We''d rather earn your trust than your click.'
@@ -65,6 +66,14 @@ page_builder:
   - title: For clinicians
     text: The dashboard, the workflow, the governance.
     link: /for-clinicians
+- type: image_band
+  kicker: Made to be used
+  heading: Designed for real routines, reviewed with care
+  text: Every tracker is built to be quick to use and honest about its status. Nothing here replaces your clinical team.
+  image_path: /assets/KD_Assets/web/doctor-patient-stethoscope-thirdman-5327584-2000.jpg
+  image_alt: Designed for real routines, reviewed with care
+  height: default
+  align: left
 - type: cta_banner
   use_global: true
 hide_default_cta: true

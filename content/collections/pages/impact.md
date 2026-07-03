@@ -7,6 +7,7 @@ seo_description: What could change for patients, clinicians, the health system a
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: Impact
   heading: What could change when the gap closes
   subheading: 'KidneyMate is early, and we don''t claim proven outcomes: that''s what our validation research is for. But the framework was built because the evidence points to real, reachable change for patients, clinicians, the health system and research itself. Here''s the case, stated carefully.'
@@ -39,6 +40,14 @@ page_builder:
 - type: timeline
   heading: Impact, in the order you earn it
   background: gradient
+- type: image_band
+  kicker: Why it matters
+  heading: Better information, shared at the right moment
+  text: When daily context reaches the clinic organised, an appointment can start from a clearer picture instead of a blank page.
+  image_path: /assets/KD_Assets/web/clinician-laptop-office-tima-8376232-2000.jpg
+  image_alt: Better information, shared at the right moment
+  height: default
+  align: left
 - type: cta_banner
   use_global: false
   heading: The claims stop where the evidence stops

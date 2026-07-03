@@ -194,6 +194,79 @@
 }
 
 /* ---------------------------------------------------------------
+   Attention cards
+   The old flat white boxes, reworked into surfaces that pull the
+   eye: a tinted glow keyed to each card's accent, a gradient icon
+   medallion, a top hairline that lights up, and a real lift on hover.
+   Drive per-card colour with --card-accent and --card-deep.
+---------------------------------------------------------------- */
+@utility card-feature {
+  --card-accent: rgb(43 78 163 / 0.14);
+  --card-deep: var(--color-cobalt-500);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(177deg, #ffffff 0%, #fbfcff 62%, #f4f7fe 100%);
+  border: 1px solid rgb(43 78 163 / 0.10);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lift);
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 220ms ease, border-color 220ms ease;
+}
+/* corner glow, keyed to the card accent */
+.card-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(26rem 18rem at 8% -6%, var(--card-accent) 0%, transparent 58%);
+  opacity: 0.85;
+  transition: opacity 220ms ease;
+}
+/* top hairline that brightens on hover */
+.card-feature::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--card-deep), transparent);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+.card-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift-lg);
+  border-color: rgb(43 78 163 / 0.20);
+}
+.card-feature:hover::before { opacity: 1; }
+.card-feature:hover::after { opacity: 0.9; }
+.card-feature:focus-within {
+  border-color: var(--card-deep);
+  box-shadow: var(--shadow-lift-lg);
+}
+
+/* Gradient icon medallion. Inherits --medallion-from / --medallion-to
+   from the card so the colour follows each tracker's tint. */
+@utility icon-medallion {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.95rem;
+  color: #fff;
+  background: linear-gradient(145deg,
+    var(--medallion-from, var(--color-cobalt-500)) 0%,
+    var(--medallion-to, var(--color-cobalt-700)) 100%);
+  box-shadow: 0 10px 22px -10px var(--medallion-from, var(--color-cobalt-500)),
+              inset 0 1px 0 0 rgb(255 255 255 / 0.30);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-feature { transition: box-shadow 220ms ease, border-color 220ms ease; }
+  .card-feature:hover { transform: none; }
+}
+
+/* ---------------------------------------------------------------
    Gradient fields and grain
 ---------------------------------------------------------------- */
 @utility field-gradient {

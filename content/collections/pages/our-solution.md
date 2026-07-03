@@ -7,6 +7,7 @@ seo_description: KidneyMate turns scattered CKD self-management into one routine
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: Our solution
   heading: One supported routine. One shared picture.
   subheading: KidneyMate turns the scattered work of daily self-management into one calm routine, and turns that routine into information your care team can actually act on. Simple on the surface, and deliberately careful underneath.
@@ -70,6 +71,14 @@ page_builder:
 
 
     AI has a role in KidneyMate''s future: conversational guidance for everyday questions about food and routines, and richer pattern analysis as real-world data grows. When those features arrive, they''ll arrive the same way everything else here works: bounded in scope, explainable, privacy-preserving, never diagnosing, and always with human review between analysis and action. Our own research is blunt about why: careless AI integration in health tools risks exactly the safety and privacy failures we built this framework to prevent.'
+- type: image_band
+  kicker: One routine
+  heading: A calmer routine, in the places life already happens
+  text: KidneyMate is designed to fit the kettle, the couch and the bedside table, then turn the day into a picture you can choose to share.
+  image_path: /assets/KD_Assets/web/senior-home-phone-laptop-yankrukov-6817698-2000.jpg
+  image_alt: A calmer routine, in the places life already happens
+  height: default
+  align: left
 - type: cta_banner
   use_global: false
   heading: See it move

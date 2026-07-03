@@ -26,6 +26,13 @@ fields:
                       interior: 'Interior page'
                       conversion: 'Conversion (waitlist page)'
                 -
+                  handle: atmosphere
+                  field:
+                    type: toggle
+                    display: '3D atmosphere'
+                    instructions: 'Interior pages only: dark cinematic field with drifting 3D particles behind the hero.'
+                    default: false
+                -
                   handle: eyebrow
                   field: { type: text, display: Eyebrow }
                 -

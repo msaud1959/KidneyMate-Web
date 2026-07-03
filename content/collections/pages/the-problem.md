@@ -7,6 +7,7 @@ seo_description: 2.7 million Australians have biomedical signs of kidney disease
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: The problem
   heading: The hardest part of kidney disease is Tuesday
   subheading: Not the diagnosis. Not the specialist visits. The ordinary days in between, when managing a serious condition is entirely up to you, and nobody who treats you can see how it's really going.
@@ -91,6 +92,14 @@ page_builder:
   - title: The missing piece is integration
     text: What's absent isn't another tracker. It's a clinically responsible pathway from daily records to accountable human review. That's the piece we set out to build.
     tint: none
+- type: image_band
+  kicker: Between visits
+  heading: Most of it happens where no clinician can see
+  text: 'The choices, the tracking, the tired days: they land at home, in notebooks and memory, and rarely reach the people responsible for your care.'
+  image_path: /assets/KD_Assets/web/senior-phone-shvets-8899552-2000.jpg
+  image_alt: Most of it happens where no clinician can see
+  height: default
+  align: left
 - type: cta_banner
   use_global: false
   heading: The gap is the problem. So we designed for the gap.

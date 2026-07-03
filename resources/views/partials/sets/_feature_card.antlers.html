@@ -1,21 +1,19 @@
 {{# One feature card. Expects a feature entry in scope. #}}
-<div class="glass-solid p-6 h-full flex flex-col" data-reveal style="--reveal-index: {{ index ?? 0 }}">
+<div class="card-feature p-6 h-full flex flex-col" data-reveal style="--reveal-index: {{ index ?? 0 }}{{ if tint && tint != 'none' }}; --card-accent: color-mix(in srgb, var(--color-{{ tint }}-deep) 15%, transparent); --card-deep: var(--color-{{ tint }}-deep); --medallion-from: var(--color-{{ tint }}-deep); --medallion-to: color-mix(in srgb, var(--color-{{ tint }}-deep) 68%, #000){{ /if }}">
     <div class="flex items-start justify-between gap-3">
-        <span class="inline-flex w-10 h-10 items-center justify-center rounded-lg"
-              {{ if tint && tint != 'none' }}style="background: var(--color-{{ tint }}-tint)"{{ else }}style="background: var(--color-cobalt-50)"{{ /if }}
-              aria-hidden="true">
-            <span class="w-3.5 h-3.5 rounded-full" {{ if tint && tint != 'none' }}style="background: var(--color-{{ tint }}-deep)"{{ else }}style="background: var(--color-cobalt-500)"{{ /if }}></span>
+        <span class="icon-medallion" aria-hidden="true">
+            <span class="w-3.5 h-3.5 rounded-full bg-white/95"></span>
         </span>
         {{ if show_status !== false && build_status }}
-            <span class="rounded px-2.5 py-1 text-[0.75rem] font-semibold
-                {{ if build_status == 'prototype' }}bg-sage-100 text-sage-700
-                {{ elseif build_status == 'development' }}bg-amber-100 text-amber-600
-                {{ else }}bg-cloud-100 text-ink-400{{ /if }}">
+            <span class="rounded-full px-3 py-1 text-[0.75rem] font-semibold ring-1
+                {{ if build_status == 'prototype' }}bg-sage-100 text-sage-700 ring-sage-500/20
+                {{ elseif build_status == 'development' }}bg-amber-100 text-amber-600 ring-amber-400/25
+                {{ else }}bg-cloud-100 text-ink-400 ring-ink-400/15{{ /if }}">
                 {{ if build_status == 'prototype' }}In prototype{{ elseif build_status == 'development' }}In development{{ else }}Planned{{ /if }}
             </span>
         {{ /if }}
     </div>
-    <h3 class="mt-4 font-sans font-bold text-[1.125rem] text-ink-900">{{ title }}</h3>
+    <h3 class="mt-5 font-sans font-bold text-[1.1875rem] text-ink-900">{{ title }}</h3>
     {{ if one_liner }}<p class="mt-1 text-[0.9375rem] font-medium text-ink-400">{{ one_liner }}</p>{{ /if }}
     {{ if description }}<div class="mt-2 text-[1rem] text-ink-600">{{ description }}</div>{{ /if }}
 </div>

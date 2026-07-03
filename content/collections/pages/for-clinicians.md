@@ -7,6 +7,7 @@ seo_description: 'Structured, longitudinal patient-reported data for CKD care: t
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: For clinicians and health services
   heading: You manage CKD through snapshots. Your patients live it in sequence.
   subheading: 'KidneyMate is designed to give you the sequence: structured, longitudinal patient-reported data between consultations, organised for review rather than for reading. Built on a decision-support research framework, currently under peer review, in which clinical judgement stays exactly where it belongs.'

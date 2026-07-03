@@ -7,6 +7,7 @@ seo_description: 'Built for real life with kidney disease: quick entries, gentle
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: For patients and carers
   heading: You're already doing the work. KidneyMate just makes it lighter.
   subheading: You count the fluids. You watch the potassium. You keep the appointments and take the tablets and push through the tired days. KidneyMate doesn't add another job to that list. It's built to shrink the list.

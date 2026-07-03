@@ -46,23 +46,26 @@
 </section>
 
 {{ else }}
-<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative field-gradient grain">
-    <div class="mx-auto max-w-6xl px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 {{ if media_type == 'screen' && screen }}grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center{{ /if }}">
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }} class="relative overflow-hidden grain {{ if atmosphere }}field-hero text-white{{ else }}field-gradient{{ /if }}">
+    {{ if atmosphere }}
+        <canvas data-ambient-field class="absolute inset-0 h-full w-full" aria-hidden="true"></canvas>
+    {{ /if }}
+    <div class="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 {{ if media_type == 'screen' && screen }}grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center{{ /if }}">
         <div>
-            {{ if eyebrow }}<p class="eyebrow" data-reveal>{{ eyebrow }}</p>{{ /if }}
-            <h1 class="display-lg mt-4 max-w-[18ch]" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
-            {{ if subheading }}<p class="mt-6 text-[1.125rem] leading-relaxed measure" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
+            {{ if eyebrow }}<p class="eyebrow {{ if atmosphere }}!text-cobalt-300{{ /if }}" data-reveal>{{ eyebrow }}</p>{{ /if }}
+            <h1 class="display-lg mt-4 max-w-[18ch] {{ if atmosphere }}!text-white{{ /if }}" data-reveal style="--reveal-index: 1">{{ heading }}</h1>
+            {{ if subheading }}<p class="mt-6 text-[1.125rem] leading-relaxed measure {{ if atmosphere }}text-cobalt-100{{ /if }}" data-reveal style="--reveal-index: 2">{{ subheading }}</p>{{ /if }}
             {{ if primary_label || secondary_label }}
                 <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal style="--reveal-index: 3">
-                    {{ if primary_label }}<a href="{{ primary_link }}" class="btn-primary">{{ primary_label }}</a>{{ /if }}
-                    {{ if secondary_label }}<a href="{{ secondary_link }}" class="btn-secondary">{{ secondary_label }}</a>{{ /if }}
+                    {{ if primary_label }}<a href="{{ primary_link }}" class="{{ if atmosphere }}btn-accent{{ else }}btn-primary{{ /if }}">{{ primary_label }}</a>{{ /if }}
+                    {{ if secondary_label }}<a href="{{ secondary_link }}" class="{{ if atmosphere }}btn-ghost-light{{ else }}btn-secondary{{ /if }}">{{ secondary_label }}</a>{{ /if }}
                 </div>
             {{ /if }}
-            {{ if honesty_line }}<p class="mt-5 text-[0.9375rem] text-ink-400">{{ honesty_line }}</p>{{ /if }}
+            {{ if honesty_line }}<p class="mt-5 text-[0.9375rem] {{ if atmosphere }}text-cobalt-300{{ else }}text-ink-400{{ /if }}">{{ honesty_line }}</p>{{ /if }}
         </div>
         {{ if media_type == 'screen' && screen }}
             <div class="flex justify-center lg:justify-end" data-reveal style="--reveal-index: 2">
-                {{ partial:screens/screen :screen="screen" }}
+                {{ if atmosphere }}<div class="float-slow"><div class="phone-tilt">{{ partial:screens/screen :screen="screen" }}</div></div>{{ else }}{{ partial:screens/screen :screen="screen" }}{{ /if }}
             </div>
         {{ /if }}
     </div>

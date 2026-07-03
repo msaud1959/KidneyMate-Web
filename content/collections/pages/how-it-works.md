@@ -7,6 +7,7 @@ seo_description: You record your day. Transparent rules find what's changing. Yo
 page_builder:
 - type: hero
   variant: interior
+  atmosphere: true
   eyebrow: How it works
   heading: Three layers. No black boxes.
   subheading: 'KidneyMate is built on a research framework with one rule running through it: information can be automated, judgement can''t. Here''s the whole system, in plain language.'
@@ -90,6 +91,14 @@ page_builder:
   style: safety
   heading: Where KidneyMate stops
   content: 'KidneyMate supports self-management. It does not diagnose, treat, or give medical advice, and it is not an emergency service. If you feel seriously unwell, don''t log it, act on it: call 000 or contact your care team. Clinical decisions belong to your clinicians, with KidneyMate or without it.'
+- type: image_band
+  kicker: In your hand
+  heading: Simple on the surface. Careful underneath.
+  text: A few taps a day is all it asks. Everything harder than that is designed to stay behind the scenes.
+  image_path: /assets/KD_Assets/web/health-technology-phone-polina-4108124-2000.jpg
+  image_alt: Simple on the surface. Careful underneath.
+  height: default
+  align: left
 - type: cta_banner
   use_global: false
   heading: Now see what it can track
