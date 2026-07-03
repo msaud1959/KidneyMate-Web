@@ -49,8 +49,12 @@ page_builder:
   - label: Stage three
     title: Meet the organ this whole idea is built around
     text: KidneyMate takes that daily effort and turns it into a clear, calm picture, for you, and for the people who care for you.
-  footnote: An animated sequence shows particles forming abdominal organs, then converging into a kidney as you scroll.
+  - label: Stage four
+    title: Records become a picture you can read
+    text: Every drink logged and every dose ticked is designed to become a simple trend over time. A picture you can understand, and choose to share with your care team.
+  footnote: An animated sequence shows particles forming abdominal organs, converging into a kidney, then flowing into calm trend lines as you scroll.
 - type: audience_router
+  background: gradient
   heading: Start where you are
   cards:
   - title: I live with kidney disease

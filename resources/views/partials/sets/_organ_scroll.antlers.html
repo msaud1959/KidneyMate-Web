@@ -17,15 +17,17 @@
         </div>
 
         <div class="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center px-6">
-            {{ if heading }}<p class="eyebrow !text-cobalt-300">{{ heading }}</p>{{ /if }}
-            <div class="organ-captions relative mt-6 max-w-lg">
-                {{ stages }}
-                    <div data-stage class="organ-caption">
-                        {{ if label }}<p class="text-[0.9375rem] font-bold uppercase tracking-[0.14em] text-[#ff6b6b]">{{ label }}</p>{{ /if }}
-                        <h2 class="display-lg mt-2 !text-white">{{ title }}</h2>
-                        <p class="mt-4 max-w-md text-[1.125rem] leading-relaxed text-cobalt-100">{{ text }}</p>
-                    </div>
-                {{ /stages }}
+            <div class="glass-dark max-w-lg px-7 py-7 sm:px-9 sm:py-8">
+                {{ if heading }}<p class="eyebrow !text-cobalt-300">{{ heading }}</p>{{ /if }}
+                <div class="organ-captions relative mt-5">
+                    {{ stages }}
+                        <div data-stage class="organ-caption">
+                            {{ if label }}<p class="text-[0.9375rem] font-bold uppercase tracking-[0.14em] text-[#ff6b6b]">{{ label }}</p>{{ /if }}
+                            <h2 class="display-lg mt-2 !text-white">{{ title }}</h2>
+                            <p class="mt-4 max-w-md text-[1.125rem] leading-relaxed text-cobalt-100">{{ text }}</p>
+                        </div>
+                    {{ /stages }}
+                </div>
             </div>
         </div>
 

@@ -21,12 +21,14 @@
     {{ /if }}
     <div class="band-scrim" aria-hidden="true"></div>
 
-    <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-end px-6 py-16 sm:py-24 {{ if align == 'center' }}items-center text-center justify-center{{ /if }}">
-        {{ if kicker }}<p class="eyebrow !text-white/80">{{ kicker }}</p>{{ /if }}
-        {{ if heading }}<h2 class="display-lg mt-3 max-w-[18ch] !text-white">{{ heading }}</h2>{{ /if }}
-        {{ if text }}<p class="mt-4 max-w-xl text-[1.125rem] leading-relaxed text-white/85">{{ text }}</p>{{ /if }}
-        {{ if link_label }}
-            <a href="{{ link_target }}" class="btn-ghost-light mt-7 self-start backdrop-blur-sm {{ if align == 'center' }}!self-center{{ /if }}">{{ link_label }}</a>
-        {{ /if }}
+    <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-end px-6 py-14 sm:py-20 {{ if align == 'center' }}items-center justify-center{{ /if }}">
+        <div class="glass-dark max-w-xl px-7 py-7 sm:px-9 sm:py-8 flex flex-col {{ if align == 'center' }}items-center text-center{{ /if }}">
+            {{ if kicker }}<p class="eyebrow !text-white/80">{{ kicker }}</p>{{ /if }}
+            {{ if heading }}<h2 class="display-lg mt-3 max-w-[18ch] !text-white">{{ heading }}</h2>{{ /if }}
+            {{ if text }}<p class="mt-4 max-w-xl text-[1.125rem] leading-relaxed text-white/90">{{ text }}</p>{{ /if }}
+            {{ if link_label }}
+                <a href="{{ link_target }}" class="btn-ghost-light mt-7 self-start {{ if align == 'center' }}!self-center{{ /if }}">{{ link_label }}</a>
+            {{ /if }}
+        </div>
     </div>
 </section>

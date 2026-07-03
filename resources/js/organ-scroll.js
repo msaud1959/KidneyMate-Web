@@ -1,8 +1,9 @@
 /*
- * Organ-to-kidney particle sequence.
- * A stylised cluster of abdominal organs (torso, stomach, liver, bowel,
- * two kidneys) forms in blue particles; as the visitor scrolls, the
- * cloud converges and the brand kidney emerges in red, ureter and all.
+ * Organ-to-kidney-to-signal particle sequence, in three morphs:
+ * a stylised cluster of abdominal organs (torso, stomach, liver, bowel,
+ * two kidneys) forms in blue particles; scrolling converges the cloud
+ * into the brand kidney in red, ureter and all; scrolling on dissolves
+ * the kidney into calm flowing trend lines, records becoming a picture.
  * The kidney silhouette is sampled from the logo's own paths.
  *
  * Loaded lazily, only when [data-organ-scroll] exists, WebGL is
@@ -12,6 +13,7 @@ import * as THREE from 'three';
 
 const BLUE = { frame: '#7e97e0', stomach: '#5f7fd9', liver: '#3d5da8', bowel: '#8fa5e6', torso: '#41598f' };
 const RED = ['#d9455b', '#e87c8a', '#f2b3b9'];
+const WAVE = ['#7e97e0', '#b9c8f0', '#ffffff', '#e87c8a'];
 
 function sampleShape(drawFn, count, w = 640, h = 640) {
     const c = document.createElement('canvas');
@@ -47,6 +49,38 @@ function drawKidney(ctx, w, h) {
     ctx.fillStyle = '#fff';
     ctx.fill(new Path2D('M57 42 h9 a4.5 4.5 0 0 1 4.5 4.5 v8 a4.5 4.5 0 0 1 -4.5 4.5 h-9 z'));
     ctx.restore();
+}
+
+/* Calm trend lines: the kidney's story becoming a readable picture. */
+function drawWave(ctx, w, h) {
+    ctx.strokeStyle = '#fff';
+    ctx.lineCap = 'round';
+    const lines = [
+        { yc: 0.36, amp: 0.11, freq: 2.1, phase: 0.2, lw: 0.030 },
+        { yc: 0.52, amp: 0.08, freq: 2.7, phase: 1.9, lw: 0.022 },
+        { yc: 0.66, amp: 0.055, freq: 3.3, phase: 3.4, lw: 0.015 },
+    ];
+    for (const l of lines) {
+        ctx.lineWidth = w * l.lw;
+        ctx.beginPath();
+        for (let s = 0; s <= 1.001; s += 0.01) {
+            const taper = Math.sin(Math.PI * Math.min(1, s)); // settle at the edges
+            const px = w * (0.05 + s * 0.9);
+            const py = h * (l.yc + Math.sin(s * Math.PI * l.freq + l.phase) * l.amp * taper);
+            s === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+    }
+    // a few reading points along the top line, like logged entries
+    ctx.fillStyle = '#fff';
+    for (let i = 0; i < 9; i++) {
+        const s = 0.08 + (i / 8) * 0.84;
+        const px = w * (0.05 + s * 0.9);
+        const py = h * (0.36 + Math.sin(s * Math.PI * 2.1 + 0.2) * 0.11 * Math.sin(Math.PI * s));
+        ctx.beginPath();
+        ctx.arc(px, py - h * 0.001, w * 0.011, 0, Math.PI * 2);
+        ctx.fill();
+    }
 }
 
 /* Stylised abdominal cluster: torso outline, stomach, liver, bowel coil, two kidneys. */
@@ -104,8 +138,10 @@ export function initOrganScroll(root) {
     // Build targets ------------------------------------------------------
     const posA = new Float32Array(N * 3);   // organ cluster
     const posB = new Float32Array(N * 3);   // brand kidney
+    const posC = new Float32Array(N * 3);   // flowing trend lines
     const colA = new Float32Array(N * 3);
     const colB = new Float32Array(N * 3);
+    const colC = new Float32Array(N * 3);
     const stagger = new Float32Array(N);
 
     let offset = 0;
@@ -141,6 +177,19 @@ export function initOrganScroll(root) {
         stagger[i] = Math.random();
     }
 
+    const wavePts = sampleShape(drawWave, N);
+    const waveOrder = [...wavePts.keys()].sort(() => Math.random() - 0.5);
+    for (let i = 0; i < N; i++) {
+        const [x, y] = wavePts[waveOrder[i]];
+        posC[i * 3] = x * 1.5;
+        posC[i * 3 + 1] = y * 1.05;
+        posC[i * 3 + 2] = (Math.random() - 0.5) * 0.25;
+        // mostly cool cobalt and white, the occasional warm point
+        const pick = Math.random();
+        const c = new THREE.Color(pick < 0.44 ? WAVE[0] : pick < 0.78 ? WAVE[1] : pick < 0.94 ? WAVE[2] : WAVE[3]);
+        colC[i * 3] = c.r; colC[i * 3 + 1] = c.g; colC[i * 3 + 2] = c.b;
+    }
+
     // Geometry -----------------------------------------------------------
     const geo = new THREE.BufferGeometry();
     const positions = new Float32Array(posA);
@@ -168,7 +217,9 @@ export function initOrganScroll(root) {
         sizeAttenuation: true,
     });
     const cloud = new THREE.Points(geo, material);
-    cloud.position.x = window.matchMedia('(min-width: 64rem)').matches ? 0.55 : 0;
+    // offset beside the captions on large screens; the wave drifts back to centre
+    const baseX = window.matchMedia('(min-width: 64rem)').matches ? 0.55 : 0;
+    cloud.position.x = baseX;
     scene.add(cloud);
 
     // Sizing ---------------------------------------------------------------
@@ -186,11 +237,14 @@ export function initOrganScroll(root) {
     // Scroll progress -------------------------------------------------------
     const ease = (x) => x * x * (3 - 2 * x);
     let progress = 0;
+    // caption switch points; supports the 3-stage layout as a fallback
+    const switches = captions.length >= 4 ? [0.22, 0.5, 0.76] : [0.34, 0.72];
     function readScroll() {
         const rect = root.getBoundingClientRect();
         const total = rect.height - window.innerHeight;
         progress = Math.min(1, Math.max(0, -rect.top / Math.max(total, 1)));
-        const stageIdx = progress < 0.34 ? 0 : progress < 0.72 ? 1 : 2;
+        let stageIdx = 0;
+        for (const s of switches) { if (progress >= s) stageIdx++; }
         captions.forEach((el, i) => el.classList.toggle('is-active', i === stageIdx));
     }
     window.addEventListener('scroll', readScroll, { passive: true });
@@ -202,24 +256,35 @@ export function initOrganScroll(root) {
     function frame() {
         timer.update();
         const t = timer.getElapsed();
-        // morph begins after the organs have had their moment
-        const m = ease(Math.min(1, Math.max(0, (progress - 0.38) / 0.44)));
+        // morph one: organs converge into the kidney once they have had their moment
+        const m1 = ease(Math.min(1, Math.max(0, (progress - 0.28) / 0.3)));
+        // morph two: the kidney releases into flowing trend lines near the end
+        const m2 = ease(Math.min(1, Math.max(0, (progress - 0.7) / 0.24)));
         const pos = geo.attributes.position.array;
         const col = geo.attributes.color.array;
         for (let i = 0; i < N; i++) {
-            const k = ease(Math.min(1, Math.max(0, (m * 1.45) - stagger[i] * 0.45)));
+            const k1 = ease(Math.min(1, Math.max(0, (m1 * 1.45) - stagger[i] * 0.45)));
+            const k2 = ease(Math.min(1, Math.max(0, (m2 * 1.45) - stagger[i] * 0.45)));
             const drift = Math.sin(t * 0.7 + i) * 0.012;
-            pos[i * 3] = posA[i * 3] + (posB[i * 3] - posA[i * 3]) * k;
-            pos[i * 3 + 1] = posA[i * 3 + 1] + (posB[i * 3 + 1] - posA[i * 3 + 1]) * k + drift;
-            pos[i * 3 + 2] = posA[i * 3 + 2] + (posB[i * 3 + 2] - posA[i * 3 + 2]) * k + Math.cos(t * 0.6 + i * 1.7) * 0.012;
-            col[i * 3] = colA[i * 3] + (colB[i * 3] - colA[i * 3]) * k;
-            col[i * 3 + 1] = colA[i * 3 + 1] + (colB[i * 3 + 1] - colA[i * 3 + 1]) * k;
-            col[i * 3 + 2] = colA[i * 3 + 2] + (colB[i * 3 + 2] - colA[i * 3 + 2]) * k;
+            // a slow travelling swell keeps the finished wave alive
+            const flow = k2 * Math.sin(t * 0.9 + posC[i * 3] * 2.4) * 0.03;
+            const bx = posA[i * 3] + (posB[i * 3] - posA[i * 3]) * k1;
+            const by = posA[i * 3 + 1] + (posB[i * 3 + 1] - posA[i * 3 + 1]) * k1;
+            const bz = posA[i * 3 + 2] + (posB[i * 3 + 2] - posA[i * 3 + 2]) * k1;
+            pos[i * 3] = bx + (posC[i * 3] - bx) * k2;
+            pos[i * 3 + 1] = by + (posC[i * 3 + 1] - by) * k2 + drift + flow;
+            pos[i * 3 + 2] = bz + (posC[i * 3 + 2] - bz) * k2 + Math.cos(t * 0.6 + i * 1.7) * 0.012;
+            for (let ch = 0; ch < 3; ch++) {
+                const bc = colA[i * 3 + ch] + (colB[i * 3 + ch] - colA[i * 3 + ch]) * k1;
+                col[i * 3 + ch] = bc + (colC[i * 3 + ch] - bc) * k2;
+            }
         }
         geo.attributes.position.needsUpdate = true;
         geo.attributes.color.needsUpdate = true;
-        cloud.rotation.y = -0.25 + m * 0.5 + Math.sin(t * 0.25) * 0.06;
-        cloud.rotation.x = Math.sin(t * 0.2) * 0.04;
+        // rotate in for the kidney, settle flat again so the lines read straight
+        cloud.rotation.y = -0.25 + m1 * 0.5 - m2 * 0.25 + Math.sin(t * 0.25) * 0.06 * (1 - m2);
+        cloud.rotation.x = Math.sin(t * 0.2) * 0.04 * (1 - m2);
+        cloud.position.x = baseX * (1 - m2 * 0.55);
         renderer.render(scene, camera);
         if (running) raf = requestAnimationFrame(frame);
     }

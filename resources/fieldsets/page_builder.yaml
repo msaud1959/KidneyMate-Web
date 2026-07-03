@@ -101,7 +101,7 @@ fields:
                   import: section_settings
             organ_scroll:
               display: '3D organ scroll sequence'
-              instructions: 'The cinematic scroll moment: organs form in particles, the kidney emerges. Three stages.'
+              instructions: 'The cinematic scroll moment: organs form in particles, the kidney emerges, then dissolves into flowing trend lines. Three or four stages.'
               fields:
                 -
                   handle: heading
@@ -113,7 +113,7 @@ fields:
                     display: Stages
                     mode: stacked
                     min_rows: 3
-                    max_rows: 3
+                    max_rows: 4
                     fields:
                       - handle: label
                         field: { type: text, display: 'Stage label' }

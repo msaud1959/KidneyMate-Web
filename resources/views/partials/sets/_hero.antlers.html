@@ -16,8 +16,10 @@
 
         {{ if media_type == 'screen' && screen }}
             <div class="relative flex justify-center lg:justify-end" data-reveal style="--reveal-index: 2">
-                <div class="float-slow" style="--float-rotate: 2deg">
-                    {{ partial:screens/screen :screen="screen" }}
+                <div class="float-slow">
+                    <div class="phone-tilt">
+                        {{ partial:screens/screen :screen="screen" }}
+                    </div>
                 </div>
                 {{# Floating glass chips beside the phone #}}
                 <div aria-hidden="true" class="absolute -left-2 top-16 hidden md:block glass !rounded-lg px-4 py-3 float-slower shadow-chip">
