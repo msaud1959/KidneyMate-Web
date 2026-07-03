@@ -1,3 +1,9 @@
+{{#
+    Forms are wired for Netlify's free form service so they work on the
+    static build. Netlify detects each form at deploy time by its name +
+    the hidden form-name field, captures submissions, and redirects to
+    /thank-you. Spam is caught by the hidden bot-field honeypot.
+#}}
 {{ form_handle = form:handle ?? form }}
 {{ partial:section :background="background" :section_id="section_id" }}
     <div class="mx-auto max-w-2xl px-6">
@@ -6,181 +12,125 @@
 
         <div class="glass-strong p-6 sm:p-9 mt-8" data-reveal>
         {{ if form_handle == 'waitlist' }}
-            {{ form:create in="waitlist" }}
-                {{ if success }}
-                    <div role="status" class="text-center py-6">
-                        <h3 class="heading-md font-display">You're on the list.</h3>
-                        <p class="mt-4 text-[1.0625rem] measure mx-auto">Thanks for being part of this early. We'll send a confirmation to your inbox now, and honest updates when milestones land: no noise, and you can leave anytime. When early access opens, invitations go out in signup order.</p>
+            <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/"
+                  class="space-y-5"
+                  x-data
+                  x-init="const p = new URLSearchParams(location.search);
+                          const r = p.get('role'); if (r) { const el = document.getElementById('wl-role'); if (el && [...el.options].some(o => o.value === r)) el.value = r; }
+                          const i = p.get('interest'); if (i) { const cb = document.querySelector(`input[name='interests[]'][value='${CSS.escape(i)}']`); if (cb) cb.checked = true; }">
+                <input type="hidden" name="form-name" value="waitlist">
+                <p class="hidden" aria-hidden="true"><label>Leave this field blank: <input name="bot-field"></label></p>
+
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <label for="wl-first-name" class="field-label">First name</label>
+                        <input type="text" id="wl-first-name" name="first_name" class="input-base" autocomplete="given-name" required>
                     </div>
-                {{ else }}
-                    {{ if errors }}
-                        <div role="alert" class="mb-6 rounded-lg border border-error-600/30 bg-error-50 p-4">
-                            <p class="font-semibold text-error-600">A couple of things need a look:</p>
-                            <ul class="mt-1 list-disc ps-5 text-[0.9375rem] text-error-600">
-                                {{ errors }}<li>{{ value }}</li>{{ /errors }}
-                            </ul>
-                        </div>
-                    {{ /if }}
-
-                    <div class="space-y-5"
-                         x-data
-                         x-init="const p = new URLSearchParams(location.search);
-                                 const r = p.get('role'); if (r) { const el = document.getElementById('wl-role'); if (el && [...el.options].some(o => o.value === r)) el.value = r; }
-                                 const i = p.get('interest'); if (i) { const cb = document.querySelector(`input[name='interests[]'][value='${CSS.escape(i)}']`); if (cb) cb.checked = true; }">
-                        {{ if honeypot }}
-                        <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
-                            <label for="wl-{{ honeypot }}">Leave this field blank</label>
-                            <input type="text" name="{{ honeypot }}" id="wl-{{ honeypot }}" tabindex="-1" autocomplete="off">
-                        </div>
-                        {{ /if }}
-                        <div class="grid gap-5 sm:grid-cols-2">
-                            <div>
-                                <label for="wl-first-name" class="field-label">First name</label>
-                                <input type="text" id="wl-first-name" name="first_name" value="{{ old:first_name }}" class="input-base" autocomplete="given-name" required
-                                       {{ if error:first_name }}aria-invalid="true" aria-describedby="wl-first-name-error"{{ /if }}>
-                                {{ if error:first_name }}<p id="wl-first-name-error" class="field-error">We need this one to keep in touch.</p>{{ /if }}
-                            </div>
-                            <div>
-                                <label for="wl-email" class="field-label">Email</label>
-                                <input type="email" id="wl-email" name="email" value="{{ old:email }}" class="input-base" autocomplete="email" required
-                                       {{ if error:email }}aria-invalid="true" aria-describedby="wl-email-error"{{ /if }}>
-                                {{ if error:email }}<p id="wl-email-error" class="field-error">That email doesn't look quite right. Mind checking it?</p>{{ /if }}
-                            </div>
-                        </div>
-
-                        <div class="grid gap-5 sm:grid-cols-2">
-                            <div>
-                                <label for="wl-role" class="field-label">I am a...</label>
-                                <select id="wl-role" name="role" class="input-base" required
-                                        {{ if error:role }}aria-invalid="true" aria-describedby="wl-role-error"{{ /if }}>
-                                    <option value="">Please choose</option>
-                                    <option value="patient_or_carer" {{ if old:role == 'patient_or_carer' }}selected{{ /if }}>Person living with kidney disease, or a carer</option>
-                                    <option value="clinician_or_health_service" {{ if old:role == 'clinician_or_health_service' }}selected{{ /if }}>Clinician or health service</option>
-                                    <option value="researcher_partner_or_investor" {{ if old:role == 'researcher_partner_or_investor' }}selected{{ /if }}>Researcher, partner or investor</option>
-                                </select>
-                                {{ if error:role }}<p id="wl-role-error" class="field-error">We need this one to send you the right updates.</p>{{ /if }}
-                            </div>
-                            <div>
-                                <label for="wl-state" class="field-label">Where are you based?</label>
-                                <select id="wl-state" name="state_or_territory" class="input-base">
-                                    <option value="">Please choose (optional)</option>
-                                    <option value="act">ACT</option><option value="nsw">NSW</option><option value="nt">NT</option>
-                                    <option value="qld">QLD</option><option value="sa">SA</option><option value="tas">TAS</option>
-                                    <option value="vic">VIC</option><option value="wa">WA</option>
-                                    <option value="outside_australia">Outside Australia</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <fieldset>
-                            <legend class="field-label">I'm interested in...</legend>
-                            <div class="grid gap-2 sm:grid-cols-2">
-                                <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
-                                    <input type="checkbox" name="interests[]" value="beta_testing" class="mt-1 accent-cobalt-500"> Early access to the patient app
-                                </label>
-                                <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
-                                    <input type="checkbox" name="interests[]" value="clinician_pilot" class="mt-1 accent-cobalt-500"> Clinician dashboard pilot
-                                </label>
-                                <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
-                                    <input type="checkbox" name="interests[]" value="research_collaboration" class="mt-1 accent-cobalt-500"> Research collaboration
-                                </label>
-                                <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
-                                    <input type="checkbox" name="interests[]" value="updates_only" class="mt-1 accent-cobalt-500"> Just keep me updated
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <div>
-                            <label for="wl-message" class="field-label">Anything you'd like to tell us? (optional)</label>
-                            <textarea id="wl-message" name="message" rows="3" class="input-base">{{ old:message }}</textarea>
-                        </div>
-
-                        <div>
-                            <label class="flex items-start gap-3 text-[1rem] text-ink-600 cursor-pointer">
-                                <input type="checkbox" name="privacy_consent[]" value="agreed" class="mt-1.5 accent-cobalt-500" required
-                                       {{ if error:privacy_consent }}aria-invalid="true" aria-describedby="wl-consent-error"{{ /if }}>
-                                <span>I'm happy for KidneyMate to store these details and contact me about KidneyMate, as described in the <a href="/privacy-policy" class="underline underline-offset-2 text-cobalt-600">Privacy Policy</a>.</span>
-                            </label>
-                            {{ if error:privacy_consent }}<p id="wl-consent-error" class="field-error">We can only add you with your okay on this.</p>{{ /if }}
-                        </div>
-
-                        <button type="submit" class="btn-primary w-full sm:w-auto">Join the waitlist</button>
-                        <p class="text-[0.9375rem] text-ink-400">No spam. Updates only when something real happens.</p>
+                    <div>
+                        <label for="wl-email" class="field-label">Email</label>
+                        <input type="email" id="wl-email" name="email" class="input-base" autocomplete="email" required>
                     </div>
-                {{ /if }}
-            {{ /form:create }}
+                </div>
+
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <label for="wl-role" class="field-label">I am a...</label>
+                        <select id="wl-role" name="role" class="input-base" required>
+                            <option value="">Please choose</option>
+                            <option value="patient_or_carer">Person living with kidney disease, or a carer</option>
+                            <option value="clinician_or_health_service">Clinician or health service</option>
+                            <option value="researcher_partner_or_investor">Researcher, partner or investor</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="wl-state" class="field-label">Where are you based?</label>
+                        <select id="wl-state" name="state_or_territory" class="input-base">
+                            <option value="">Please choose (optional)</option>
+                            <option value="act">ACT</option><option value="nsw">NSW</option><option value="nt">NT</option>
+                            <option value="qld">QLD</option><option value="sa">SA</option><option value="tas">TAS</option>
+                            <option value="vic">VIC</option><option value="wa">WA</option>
+                            <option value="outside_australia">Outside Australia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <fieldset>
+                    <legend class="field-label">I'm interested in...</legend>
+                    <div class="grid gap-2 sm:grid-cols-2">
+                        <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
+                            <input type="checkbox" name="interests[]" value="beta_testing" class="mt-1 accent-cobalt-500"> Early access to the patient app
+                        </label>
+                        <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
+                            <input type="checkbox" name="interests[]" value="clinician_pilot" class="mt-1 accent-cobalt-500"> Clinician dashboard pilot
+                        </label>
+                        <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
+                            <input type="checkbox" name="interests[]" value="research_collaboration" class="mt-1 accent-cobalt-500"> Research collaboration
+                        </label>
+                        <label class="flex items-start gap-2.5 rounded-lg border border-cloud-200 bg-white px-4 py-3 text-[1rem] cursor-pointer has-checked:border-cobalt-500 has-checked:bg-cobalt-50">
+                            <input type="checkbox" name="interests[]" value="updates_only" class="mt-1 accent-cobalt-500"> Just keep me updated
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label for="wl-message" class="field-label">Anything you'd like to tell us? (optional)</label>
+                    <textarea id="wl-message" name="message" rows="3" class="input-base"></textarea>
+                </div>
+
+                <div>
+                    <label class="flex items-start gap-3 text-[1rem] text-ink-600 cursor-pointer">
+                        <input type="checkbox" name="privacy_consent[]" value="agreed" class="mt-1.5 accent-cobalt-500" required>
+                        <span>I'm happy for KidneyMate to store these details and contact me about KidneyMate, as described in the <a href="/privacy-policy" class="underline underline-offset-2 text-cobalt-600">Privacy Policy</a>.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary w-full sm:w-auto">Join the waitlist</button>
+                <p class="text-[0.9375rem] text-ink-400">No spam. Updates only when something real happens.</p>
+            </form>
 
         {{ elseif form_handle == 'contact' }}
-            {{ form:create in="contact" }}
-                {{ if success }}
-                    <div role="status" class="text-center py-6">
-                        <h3 class="heading-md font-display">Thanks, we've got it.</h3>
-                        <p class="mt-4 text-[1.0625rem] measure mx-auto">A real person reads every message. We usually reply within a few business days.</p>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" class="space-y-5">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden" aria-hidden="true"><label>Leave this field blank: <input name="bot-field"></label></p>
+
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <label for="ct-name" class="field-label">Name</label>
+                        <input type="text" id="ct-name" name="name" class="input-base" autocomplete="name" required>
                     </div>
-                {{ else }}
-                    {{ if errors }}
-                        <div role="alert" class="mb-6 rounded-lg border border-error-600/30 bg-error-50 p-4">
-                            <p class="font-semibold text-error-600">A couple of things need a look:</p>
-                            <ul class="mt-1 list-disc ps-5 text-[0.9375rem] text-error-600">
-                                {{ errors }}<li>{{ value }}</li>{{ /errors }}
-                            </ul>
-                        </div>
-                    {{ /if }}
-                    <div class="space-y-5">
-                        {{ if honeypot }}
-                        <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
-                            <label for="ct-{{ honeypot }}">Leave this field blank</label>
-                            <input type="text" name="{{ honeypot }}" id="ct-{{ honeypot }}" tabindex="-1" autocomplete="off">
-                        </div>
-                        {{ /if }}
-                        <div class="grid gap-5 sm:grid-cols-2">
-                            <div>
-                                <label for="ct-name" class="field-label">Name</label>
-                                <input type="text" id="ct-name" name="name" value="{{ old:name }}" class="input-base" autocomplete="name" required
-                                       {{ if error:name }}aria-invalid="true" aria-describedby="ct-name-error"{{ /if }}>
-                                {{ if error:name }}<p id="ct-name-error" class="field-error">We need a name to reply to.</p>{{ /if }}
-                            </div>
-                            <div>
-                                <label for="ct-email" class="field-label">Email</label>
-                                <input type="email" id="ct-email" name="email" value="{{ old:email }}" class="input-base" autocomplete="email" required
-                                       {{ if error:email }}aria-invalid="true" aria-describedby="ct-email-error"{{ /if }}>
-                                {{ if error:email }}<p id="ct-email-error" class="field-error">That email doesn't look quite right. Mind checking it?</p>{{ /if }}
-                            </div>
-                        </div>
-                        <div class="grid gap-5 sm:grid-cols-2">
-                            <div>
-                                <label for="ct-org" class="field-label">Organisation (optional)</label>
-                                <input type="text" id="ct-org" name="organisation" value="{{ old:organisation }}" class="input-base" autocomplete="organization">
-                            </div>
-                            <div>
-                                <label for="ct-topic" class="field-label">Topic</label>
-                                <select id="ct-topic" name="topic" class="input-base">
-                                    <option value="general">General</option>
-                                    <option value="media">Media</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="investment">Investment</option>
-                                    <option value="something_else">Something else</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="ct-message" class="field-label">Message</label>
-                            <textarea id="ct-message" name="message" rows="5" class="input-base" required
-                                      {{ if error:message }}aria-invalid="true" aria-describedby="ct-message-error"{{ /if }}>{{ old:message }}</textarea>
-                            {{ if error:message }}<p id="ct-message-error" class="field-error">The message seems to be missing.</p>{{ /if }}
-                        </div>
-                        <div>
-                            <label class="flex items-start gap-3 text-[1rem] text-ink-600 cursor-pointer">
-                                <input type="checkbox" name="privacy_consent[]" value="agreed" class="mt-1.5 accent-cobalt-500" required
-                                       {{ if error:privacy_consent }}aria-invalid="true" aria-describedby="ct-consent-error"{{ /if }}>
-                                <span>I'm happy for KidneyMate to store these details to respond to my message, as described in the <a href="/privacy-policy" class="underline underline-offset-2 text-cobalt-600">Privacy Policy</a>.</span>
-                            </label>
-                            {{ if error:privacy_consent }}<p id="ct-consent-error" class="field-error">We can only reply with your okay on this.</p>{{ /if }}
-                        </div>
-                        <button type="submit" class="btn-primary w-full sm:w-auto">Send message</button>
+                    <div>
+                        <label for="ct-email" class="field-label">Email</label>
+                        <input type="email" id="ct-email" name="email" class="input-base" autocomplete="email" required>
                     </div>
-                {{ /if }}
-            {{ /form:create }}
+                </div>
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <label for="ct-org" class="field-label">Organisation (optional)</label>
+                        <input type="text" id="ct-org" name="organisation" class="input-base" autocomplete="organization">
+                    </div>
+                    <div>
+                        <label for="ct-topic" class="field-label">Topic</label>
+                        <select id="ct-topic" name="topic" class="input-base">
+                            <option value="general">General</option>
+                            <option value="media">Media</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="investment">Investment</option>
+                            <option value="something_else">Something else</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="ct-message" class="field-label">Message</label>
+                    <textarea id="ct-message" name="message" rows="5" class="input-base" required></textarea>
+                </div>
+                <div>
+                    <label class="flex items-start gap-3 text-[1rem] text-ink-600 cursor-pointer">
+                        <input type="checkbox" name="privacy_consent[]" value="agreed" class="mt-1.5 accent-cobalt-500" required>
+                        <span>I'm happy for KidneyMate to store these details to respond to my message, as described in the <a href="/privacy-policy" class="underline underline-offset-2 text-cobalt-600">Privacy Policy</a>.</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary w-full sm:w-auto">Send message</button>
+            </form>
         {{ /if }}
         </div>
     </div>
