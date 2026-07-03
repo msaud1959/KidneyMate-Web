@@ -66,6 +66,14 @@ page_builder:
 - type: timeline
   heading: The road, honestly
   background: gradient
+- type: image_band
+  kicker: Who we are
+  heading: A small team, accountable to the people we build for
+  text: 'We are clinicians, researchers and builders working in the open, guided by people living with kidney disease and the professionals who care for them.'
+  image_path: /assets/KD_Assets/web/clinician-consultation-cottonbro-7579823-2000.jpg
+  image_alt: A small team, accountable to the people we build for
+  height: default
+  align: left
 - type: cta_banner
   use_global: false
   heading: Help us build it right

@@ -1,50 +1,117 @@
-{{# Home dashboard: greeting, streak, to-do, four tracker tiles, tab bar. #}}
-<div class="flex items-center justify-between">
+{{# Apple Health-style Summary: large title, activity rings, favourites cards, glass tab bar. #}}
+<div class="flex items-end justify-between">
     <div>
-        <p class="text-[15px] font-bold text-ink-900">Good evening, Sam</p>
-        <p class="text-[11.5px] text-ink-400">Small steps, steady days.</p>
+        <p class="text-[11.5px] font-semibold text-ink-400">Wednesday, 3 July</p>
+        <h3 class="text-[25px] font-bold tracking-tight text-ink-900 leading-none mt-1">Summary</h3>
     </div>
-    <span class="inline-flex items-center gap-1 rounded-md bg-white/80 border border-white px-2.5 py-1 text-[10.5px] font-semibold text-cobalt-700 shadow-chip">
-        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5l2.3 2.3L8.5 3" stroke="#3e9c84" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Synced 5:24 pm
-    </span>
+    <span class="grid place-items-center w-[30px] h-[30px] rounded-full bg-gradient-to-br from-cobalt-500 to-cobalt-700 text-white text-[12px] font-bold shadow-chip">S</span>
 </div>
 
-<div class="mt-3 flex gap-2">
-    <span class="rounded-md bg-white/85 border border-white px-3 py-2 text-[11px] font-semibold text-ink-900 shadow-chip">7-day streak</span>
-    <span class="rounded-md bg-white/85 border border-white px-3 py-2 text-[11px] text-ink-600 shadow-chip flex-1">To do: evening check-in, 9 pm tablets</span>
+{{# Daily routine rings card (glass) #}}
+<div class="mt-3 rounded-[18px] bg-white/70 border border-white/80 p-3.5 shadow-chip flex items-center gap-3.5" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <svg width="52" height="52" viewBox="0 0 50 50" aria-hidden="true" class="shrink-0">
+        <circle cx="25" cy="25" r="21" fill="none" stroke="#fbe1e6" stroke-width="5"/>
+        <circle cx="25" cy="25" r="21" fill="none" stroke="#e0345a" stroke-width="5" stroke-linecap="round" stroke-dasharray="131.9" stroke-dashoffset="33" transform="rotate(-90 25 25)"/>
+        <circle cx="25" cy="25" r="14.5" fill="none" stroke="#dcefe9" stroke-width="5"/>
+        <circle cx="25" cy="25" r="14.5" fill="none" stroke="#2fae8f" stroke-width="5" stroke-linecap="round" stroke-dasharray="91.1" stroke-dashoffset="18" transform="rotate(-90 25 25)"/>
+        <circle cx="25" cy="25" r="8" fill="none" stroke="#dce8fb" stroke-width="5"/>
+        <circle cx="25" cy="25" r="8" fill="none" stroke="#2e6cb5" stroke-width="5" stroke-linecap="round" stroke-dasharray="50.3" stroke-dashoffset="13" transform="rotate(-90 25 25)"/>
+    </svg>
+    <div class="min-w-0">
+        <p class="text-[12.5px] font-bold text-ink-900">Today's routine</p>
+        <p class="text-[11px] text-ink-400 leading-snug">Fluid, medication and your evening check-in.</p>
+        <p class="mt-1 text-[11px] font-semibold text-cobalt-600">3 of 4 done</p>
+    </div>
 </div>
 
-<p class="mt-4 mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-400">Today</p>
+{{# Favourites #}}
+<div class="mt-4 mb-2 flex items-center justify-between">
+    <p class="text-[13px] font-bold text-ink-900">Favourites</p>
+    <span class="text-[11.5px] font-semibold text-cobalt-600">Show All</span>
+</div>
 <div class="grid grid-cols-2 gap-2.5">
-    <div class="rounded-lg p-3 shadow-chip" style="background: var(--color-meds-tint)">
-        <p class="text-[11px] font-semibold" style="color: var(--color-meds-deep)">Medication</p>
-        <p class="mt-1.5 text-[17px] font-bold text-ink-900">3 of 4</p>
-        <p class="text-[10.5px] text-ink-400">taken · 9 pm to go</p>
+    {{# Fluid #}}
+    <div class="rounded-[16px] bg-white p-3 shadow-chip">
+        <div class="flex items-center gap-1.5">
+            <span class="grid place-items-center w-[22px] h-[22px] rounded-[7px]" style="background: var(--color-fluid-deep)">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="#fff"><path d="M7 1.5C7 1.5 2.6 6 2.6 9.1A4.4 4.4 0 0 0 11.4 9.1C11.4 6 7 1.5 7 1.5Z"/></svg>
+            </span>
+            <p class="text-[11px] font-semibold" style="color: var(--color-fluid-deep)">Fluid</p>
+        </div>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900 leading-none">1,050 <span class="text-[11px] font-semibold text-ink-400">mL</span></p>
+        <p class="text-[10px] text-ink-400 mt-1">of 1,500 mL today</p>
+        <svg width="100%" height="16" viewBox="0 0 100 16" preserveAspectRatio="none" class="mt-1.5"><rect x="0" y="10" width="100" height="4" rx="2" fill="#e3ecf8"/><rect x="0" y="10" width="70" height="4" rx="2" fill="var(--color-fluid-deep)"/></svg>
     </div>
-    <div class="rounded-lg p-3 shadow-chip" style="background: var(--color-fluid-tint)">
-        <p class="text-[11px] font-semibold" style="color: var(--color-fluid-deep)">Fluid</p>
-        <p class="mt-1.5 text-[17px] font-bold text-ink-900">1,050 mL</p>
-        <p class="text-[10.5px] text-ink-400">of 1,500 mL target</p>
+    {{# Medication #}}
+    <div class="rounded-[16px] bg-white p-3 shadow-chip">
+        <div class="flex items-center gap-1.5">
+            <span class="grid place-items-center w-[22px] h-[22px] rounded-[7px]" style="background: var(--color-meds-deep)">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><rect x="1.6" y="4.4" width="10.8" height="5.2" rx="2.6" fill="#fff"/><path d="M7 4.6v4.8" stroke="var(--color-meds-deep)" stroke-width="1.1"/></svg>
+            </span>
+            <p class="text-[11px] font-semibold" style="color: var(--color-meds-deep)">Medication</p>
+        </div>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900 leading-none">3 <span class="text-[11px] font-semibold text-ink-400">of 4</span></p>
+        <p class="text-[10px] text-ink-400 mt-1">9 pm dose to go</p>
+        <div class="mt-1.5 flex gap-1">
+            <span class="h-[6px] flex-1 rounded-full" style="background: var(--color-meds-deep)"></span>
+            <span class="h-[6px] flex-1 rounded-full" style="background: var(--color-meds-deep)"></span>
+            <span class="h-[6px] flex-1 rounded-full" style="background: var(--color-meds-deep)"></span>
+            <span class="h-[6px] flex-1 rounded-full bg-cloud-200"></span>
+        </div>
     </div>
-    <div class="rounded-lg p-3 shadow-chip" style="background: var(--color-sleep-tint)">
-        <p class="text-[11px] font-semibold" style="color: var(--color-sleep-deep)">Sleep</p>
-        <p class="mt-1.5 text-[17px] font-bold text-ink-900">7h 10m</p>
-        <p class="text-[10.5px] text-ink-400">last night · patchy</p>
+    {{# Sleep #}}
+    <div class="rounded-[16px] bg-white p-3 shadow-chip">
+        <div class="flex items-center gap-1.5">
+            <span class="grid place-items-center w-[22px] h-[22px] rounded-[7px]" style="background: var(--color-sleep-deep)">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="#fff"><path d="M11 8.6A4.6 4.6 0 0 1 5.4 3a4.6 4.6 0 1 0 5.6 5.6Z"/></svg>
+            </span>
+            <p class="text-[11px] font-semibold" style="color: var(--color-sleep-deep)">Sleep</p>
+        </div>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900 leading-none">7h 10m</p>
+        <p class="text-[10px] text-ink-400 mt-1">last night · patchy</p>
+        <svg width="100%" height="16" viewBox="0 0 100 16" preserveAspectRatio="none" class="mt-1.5"><polyline points="0,12 14,7 28,9 42,4 56,10 70,6 84,8 100,5" fill="none" stroke="var(--color-sleep-deep)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <div class="rounded-lg p-3 shadow-chip" style="background: var(--color-symptoms-tint)">
-        <p class="text-[11px] font-semibold" style="color: var(--color-symptoms-deep)">Symptoms</p>
-        <p class="mt-1.5 text-[17px] font-bold text-ink-900">1 note</p>
-        <p class="text-[10.5px] text-ink-400">tiredness, mild</p>
+    {{# Symptoms #}}
+    <div class="rounded-[16px] bg-white p-3 shadow-chip">
+        <div class="flex items-center gap-1.5">
+            <span class="grid place-items-center w-[22px] h-[22px] rounded-[7px]" style="background: var(--color-symptoms-deep)">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7.5h2.4l1.4-3.2 2 6 1.6-4 1 1.2H13" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p class="text-[11px] font-semibold" style="color: var(--color-symptoms-deep)">Symptoms</p>
+        </div>
+        <p class="mt-1.5 text-[17px] font-bold text-ink-900 leading-none">1 <span class="text-[11px] font-semibold text-ink-400">note</span></p>
+        <p class="text-[10px] text-ink-400 mt-1">tiredness, mild</p>
+        <div class="mt-1.5 inline-flex items-center gap-1 rounded-full bg-[color-mix(in_srgb,var(--color-symptoms-deep)_12%,transparent)] px-2 py-0.5">
+            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--color-symptoms-deep)"></span>
+            <span class="text-[9.5px] font-semibold" style="color: var(--color-symptoms-deep)">logged 8:12 pm</span>
+        </div>
     </div>
 </div>
 
-<div class="mt-3 rounded-lg bg-white/85 border border-white p-3 shadow-chip">
-    <p class="text-[11px] font-semibold" style="color: var(--color-appts-deep)">Thursday 10:30 am</p>
-    <p class="text-[12px] font-semibold text-ink-900 mt-0.5">Dr Patel, nephrology review</p>
-    <p class="text-[10.5px] text-ink-400">Summary ready to share</p>
+{{# Upcoming appointment row #}}
+<div class="mt-2.5 rounded-[16px] bg-white p-3 shadow-chip flex items-center gap-2.5">
+    <span class="grid place-items-center w-[26px] h-[26px] rounded-[8px]" style="background: var(--color-appts-deep)">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.8" y="2.6" width="10.4" height="9.4" rx="2" stroke="#fff" stroke-width="1.1"/><path d="M1.8 5.2h10.4M4.6 1.4v2.2M9.4 1.4v2.2" stroke="#fff" stroke-width="1.1" stroke-linecap="round"/></svg>
+    </span>
+    <div class="min-w-0 flex-1">
+        <p class="text-[11.5px] font-semibold text-ink-900 truncate">Dr Patel · nephrology review</p>
+        <p class="text-[10px] text-ink-400">Thursday 10:30 am · summary ready to share</p>
+    </div>
+    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" class="shrink-0"><path d="M1 1l5 5-5 5" stroke="#b7bece" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </div>
 
-<div class="absolute bottom-3 left-4 right-4 rounded-lg bg-white/90 border border-white shadow-chip flex justify-around py-2 text-[10px] font-semibold text-ink-400">
-    <span class="text-cobalt-600">Home</span><span>Trackers</span><span>Insights</span><span>Profile</span>
+{{# Glass tab bar #}}
+<div class="absolute bottom-0 inset-x-0 border-t border-black/5 flex justify-around pt-2 pb-3 text-[9.5px] font-semibold" style="background: rgba(248,249,252,0.82); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+    <span class="flex flex-col items-center gap-0.5 text-cobalt-600">
+        <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 2.2 2.5 5.5c0 6 3.4 8.6 6.5 10.3 3.1-1.7 6.5-4.3 6.5-10.3L9 2.2Z" fill="#2b4ea3" fill-opacity="0.18" stroke="#2b4ea3" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        Summary
+    </span>
+    <span class="flex flex-col items-center gap-0.5 text-ink-400">
+        <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><circle cx="6.4" cy="6" r="2.6" stroke="currentColor" stroke-width="1.3"/><path d="M2.4 15c0-2.7 1.8-4.4 4-4.4M11 5.2a2.4 2.4 0 0 1 0 4.4M15.6 15c0-2.2-1.3-3.8-3.2-4.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Sharing
+    </span>
+    <span class="flex flex-col items-center gap-0.5 text-ink-400">
+        <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><rect x="2.4" y="2.6" width="13.2" height="12.8" rx="2.4" stroke="currentColor" stroke-width="1.3"/><path d="M2.4 6.4h13.2M6 2.6v12.8" stroke="currentColor" stroke-width="1.3"/></svg>
+        Browse
+    </span>
 </div>

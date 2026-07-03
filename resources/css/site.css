@@ -27,9 +27,9 @@
   --color-ink-600: #454f6b;
   --color-ink-900: #161d33;
 
-  --color-cloud-50: #f6f8fc;
-  --color-cloud-100: #eef1f8;
-  --color-cloud-200: #dce2f0;
+  --color-cloud-50: #e9eff9;
+  --color-cloud-100: #e2e9f6;
+  --color-cloud-200: #d3ddef;
 
   --color-amber-100: #fdf2df;
   --color-amber-400: #e9a13b;
@@ -271,9 +271,9 @@
 ---------------------------------------------------------------- */
 @utility field-gradient {
   background:
-    radial-gradient(90rem 60rem at 85% -10%, #e9eeff 0%, transparent 55%),
-    radial-gradient(70rem 50rem at -10% 30%, #f4f0ff 0%, transparent 55%),
-    radial-gradient(80rem 60rem at 70% 110%, #fdf7ef 0%, transparent 50%),
+    radial-gradient(90rem 60rem at 85% -10%, #d3e0fb 0%, transparent 55%),
+    radial-gradient(70rem 50rem at -10% 30%, #dde7fb 0%, transparent 55%),
+    radial-gradient(80rem 60rem at 70% 110%, #dbe6f7 0%, transparent 50%),
     var(--color-cloud-50);
 }
 @utility field-hero {

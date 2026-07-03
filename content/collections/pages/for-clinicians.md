@@ -118,6 +118,14 @@ page_builder:
   heading: Asked by clinicians
   mode: audience
   audience: clinicians
+- type: image_band
+  kicker: In the consult room
+  heading: The conversation stays human
+  text: 'KidneyMate organises the record before the appointment, so the minutes you have can go to the person in front of you rather than the paperwork.'
+  image_path: /assets/KD_Assets/web/clinician-consultation-cottonbro-7578797-2000.jpg
+  image_alt: The conversation stays human
+  height: default
+  align: left
 - type: cta_banner
   use_global: false
   heading: Bring the between-appointments picture to your clinic

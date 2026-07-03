@@ -25,7 +25,7 @@ page_builder:
     The framework positions CKD self-management support as decision support, never autonomous clinical decision-making, and sets out the validation research needed next.'
 - type: evidence_list
   heading: The shoulders this stands on
-  intro: A working library of the research that shaped KidneyMate. Each entry says what the study found and what we took from it. This library grows as the field does.
+  intro: 'A working library of the peer-reviewed studies, clinical guidelines and population data that shaped KidneyMate. Each entry states what the source found and what we took from it for the framework. It grows as the evidence does, and every item links to its origin once available.'
 - type: icon_points
   heading: What we must show, and how
   style: numbered
@@ -63,8 +63,8 @@ page_builder:
     tint: appts
 - type: image_band
   kicker: The evidence base
-  heading: Built on a framework, currently under peer review
-  text: The guidance model comes from a decision-support research framework in which clinical judgement always stays with your care team.
+  heading: Grounded in the literature, honest about the stage we are at
+  text: 'KidneyMate''s three-layer model is drawn from peer-reviewed CKD research, the KDIGO 2024 clinical guideline and national and global burden data. The framework itself is currently under peer review. We describe what this evidence supports, and we make no claim of clinical validation we have not yet completed.'
   image_path: /assets/KD_Assets/web/heartbeat-graph-cottonbro-6203473-2000.jpg
   image_alt: Built on a framework, currently under peer review
   height: default
