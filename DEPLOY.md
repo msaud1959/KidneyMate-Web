@@ -19,7 +19,13 @@ Choose "Sign up with GitHub" so it can see your repository.
 
 ### Step 2 – Connect this repository
 - In Netlify: **Add new site → Import an existing project → GitHub**.
+  (Shortcut: while logged in, opening
+  `https://app.netlify.com/start/deploy?repository=https://github.com/msaud1959/kidneymate-web`
+  starts this import for you.)
 - Pick the `msaud1959/kidneymate-web` repository.
+- **Set the branch to deploy** to `feature/kidneymate-website-build` (that is
+  where the finished site lives). Or merge that branch into `main` first and
+  deploy `main`. This matters, otherwise Netlify may build an empty branch.
 - Netlify reads `netlify.toml` in this repo, so the build settings fill in
   automatically. You do **not** need to type a build command or publish
   directory. Just click **Deploy**.
