@@ -13,6 +13,14 @@ page_builder:
   media_type: screen
   screen:
   - screen-mood-sleep
+- type: image_band
+  kicker: Your routine, your pace
+  heading: Care that fits around your day, not the other way round
+  text: A minute on the couch, a tap at the kettle. That's a day well tracked.
+  image_path: /assets/KD_Assets/web/senior-sofa-phone-kampus-6667736-2000.jpg
+  image_alt: An older woman relaxing on her sofa at home, holding her phone above her.
+  height: default
+  align: left
 - type: icon_points
   heading: Made for the many shapes of kidney disease
   style: icons

@@ -1,0 +1,32 @@
+{{#
+    Full-bleed photographic band, Apple-style: image or ambient video,
+    quiet scrim, minimal overlay copy. Paths point at the optimised
+    files in /assets/KD_Assets/web. Video only autoplays on large
+    screens without reduced motion (handled in site.js).
+#}}
+<section {{ if section_id }}id="{{ section_id }}"{{ /if }}
+         class="img-band {{ if align == 'center' }}band-center{{ /if }} {{ if height == 'tall' }}min-h-[86vh]{{ elseif height == 'compact' }}min-h-[46vh]{{ else }}min-h-[64vh]{{ /if }} flex"
+         data-reveal>
+    {{ if video_path }}
+        <video data-ambient muted loop playsinline preload="none" poster="{{ poster_path }}" aria-hidden="true" tabindex="-1">
+            <source src="{{ video_path }}" type="video/mp4">
+        </video>
+    {{ elseif image_path }}
+        {{# image_path is the -2000 file; the -1000 sibling serves small screens #}}
+        <img src="{{ image_path }}"
+             srcset="{{ image_path | replace('-2000.jpg', '-1000.jpg') }} 1000w, {{ image_path }} 2000w"
+             sizes="100vw"
+             alt="{{ image_alt }}"
+             loading="lazy" decoding="async">
+    {{ /if }}
+    <div class="band-scrim" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-end px-6 py-16 sm:py-24 {{ if align == 'center' }}items-center text-center justify-center{{ /if }}">
+        {{ if kicker }}<p class="eyebrow !text-white/80">{{ kicker }}</p>{{ /if }}
+        {{ if heading }}<h2 class="display-lg mt-3 max-w-[18ch] !text-white">{{ heading }}</h2>{{ /if }}
+        {{ if text }}<p class="mt-4 max-w-xl text-[1.125rem] leading-relaxed text-white/85">{{ text }}</p>{{ /if }}
+        {{ if link_label }}
+            <a href="{{ link_target }}" class="btn-ghost-light mt-7 self-start backdrop-blur-sm {{ if align == 'center' }}!self-center{{ /if }}">{{ link_label }}</a>
+        {{ /if }}
+    </div>
+</section>

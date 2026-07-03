@@ -46,6 +46,59 @@ fields:
                   import: media
                 -
                   import: section_settings
+            image_band:
+              display: 'Photographic band'
+              instructions: 'Full-bleed photo or ambient video with minimal overlay copy. Use optimised files from /assets/KD_Assets/web (the -2000.jpg versions).'
+              fields:
+                -
+                  handle: kicker
+                  field: { type: text, display: Kicker }
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text, rows: 2 }
+                -
+                  handle: image_path
+                  field:
+                    type: text
+                    display: 'Image path'
+                    instructions: 'For example /assets/KD_Assets/web/senior-home-phone-helenalopes-27086767-2000.jpg'
+                -
+                  handle: image_alt
+                  field: { type: text, display: 'Image alt text' }
+                -
+                  handle: video_path
+                  field:
+                    type: text
+                    display: 'Ambient video path (optional)'
+                    instructions: 'Plays muted on large screens only; the poster shows everywhere else.'
+                -
+                  handle: poster_path
+                  field: { type: text, display: 'Video poster image path' }
+                -
+                  handle: height
+                  field:
+                    type: select
+                    display: Height
+                    default: default
+                    options: { compact: Compact, default: Standard, tall: Tall }
+                -
+                  handle: align
+                  field:
+                    type: select
+                    display: 'Text position'
+                    default: left
+                    options: { left: 'Lower left', center: Centred }
+                -
+                  handle: link_label
+                  field: { type: text, display: 'Link label' }
+                -
+                  handle: link_target
+                  field: { type: text, display: 'Link target' }
+                -
+                  import: section_settings
             organ_scroll:
               display: '3D organ scroll sequence'
               instructions: 'The cinematic scroll moment: organs form in particles, the kidney emerges. Three stages.'

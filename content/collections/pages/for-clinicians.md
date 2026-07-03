@@ -14,6 +14,15 @@ page_builder:
   primary_link: /join?role=clinician_or_health_service&interest=clinician_pilot
   secondary_label: Read about the framework
   secondary_link: /research
+- type: image_band
+  kicker: In the consultation
+  heading: Ten minutes goes further when the story arrives organised
+  text: KidneyMate is designed to support the conversation you already have, with the between-visit picture you have never had.
+  video_path: /assets/KD_Assets/videos/doctor-patient-consultation-video-pexels-7579338.mp4
+  poster_path: /assets/KD_Assets/web/doctor-patient-consultation-rdne-6129441-2000.jpg
+  image_alt: ''
+  height: default
+  align: left
 - type: rich_prose
   heading: The blind spot you already know about
   background: solid

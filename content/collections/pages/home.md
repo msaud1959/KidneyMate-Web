@@ -107,6 +107,16 @@ page_builder:
   - title: Stay connected to care
     text: 'When you choose to share, your records become clear summaries and review flags for your clinician: the story of your weeks, not a guess from memory. People make the decisions. KidneyMate just makes sure they can see.'
     tint: appts
+- type: image_band
+  kicker: Everyday care
+  heading: Built for real mornings, real kitchens, real life
+  text: 'KidneyMate lives where the routine lives: the couch, the kettle, the bedside table. Not another clinical tool. A daily companion.'
+  image_path: /assets/KD_Assets/web/senior-home-phone-helenalopes-27086767-2000.jpg
+  image_alt: An older man at home on his couch, smiling while using his phone.
+  height: default
+  align: left
+  link_label: See it from the patient side
+  link_target: /for-patients
 - type: layered_framework
   background: gradient
   heading: No black boxes. Three honest layers.

@@ -96,7 +96,7 @@ export function initOrganScroll(root) {
     if (fallback) fallback.hidden = true;
     canvas.removeAttribute('hidden');
 
-    const N = window.innerWidth < 768 ? 1000 : 2800;
+    const N = window.innerWidth < 768 ? 1000 : 4200;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 20);
     camera.position.z = 3.1;
@@ -159,7 +159,7 @@ export function initOrganScroll(root) {
     sctx.fillRect(0, 0, 64, 64);
 
     const material = new THREE.PointsMaterial({
-        size: window.innerWidth < 768 ? 0.026 : 0.032,
+        size: window.innerWidth < 768 ? 0.026 : 0.03,
         map: new THREE.CanvasTexture(spriteCanvas),
         vertexColors: true,
         transparent: true,

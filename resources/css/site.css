@@ -9,8 +9,8 @@
    sage positive, careful red for errors only, six tracker tints.
 ------------------------------------------------------------------- */
 @theme {
-  --font-display: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 
   /* Brand colours sampled from the KidneyMate logo */
   --color-cobalt-50: #edf1fa;
@@ -54,8 +54,8 @@
   --color-appts-tint: #fdf4e7;
   --color-appts-deep: #9c6516;
 
-  --radius-card: 0.5rem;
-  --radius-glass: 0.625rem;
+  --radius-card: 1.125rem;
+  --radius-glass: 1.25rem;
 
   --shadow-lift: 0 20px 50px -24px rgb(27 47 122 / 0.18);
   --shadow-lift-lg: 0 32px 70px -30px rgb(27 47 122 / 0.28);
@@ -77,12 +77,12 @@
   }
   h1, h2, h3 {
     @apply font-display text-ink-900;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
-  h1 { line-height: 1.04; font-weight: 800; }
-  h2 { line-height: 1.1; font-weight: 800; }
-  h3 { line-height: 1.2; font-weight: 700; }
+  h1 { line-height: 1.06; font-weight: 700; }
+  h2 { line-height: 1.12; font-weight: 700; }
+  h3 { line-height: 1.22; font-weight: 650; }
   ::selection { background: var(--color-cobalt-100); color: var(--color-cobalt-900); }
 
   :focus-visible {
@@ -100,9 +100,9 @@
    Type scale helpers
 ---------------------------------------------------------------- */
 @utility display-xl {
-  font-size: clamp(2.5rem, 1.6rem + 3.8vw, 4.75rem);
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  font-size: clamp(2.625rem, 1.6rem + 4vw, 5rem);
+  letter-spacing: -0.025em;
+  line-height: 1.04;
 }
 @utility display-lg { font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.375rem); }
 @utility heading-md { font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.125rem); }
@@ -111,8 +111,8 @@
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 1.9rem + 3.4vw, 5.25rem);
   line-height: 1;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.025em;
   color: var(--color-cobalt-700);
 }
 @utility eyebrow {
@@ -218,8 +218,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.625rem;
-  border-radius: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 980px;
   background: var(--color-cobalt-500);
   color: #fff;
   font-weight: 600;
@@ -236,8 +236,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.625rem;
-  border-radius: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 980px;
   background: var(--color-brand-red);
   color: #fff;
   font-weight: 700;
@@ -253,8 +253,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.625rem;
-  border-radius: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 980px;
   background: rgb(255 255 255 / 0.08);
   border: 1px solid rgb(255 255 255 / 0.3);
   color: #fff;
@@ -270,8 +270,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.625rem;
-  border-radius: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 980px;
   background: rgb(255 255 255 / 0.75);
   border: 1px solid var(--color-cloud-200);
   color: var(--color-cobalt-700);
@@ -334,6 +334,36 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
 }
 .km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 800; }
 
+/* ---------------------------------------------------------------
+   Apple-style centered section head
+---------------------------------------------------------------- */
+@utility section-head {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 46rem;
+}
+
+/* ---------------------------------------------------------------
+   Full-bleed photographic bands
+---------------------------------------------------------------- */
+.img-band { position: relative; overflow: hidden; color: #fff; }
+.img-band > img, .img-band > video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.img-band .band-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(75deg, rgb(10 18 42 / 0.78) 0%, rgb(10 18 42 / 0.45) 45%, rgb(10 18 42 / 0.12) 100%);
+}
+.img-band.band-center .band-scrim {
+  background: linear-gradient(180deg, rgb(10 18 42 / 0.25) 0%, rgb(10 18 42 / 0.62) 100%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .img-band > img { transform: scale(1.06); transition: transform 1200ms ease-out; }
+  .img-band.is-revealed > img, .img-band > img.is-revealed { transform: scale(1); }
+}
+
 /* Layered framework stagger */
 @media (min-width: 64rem) {
   .km-layer { transform: translateY(calc(var(--layer-offset, 0) * 0.75rem)); }
@@ -377,7 +407,7 @@ html.no-js .organ-hint { display: none; }
 ---------------------------------------------------------------- */
 @utility input-base {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   border: 1px solid var(--color-cloud-200);
   background: #fff;
   padding: 0.8125rem 1rem;

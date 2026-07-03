@@ -54,6 +54,14 @@ page_builder:
   - title: Evidence before claims
     text: We developed the research framework before marketing the product, and we'll validate before we promise outcomes.
     tint: none
+- type: image_band
+  kicker: Serious standards
+  heading: Small team. Clinical-grade care in every detail.
+  text: We build like the people who will rely on this are family. Because for some of us, they are.
+  image_path: /assets/KD_Assets/web/hospital-team-corridor-maxmishin-11119419-2000.jpg
+  image_alt: Three clinicians in white coats and masks walking down a bright hospital corridor.
+  height: compact
+  align: center
 - type: timeline
   heading: The road, honestly
   background: gradient
