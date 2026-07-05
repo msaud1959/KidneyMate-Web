@@ -4,71 +4,110 @@
 @source "../../content";
 
 /* ------------------------------------------------------------------
-   KidneyMate design tokens
-   Cobalt primary, ink text, cloud fields, warm amber accent,
-   sage positive, careful red for errors only, six tracker tints.
+   Self-hosted typefaces (no external requests, CSP-safe)
+   Space Grotesk — geometric grotesk for display / headings
+   Inter        — clean grotesque for body / UI
+------------------------------------------------------------------- */
+@font-face {
+  font-family: "Space Grotesk"; font-style: normal; font-weight: 500;
+  font-display: swap; src: url("/fonts/space-grotesk-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Grotesk"; font-style: normal; font-weight: 600;
+  font-display: swap; src: url("/fonts/space-grotesk-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Grotesk"; font-style: normal; font-weight: 700;
+  font-display: swap; src: url("/fonts/space-grotesk-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 400;
+  font-display: swap; src: url("/fonts/inter-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 500;
+  font-display: swap; src: url("/fonts/inter-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 600;
+  font-display: swap; src: url("/fonts/inter-600.woff2") format("woff2");
+}
+
+/* ------------------------------------------------------------------
+   KidneyMate design tokens — DARK-FIRST
+   Deep midnight canvas, white type, electric blue + kidney red +
+   vital green accents. Six tracker tints power the glossy icons.
 ------------------------------------------------------------------- */
 @theme {
-  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 
-  /* Brand colours sampled from the KidneyMate logo */
-  --color-cobalt-50: #edf1fa;
-  --color-cobalt-100: #dbe3f6;
-  --color-cobalt-300: #7e97e0;
-  --color-cobalt-500: #2b4ea3;
-  --color-cobalt-600: #24418c;
-  --color-cobalt-700: #1b306b;
-  --color-cobalt-900: #111f47;
-  --color-brand-red: #ce1126;
-  --color-brand-red-soft: #fbe9eb;
+  /* Brand blues (kept for identity; used on dark) */
+  --color-cobalt-50: #eaf0ff;
+  --color-cobalt-100: #c9d7ff;
+  --color-cobalt-300: #8aa6ff;
+  --color-cobalt-500: #5b86ff;   /* electric brand blue, tuned for dark */
+  --color-cobalt-600: #3f66e6;
+  --color-cobalt-700: #2f4fc4;
+  --color-cobalt-900: #0d1740;
 
-  --color-ink-400: #6e7891;
-  --color-ink-600: #454f6b;
-  --color-ink-900: #161d33;
+  --color-brand-red: #ff4d61;    /* kidney red, brightened for dark */
+  --color-brand-red-soft: #2a1420;
 
-  --color-cloud-50: #e9eff9;
-  --color-cloud-100: #e2e9f6;
-  --color-cloud-200: #d3ddef;
+  /* Vital green accent (Bright-style blue→green energy) */
+  --color-vital-400: #35d07f;
+  --color-vital-600: #1f9d5c;
 
-  --color-amber-100: #fdf2df;
-  --color-amber-400: #e9a13b;
-  --color-amber-600: #a06413;
-  --color-sage-100: #e4f2ee;
-  --color-sage-500: #3e9c84;
-  --color-sage-700: #2c7263;
-  --color-error-600: #b3403b;
-  --color-error-50: #fbeeed;
+  /* Neutral text — light on dark */
+  --color-ink-400: #737f99;      /* muted / meta */
+  --color-ink-600: #aab4cc;      /* body */
+  --color-ink-900: #eef2fb;      /* headings, near-white */
 
-  /* Tracker tints: background / foreground pairs */
-  --color-fluid-tint: #eaf3fd;
-  --color-fluid-deep: #2e6cb5;
-  --color-food-tint: #edf6ea;
-  --color-food-deep: #478036;
-  --color-meds-tint: #fdeef0;
-  --color-meds-deep: #b5455a;
-  --color-symptoms-tint: #e8f4f4;
-  --color-symptoms-deep: #2c747d;
-  --color-sleep-tint: #f0edfb;
-  --color-sleep-deep: #6152b8;
-  --color-appts-tint: #fdf4e7;
-  --color-appts-deep: #9c6516;
+  /* Canvas / surfaces — deep midnight */
+  --color-cloud-50: #080b17;     /* base canvas */
+  --color-cloud-100: #10162a;    /* elevated */
+  --color-cloud-200: #29324f;    /* hairline borders */
+
+  --color-amber-100: #2a2214;
+  --color-amber-400: #f0b64a;
+  --color-amber-600: #f0b64a;
+  --color-sage-100: #12271f;
+  --color-sage-500: #35d07f;
+  --color-sage-700: #7ee6ac;
+  --color-error-600: #ff6a6a;
+  --color-error-50: #2a1418;
+
+  /* Tracker tints: soft chip bg / vivid deep for glossy icons */
+  --color-fluid-tint: #12233b;
+  --color-fluid-deep: #3a8ee0;
+  --color-food-tint: #14271a;
+  --color-food-deep: #46b257;
+  --color-meds-tint: #2b1620;
+  --color-meds-deep: #e05a72;
+  --color-symptoms-tint: #10262a;
+  --color-symptoms-deep: #35b0bd;
+  --color-sleep-tint: #1a1733;
+  --color-sleep-deep: #8a7bf0;
+  --color-appts-tint: #2a2011;
+  --color-appts-deep: #d99632;
 
   --radius-card: 1.125rem;
   --radius-glass: 1.25rem;
 
-  --shadow-lift: 0 20px 50px -24px rgb(27 47 122 / 0.18);
-  --shadow-lift-lg: 0 32px 70px -30px rgb(27 47 122 / 0.28);
-  --shadow-chip: 0 10px 30px -12px rgb(27 47 122 / 0.22);
+  --shadow-lift: 0 24px 60px -28px rgb(0 0 0 / 0.7);
+  --shadow-lift-lg: 0 40px 90px -34px rgb(0 0 0 / 0.8);
+  --shadow-chip: 0 14px 34px -14px rgb(0 0 0 / 0.6);
+  --shadow-glow: 0 0 0 1px rgb(91 134 255 / 0.35), 0 20px 50px -20px rgb(91 134 255 / 0.4);
 }
 
 /* ---------------------------------------------------------------
-   Base (system Arial: zero font downloads, zero layout shift)
+   Base
 ---------------------------------------------------------------- */
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    background: var(--color-cloud-50);
   }
   body {
     @apply bg-cloud-50 font-sans text-ink-600 antialiased;
@@ -80,10 +119,10 @@
     letter-spacing: -0.02em;
     text-wrap: balance;
   }
-  h1 { line-height: 1.06; font-weight: 700; }
-  h2 { line-height: 1.12; font-weight: 700; }
-  h3 { line-height: 1.22; font-weight: 650; }
-  ::selection { background: var(--color-cobalt-100); color: var(--color-cobalt-900); }
+  h1 { line-height: 1.02; font-weight: 700; }
+  h2 { line-height: 1.1; font-weight: 700; }
+  h3 { line-height: 1.2; font-weight: 600; }
+  ::selection { background: var(--color-cobalt-500); color: #fff; }
 
   :focus-visible {
     outline: 2px solid var(--color-cobalt-500);
@@ -100,28 +139,32 @@
    Type scale helpers
 ---------------------------------------------------------------- */
 @utility display-xl {
-  font-size: clamp(2.625rem, 1.6rem + 4vw, 5rem);
-  letter-spacing: -0.025em;
-  line-height: 1.04;
+  font-size: clamp(2.75rem, 1.55rem + 4.8vw, 5.5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
 }
-@utility display-lg { font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.375rem); }
-@utility heading-md { font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.125rem); }
+@utility display-lg { font-size: clamp(2.125rem, 1.45rem + 2.9vw, 3.625rem); letter-spacing: -0.03em; line-height: 1.04; }
+@utility heading-md { font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.25rem); letter-spacing: -0.02em; }
 @utility heading-sm { font-size: clamp(1.1875rem, 1.1rem + 0.35vw, 1.375rem); }
 @utility stat-numeral {
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 1.9rem + 3.4vw, 5.25rem);
   line-height: 1;
   font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--color-cobalt-700);
+  letter-spacing: -0.03em;
+  background: linear-gradient(150deg, var(--color-cobalt-500) 0%, var(--color-vital-400) 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 @utility eyebrow {
   display: inline-block;
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-cobalt-500);
+  color: var(--color-cobalt-300);
 }
 .eyebrow::before { content: "[ "; color: var(--color-brand-red); font-weight: 800; }
 .eyebrow::after { content: " ]"; color: var(--color-brand-red); font-weight: 800; }
@@ -136,8 +179,8 @@
   text-transform: uppercase;
   color: var(--color-cobalt-300);
 }
-.footer-bracket::before { content: "[ "; color: #ff6b6b; }
-.footer-bracket::after { content: " ]"; color: #ff6b6b; }
+.footer-bracket::before { content: "[ "; color: var(--color-brand-red); }
+.footer-bracket::after { content: " ]"; color: var(--color-brand-red); }
 
 /* Editorial tag / trust chips */
 @utility tag-chip {
@@ -150,9 +193,9 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--color-cobalt-50);
-  color: var(--color-cobalt-700);
-  border: 1px solid rgb(42 76 192 / 0.12);
+  background: rgb(91 134 255 / 0.12);
+  color: var(--color-cobalt-300);
+  border: 1px solid rgb(91 134 255 / 0.28);
 }
 @utility trust-chip {
   display: inline-flex;
@@ -161,132 +204,116 @@
   padding: 0.4375rem 0.9375rem;
   border-radius: 980px;
   font-size: 0.875rem;
-  font-weight: 600;
-  background: rgb(255 255 255 / 0.08);
-  color: #fff;
-  border: 1px solid rgb(255 255 255 / 0.22);
+  font-weight: 500;
+  background: rgb(255 255 255 / 0.05);
+  color: var(--color-ink-600);
+  border: 1px solid rgb(255 255 255 / 0.14);
 }
 
 /* ---------------------------------------------------------------
-   Glass surfaces
-   Three levels. Long-form text always sits on solid surfaces.
+   Glass surfaces — dark
 ---------------------------------------------------------------- */
 @utility glass {
-  background: rgb(255 255 255 / 0.62);
-  backdrop-filter: blur(22px) saturate(1.4);
-  -webkit-backdrop-filter: blur(22px) saturate(1.4);
-  border: 1px solid rgb(255 255 255 / 0.65);
+  background: rgb(19 27 50 / 0.55);
+  backdrop-filter: blur(22px) saturate(1.3);
+  -webkit-backdrop-filter: blur(22px) saturate(1.3);
+  border: 1px solid rgb(255 255 255 / 0.10);
   border-radius: var(--radius-glass);
   box-shadow: var(--shadow-lift);
 }
 @utility glass-strong {
-  background: rgb(255 255 255 / 0.8);
-  backdrop-filter: blur(28px) saturate(1.5);
-  -webkit-backdrop-filter: blur(28px) saturate(1.5);
-  border: 1px solid rgb(255 255 255 / 0.75);
+  background: rgb(14 21 40 / 0.82);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.12);
   border-radius: var(--radius-glass);
   box-shadow: var(--shadow-lift);
 }
 @utility glass-solid {
-  background: #ffffff;
-  border: 1px solid var(--color-cloud-200);
+  background: #0f1730;
+  border: 1px solid rgb(255 255 255 / 0.08);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-lift);
 }
-
-/* Menus and sheets: readability must never depend on blur support */
 @utility glass-menu {
-  background: rgb(255 255 255 / 0.95);
+  background: rgb(11 17 34 / 0.97);
   backdrop-filter: blur(24px) saturate(1.4);
   -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border: 1px solid rgb(255 255 255 / 0.8);
+  border: 1px solid rgb(255 255 255 / 0.12);
   border-radius: var(--radius-glass);
   box-shadow: var(--shadow-lift);
 }
-
-/* Dark glass for panels sitting over photography or the 3D field */
 @utility glass-dark {
-  background: rgb(13 21 47 / 0.44);
+  background: rgb(9 14 30 / 0.6);
   backdrop-filter: blur(26px) saturate(1.3);
   -webkit-backdrop-filter: blur(26px) saturate(1.3);
-  border: 1px solid rgb(255 255 255 / 0.16);
+  border: 1px solid rgb(255 255 255 / 0.14);
   border-radius: var(--radius-glass);
-  box-shadow: 0 28px 60px -32px rgb(0 0 0 / 0.55);
+  box-shadow: 0 28px 60px -32px rgb(0 0 0 / 0.7);
 }
 
 @supports not (backdrop-filter: blur(1px)) {
-  .glass { background: rgb(255 255 255 / 0.92); }
-  .glass-strong { background: rgb(255 255 255 / 0.96); }
-  .glass-menu { background: #ffffff; }
-  .glass-dark { background: rgb(13 21 47 / 0.86); }
+  .glass { background: rgb(15 23 44 / 0.94); }
+  .glass-strong { background: rgb(12 18 36 / 0.97); }
+  .glass-menu { background: #0b1122; }
+  .glass-dark { background: rgb(9 14 30 / 0.94); }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .glass, .glass-strong, .glass-menu {
-    background: #ffffff;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-  .glass-dark {
-    background: #111a33;
+  .glass, .glass-strong, .glass-menu, .glass-dark {
+    background: #0d1428;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
 }
 
 /* ---------------------------------------------------------------
-   Attention cards
-   The old flat white boxes, reworked into surfaces that pull the
-   eye: a tinted glow keyed to each card's accent, a gradient icon
-   medallion, a top hairline that lights up, and a real lift on hover.
-   Drive per-card colour with --card-accent and --card-deep.
+   Attention cards — dark, with a colour glow keyed to each accent,
+   a glossy icon medallion and a top hairline that lights on hover.
 ---------------------------------------------------------------- */
 @utility card-feature {
-  --card-accent: rgb(43 78 163 / 0.14);
+  --card-accent: rgb(91 134 255 / 0.18);
   --card-deep: var(--color-cobalt-500);
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: linear-gradient(177deg, #ffffff 0%, #fbfcff 62%, #f4f7fe 100%);
-  border: 1px solid rgb(43 78 163 / 0.10);
+  background: linear-gradient(177deg, #131c36 0%, #0f1730 62%, #0c1329 100%);
+  border: 1px solid rgb(255 255 255 / 0.08);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-lift);
   transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 220ms ease, border-color 220ms ease;
 }
-/* corner glow, keyed to the card accent */
 .card-feature::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(26rem 18rem at 8% -6%, var(--card-accent) 0%, transparent 58%);
-  opacity: 0.85;
+  background: radial-gradient(28rem 20rem at 8% -6%, var(--card-accent) 0%, transparent 60%);
+  opacity: 0.9;
   transition: opacity 220ms ease;
 }
-/* top hairline that brightens on hover */
 .card-feature::after {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, var(--card-deep), transparent);
-  opacity: 0;
+  opacity: 0.25;
   transition: opacity 220ms ease;
 }
 .card-feature:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lift-lg);
-  border-color: rgb(43 78 163 / 0.20);
+  border-color: rgb(91 134 255 / 0.35);
 }
 .card-feature:hover::before { opacity: 1; }
-.card-feature:hover::after { opacity: 0.9; }
+.card-feature:hover::after { opacity: 1; }
 .card-feature:focus-within {
   border-color: var(--card-deep);
   box-shadow: var(--shadow-lift-lg);
 }
 
-/* Gradient icon medallion. Inherits --medallion-from / --medallion-to
-   from the card so the colour follows each tracker's tint. */
+/* Glossy gradient icon medallion — glows on the dark canvas */
 @utility icon-medallion {
   position: relative;
   isolation: isolate;
@@ -303,11 +330,10 @@
     linear-gradient(150deg,
       var(--medallion-from, var(--color-cobalt-500)) 0%,
       var(--medallion-to, var(--color-cobalt-700)) 82%);
-  box-shadow: 0 14px 26px -12px var(--medallion-from, var(--color-cobalt-500)),
-              inset 0 1px 1.5px 0 rgb(255 255 255 / 0.55),
-              inset 0 -6px 12px 0 rgb(0 0 0 / 0.16);
+  box-shadow: 0 12px 26px -8px var(--medallion-from, var(--color-cobalt-500)),
+              inset 0 1px 1.5px 0 rgb(255 255 255 / 0.6),
+              inset 0 -6px 12px 0 rgb(0 0 0 / 0.22);
 }
-/* glossy top sheen; glyph/number ride above it */
 .icon-medallion::after {
   content: "";
   position: absolute;
@@ -323,59 +349,57 @@
 }
 
 /* ---------------------------------------------------------------
-   Gradient fields and grain
+   Gradient fields and grain — dark aurora
 ---------------------------------------------------------------- */
 @utility field-gradient {
   background:
-    radial-gradient(90rem 60rem at 85% -10%, #d3e0fb 0%, transparent 55%),
-    radial-gradient(70rem 50rem at -10% 30%, #dde7fb 0%, transparent 55%),
-    radial-gradient(80rem 60rem at 70% 110%, #dbe6f7 0%, transparent 50%),
+    radial-gradient(80rem 55rem at 84% -12%, rgb(91 134 255 / 0.16) 0%, transparent 55%),
+    radial-gradient(64rem 50rem at 2% 22%, rgb(53 208 127 / 0.10) 0%, transparent 58%),
+    radial-gradient(70rem 46rem at 62% 116%, rgb(255 77 97 / 0.10) 0%, transparent 60%),
     var(--color-cloud-50);
 }
 @utility field-hero {
   background:
-    radial-gradient(70rem 46rem at 82% 0%, rgb(206 17 38 / 0.16) 0%, transparent 55%),
-    radial-gradient(80rem 55rem at 8% 25%, rgb(126 151 224 / 0.22) 0%, transparent 60%),
-    radial-gradient(60rem 40rem at 55% 110%, rgb(43 78 163 / 0.5) 0%, transparent 60%),
-    linear-gradient(165deg, #0c1531 0%, var(--color-cobalt-900) 55%, #1a2c60 100%);
+    radial-gradient(70rem 46rem at 82% 0%, rgb(255 77 97 / 0.18) 0%, transparent 55%),
+    radial-gradient(80rem 55rem at 8% 25%, rgb(91 134 255 / 0.24) 0%, transparent 60%),
+    radial-gradient(64rem 46rem at 55% 118%, rgb(53 208 127 / 0.16) 0%, transparent 60%),
+    linear-gradient(165deg, #070b18 0%, #0a1024 55%, #0c1430 100%);
 }
-
 @utility field-deep {
   background:
-    radial-gradient(80rem 50rem at 80% -20%, rgb(123 147 232 / 0.25) 0%, transparent 60%),
-    linear-gradient(160deg, var(--color-cobalt-900) 0%, var(--color-cobalt-700) 100%);
+    radial-gradient(80rem 50rem at 80% -20%, rgb(91 134 255 / 0.18) 0%, transparent 60%),
+    linear-gradient(160deg, #070b18 0%, #0b1128 100%);
+}
+/* Signature gradient galleries — dark, tinted glow bands */
+@utility field-mint {
+  background:
+    radial-gradient(70rem 44rem at 82% -10%, rgb(53 208 127 / 0.18) 0%, transparent 55%),
+    radial-gradient(64rem 46rem at 6% 20%, rgb(91 134 255 / 0.16) 0%, transparent 58%),
+    var(--color-cloud-50);
+}
+@utility field-peach {
+  background:
+    radial-gradient(64rem 44rem at 80% 0%, rgb(240 182 74 / 0.16) 0%, transparent 55%),
+    radial-gradient(60rem 46rem at 4% 30%, rgb(255 77 97 / 0.12) 0%, transparent 60%),
+    var(--color-cloud-50);
+}
+@utility field-lavender {
+  background:
+    radial-gradient(66rem 44rem at 84% -8%, rgb(138 123 240 / 0.18) 0%, transparent 55%),
+    radial-gradient(60rem 46rem at 2% 24%, rgb(91 134 255 / 0.12) 0%, transparent 58%),
+    var(--color-cloud-50);
 }
 .grain::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.12 0 0 0 0 0.3 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Signature gradient galleries: calm painterly bands for feature blocks */
-@utility field-mint {
-  background:
-    radial-gradient(70rem 44rem at 82% -10%, rgb(62 156 132 / 0.18) 0%, transparent 55%),
-    radial-gradient(64rem 46rem at 6% 20%, rgb(126 151 224 / 0.20) 0%, transparent 58%),
-    linear-gradient(170deg, #e7f2ee 0%, #e6eefb 60%, var(--color-cloud-50) 100%);
-}
-@utility field-peach {
-  background:
-    radial-gradient(64rem 44rem at 80% 0%, rgb(233 161 59 / 0.16) 0%, transparent 55%),
-    radial-gradient(60rem 46rem at 4% 30%, rgb(206 17 38 / 0.06) 0%, transparent 60%),
-    linear-gradient(170deg, #fbf1e6 0%, #f6ebef 60%, var(--color-cloud-50) 100%);
-}
-@utility field-lavender {
-  background:
-    radial-gradient(66rem 44rem at 84% -8%, rgb(97 82 184 / 0.16) 0%, transparent 55%),
-    radial-gradient(60rem 46rem at 2% 24%, rgb(233 161 59 / 0.10) 0%, transparent 58%),
-    linear-gradient(170deg, #efeafb 0%, #f2ecf3 62%, var(--color-cloud-50) 100%);
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.6 0 0 0 0 0.9 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ---------------------------------------------------------------
-   Buttons
+   Buttons — pill, tuned for the dark canvas
 ---------------------------------------------------------------- */
 @utility btn-primary {
   display: inline-flex;
@@ -383,16 +407,16 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.8125rem 1.875rem;
   border-radius: 980px;
-  background: var(--color-cobalt-500);
+  background: linear-gradient(180deg, #6a8dff 0%, #4062e6 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.0625rem;
-  transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
-  box-shadow: 0 12px 28px -14px rgb(42 76 192 / 0.55);
+  transition: filter 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 16px 34px -14px rgb(64 98 230 / 0.7);
 }
-.btn-primary:hover { background: var(--color-cobalt-600); transform: translateY(-1px); }
+.btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
 .btn-primary:active { transform: translateY(0); }
 
 @utility btn-accent {
@@ -401,16 +425,16 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.8125rem 1.875rem;
   border-radius: 980px;
-  background: var(--color-brand-red);
+  background: linear-gradient(180deg, #ff6274 0%, #ec3350 100%);
   color: #fff;
   font-weight: 700;
   font-size: 1.0625rem;
-  transition: background-color 150ms ease, transform 150ms ease;
-  box-shadow: 0 14px 30px -14px rgb(206 17 38 / 0.55);
+  transition: filter 150ms ease, transform 150ms ease;
+  box-shadow: 0 16px 34px -14px rgb(236 51 80 / 0.7);
 }
-.btn-accent:hover { background: #b30e21; transform: translateY(-1px); }
+.btn-accent:hover { filter: brightness(1.07); transform: translateY(-1px); }
 
 @utility btn-ghost-light {
   display: inline-flex;
@@ -418,16 +442,16 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.8125rem 1.875rem;
   border-radius: 980px;
-  background: rgb(255 255 255 / 0.08);
-  border: 1px solid rgb(255 255 255 / 0.3);
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.22);
   color: #fff;
   font-weight: 600;
   font-size: 1.0625rem;
   transition: background-color 150ms ease, border-color 150ms ease;
 }
-.btn-ghost-light:hover { background: rgb(255 255 255 / 0.16); border-color: rgb(255 255 255 / 0.5); }
+.btn-ghost-light:hover { background: rgb(255 255 255 / 0.14); border-color: rgb(255 255 255 / 0.45); }
 
 @utility btn-secondary {
   display: inline-flex;
@@ -435,29 +459,29 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 3rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.8125rem 1.875rem;
   border-radius: 980px;
-  background: rgb(255 255 255 / 0.75);
-  border: 1px solid var(--color-cloud-200);
-  color: var(--color-cobalt-700);
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.18);
+  color: var(--color-ink-900);
   font-weight: 600;
   font-size: 1.0625rem;
   transition: background-color 150ms ease, border-color 150ms ease;
 }
-.btn-secondary:hover { background: #fff; border-color: var(--color-cobalt-300); }
+.btn-secondary:hover { background: rgb(255 255 255 / 0.10); border-color: var(--color-cobalt-500); }
 
 @utility link-arrow {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   font-weight: 600;
-  color: var(--color-cobalt-500);
+  color: var(--color-cobalt-300);
 }
 .link-arrow svg { transition: transform 150ms ease; }
 .link-arrow:hover svg { transform: translateX(3px); }
 
 /* ---------------------------------------------------------------
-   Motion: reveal on scroll (fires once, JS adds .is-revealed)
+   Motion: reveal on scroll
 ---------------------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
@@ -478,39 +502,37 @@
   }
 }
 
-/* Gentle showroom tilt for the hero device; sits inside the float wrapper */
 .phone-tilt {
   transform: perspective(1400px) rotateY(-9deg) rotateX(2.5deg) rotateZ(0.5deg);
   transform-style: preserve-3d;
 }
 @media (prefers-reduced-motion: reduce) {
   .phone-tilt { transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
   [data-reveal] { opacity: 1; transform: none; }
   .float-slow, .float-slower { animation: none; }
 }
 
-/* No-JS safety: never hide content when the observer can't run */
 html.no-js [data-reveal] { opacity: 1; transform: none; }
 
 /* ---------------------------------------------------------------
-   Long-form prose defaults
+   Long-form prose — dark
 ---------------------------------------------------------------- */
 .km-prose {
   @apply prose prose-lg max-w-[68ch];
   --tw-prose-body: var(--color-ink-600);
   --tw-prose-headings: var(--color-ink-900);
-  --tw-prose-links: var(--color-cobalt-500);
-  --tw-prose-bold: var(--color-ink-900);
+  --tw-prose-links: var(--color-cobalt-300);
+  --tw-prose-bold: #ffffff;
   --tw-prose-quotes: var(--color-ink-900);
   --tw-prose-quote-borders: var(--color-amber-400);
+  --tw-prose-bullets: var(--color-cobalt-500);
+  --tw-prose-counters: var(--color-ink-400);
+  --tw-prose-hr: rgb(255 255 255 / 0.12);
+  --tw-prose-captions: var(--color-ink-400);
 }
-.km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 800; }
+.km-prose h2, .km-prose h3 { font-family: var(--font-display); letter-spacing: -0.02em; font-weight: 700; }
 
-/* ---------------------------------------------------------------
-   Apple-style centered section head
----------------------------------------------------------------- */
+/* Centered section head */
 @utility section-head {
   text-align: center;
   margin-inline: auto;
@@ -528,10 +550,10 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
 }
 .img-band .band-scrim {
   position: absolute; inset: 0;
-  background: linear-gradient(75deg, rgb(10 18 42 / 0.78) 0%, rgb(10 18 42 / 0.45) 45%, rgb(10 18 42 / 0.12) 100%);
+  background: linear-gradient(75deg, rgb(6 10 22 / 0.86) 0%, rgb(6 10 22 / 0.55) 45%, rgb(6 10 22 / 0.2) 100%);
 }
 .img-band.band-center .band-scrim {
-  background: linear-gradient(180deg, rgb(10 18 42 / 0.25) 0%, rgb(10 18 42 / 0.62) 100%);
+  background: linear-gradient(180deg, rgb(6 10 22 / 0.35) 0%, rgb(6 10 22 / 0.72) 100%);
 }
 @media (prefers-reduced-motion: no-preference) {
   .img-band > img { transform: scale(1.06); transition: transform 1200ms ease-out; }
@@ -564,7 +586,6 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
     50% { transform: translate(-50%, 8px); opacity: 1; }
   }
 }
-/* Without JS or with reduced motion: no scrolljack, everything readable */
 html.no-js .organ-scroll { height: auto; }
 html.no-js .organ-stage { position: relative; height: auto; padding: 6rem 0; }
 html.no-js .organ-caption { position: static; opacity: 1; transform: none; margin-bottom: 3rem; }
@@ -577,22 +598,23 @@ html.no-js .organ-hint { display: none; }
 }
 
 /* ---------------------------------------------------------------
-   Form controls
+   Form controls — dark
 ---------------------------------------------------------------- */
 @utility input-base {
   width: 100%;
-  border-radius: 0.75rem;
-  border: 1px solid var(--color-cloud-200);
-  background: #fff;
+  border-radius: 0.85rem;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  background: #0c1428;
   padding: 0.8125rem 1rem;
   font-size: 1.0625rem;
   color: var(--color-ink-900);
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
+.input-base::placeholder { color: var(--color-ink-400); }
 .input-base:focus {
   outline: none;
   border-color: var(--color-cobalt-500);
-  box-shadow: 0 0 0 3px rgb(42 76 192 / 0.15);
+  box-shadow: 0 0 0 3px rgb(91 134 255 / 0.25);
 }
 .input-base[aria-invalid="true"] { border-color: var(--color-error-600); }
 
@@ -612,6 +634,43 @@ html.no-js .organ-hint { display: none; }
 
 /* Alpine cloak */
 [x-cloak] { display: none !important; }
+
+/* ---------------------------------------------------------------
+   Light palette island
+   The phone / browser app mockups keep the original light UI even on
+   the dark site. Re-declaring the theme vars in this scope makes every
+   descendant token-based utility resolve to its light value.
+---------------------------------------------------------------- */
+.surface-light {
+  --color-ink-400: #6e7891;
+  --color-ink-600: #454f6b;
+  --color-ink-900: #161d33;
+  --color-cloud-50: #f4f7fc;
+  --color-cloud-100: #eef1f8;
+  --color-cloud-200: #dce2f0;
+  --color-cobalt-50: #edf1fa;
+  --color-cobalt-100: #dbe3f6;
+  --color-cobalt-300: #7e97e0;
+  --color-cobalt-500: #2b4ea3;
+  --color-cobalt-600: #24418c;
+  --color-cobalt-700: #1b306b;
+  --color-cobalt-900: #111f47;
+  --color-brand-red: #ce1126;
+  --color-amber-100: #fdf2df;
+  --color-amber-400: #e9a13b;
+  --color-amber-600: #a06413;
+  --color-sage-100: #e4f2ee;
+  --color-sage-500: #3e9c84;
+  --color-sage-700: #2c7263;
+  --color-error-600: #b3403b;
+  --color-fluid-tint: #eaf3fd; --color-fluid-deep: #2e6cb5;
+  --color-food-tint: #edf6ea; --color-food-deep: #478036;
+  --color-meds-tint: #fdeef0; --color-meds-deep: #b5455a;
+  --color-symptoms-tint: #e8f4f4; --color-symptoms-deep: #2c747d;
+  --color-sleep-tint: #f0edfb; --color-sleep-deep: #6152b8;
+  --color-appts-tint: #fdf4e7; --color-appts-deep: #9c6516;
+  color: #454f6b;
+}
 
 /* Accessible skip link */
 .skip-link {

@@ -4,7 +4,7 @@
 #}}
 <section
     {{ if section_id }}id="{{ section_id }}"{{ /if }}
-    class="relative {{ if background == 'gradient' }}field-gradient grain{{ elseif background == 'mint' }}field-mint{{ elseif background == 'peach' }}field-peach{{ elseif background == 'lavender' }}field-lavender{{ elseif background == 'solid' }}bg-white{{ elseif background == 'deep' }}field-deep text-white{{ /if }} {{ if tight }}py-12 sm:py-16{{ else }}py-16 sm:py-24{{ /if }}"
+    class="relative {{ if background == 'gradient' }}field-gradient grain{{ elseif background == 'mint' }}field-mint{{ elseif background == 'peach' }}field-peach{{ elseif background == 'lavender' }}field-lavender{{ elseif background == 'solid' }}bg-cloud-100{{ elseif background == 'deep' }}field-deep text-white{{ /if }} {{ if tight }}py-12 sm:py-16{{ else }}py-16 sm:py-24{{ /if }}"
 >
     {{ slot }}
 </section>
