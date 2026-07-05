@@ -53,6 +53,36 @@ fields:
                   import: media
                 -
                   import: section_settings
+            bento_grid:
+              display: 'Bento overview grid'
+              instructions: 'The dense product grid: clinician dashboard, patient app, scale stat, trackers and trust principles in one section.'
+              fields:
+                -
+                  handle: eyebrow
+                  field: { type: text, display: Eyebrow }
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: intro
+                  field: { type: textarea, display: Intro, rows: 2 }
+                -
+                  handle: stat_value
+                  field: { type: text, display: 'Stat value', instructions: 'e.g. 788M' }
+                -
+                  handle: stat_label
+                  field: { type: textarea, display: 'Stat label', rows: 2 }
+                -
+                  handle: stat_source
+                  field: { type: text, display: 'Stat source' }
+                -
+                  handle: cta_label
+                  field: { type: text, display: 'CTA label' }
+                -
+                  handle: cta_link
+                  field: { type: text, display: 'CTA link', default: /join }
+                -
+                  import: section_settings
             image_band:
               display: 'Photographic band'
               instructions: 'Full-bleed photo or ambient video with minimal overlay copy. Use optimised files from /assets/KD_Assets/web (the -2000.jpg versions).'

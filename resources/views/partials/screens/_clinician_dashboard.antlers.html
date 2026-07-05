@@ -1,0 +1,126 @@
+{{#
+    Rebuilt clinician dashboard as a realistic product surface: a patient
+    review queue, a multi-metric trend chart against baseline, KPIs and an
+    explainable review flag. Decorative; the tile label carries meaning.
+#}}
+<div class="surface-light km-dash" aria-hidden="true">
+    {{# Top bar #}}
+    <div class="km-dash-bar">
+        <span class="km-dash-dot" style="background:#ce1126"></span>
+        <span class="font-bold text-[12.5px] text-ink-900">KidneyMate</span>
+        <span class="text-[11px] text-ink-400">Clinician</span>
+        <span class="km-dash-tabs">
+            <span class="km-dash-tab is-on">Review queue</span>
+            <span class="km-dash-tab">Patient</span>
+            <span class="km-dash-tab">Trends</span>
+        </span>
+    </div>
+
+    <div class="km-dash-body">
+        {{# Review queue #}}
+        <aside class="km-dash-queue">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-[10.5px] font-bold uppercase tracking-wider text-ink-400">Review queue</span>
+                <span class="text-[10px] font-bold text-cobalt-600 bg-cobalt-50 rounded-full px-1.5 py-0.5">4</span>
+            </div>
+
+            <div class="km-dash-row is-on">
+                <span class="km-dash-av" style="background:#2e6cb5">ST</span>
+                <span class="min-w-0">
+                    <span class="block text-[11.5px] font-bold text-ink-900 truncate">Sam T.</span>
+                    <span class="block text-[10px] text-ink-400">CKD 3b · fluid</span>
+                </span>
+                <span class="km-dash-flag km-dash-flag--review">Review</span>
+            </div>
+            <div class="km-dash-row">
+                <span class="km-dash-av" style="background:#9c6516">RA</span>
+                <span class="min-w-0">
+                    <span class="block text-[11.5px] font-bold text-ink-900 truncate">Rosa A.</span>
+                    <span class="block text-[10px] text-ink-400">CKD 4 · BP</span>
+                </span>
+                <span class="km-dash-flag km-dash-flag--watch">Watch</span>
+            </div>
+            <div class="km-dash-row">
+                <span class="km-dash-av" style="background:#2c7263">MN</span>
+                <span class="min-w-0">
+                    <span class="block text-[11.5px] font-bold text-ink-900 truncate">Minh N.</span>
+                    <span class="block text-[10px] text-ink-400">Dialysis · weight</span>
+                </span>
+                <span class="km-dash-flag km-dash-flag--review">Review</span>
+            </div>
+            <div class="km-dash-row">
+                <span class="km-dash-av" style="background:#6152b8">DK</span>
+                <span class="min-w-0">
+                    <span class="block text-[11.5px] font-bold text-ink-900 truncate">Dan K.</span>
+                    <span class="block text-[10px] text-ink-400">CKD 3a · stable</span>
+                </span>
+                <span class="km-dash-flag km-dash-flag--stable">Stable</span>
+            </div>
+        </aside>
+
+        {{# Detail #}}
+        <section class="km-dash-main">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div>
+                    <p class="text-[13px] font-bold text-ink-900">Sam T. · CKD stage 3b</p>
+                    <p class="text-[10.5px] text-ink-400">90-day view · targets set 12 Mar</p>
+                </div>
+                <div class="flex gap-1 text-[9.5px] font-semibold">
+                    <span class="rounded-md bg-cloud-100 px-2 py-1 text-ink-600">30d</span>
+                    <span class="rounded-md bg-cobalt-500 px-2 py-1 text-white">90d</span>
+                    <span class="rounded-md bg-cloud-100 px-2 py-1 text-ink-600">12m</span>
+                </div>
+            </div>
+
+            {{# Trend chart #}}
+            <div class="rounded-lg border border-cloud-200 bg-white p-2.5">
+                <div class="flex gap-3 text-[9.5px] font-semibold mb-1">
+                    <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#2e6cb5"></span>Fluid vs target</span>
+                    <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#2c747d"></span>Fatigue</span>
+                    <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full" style="background:#b5455a"></span>Adherence</span>
+                </div>
+                <svg viewBox="0 0 320 96" class="w-full" preserveAspectRatio="none">
+                    <rect x="0" y="30" width="320" height="26" fill="#eef4fb"/>
+                    <line x1="0" y1="30" x2="320" y2="30" stroke="#d9e3f2" stroke-width="1" stroke-dasharray="3 4"/>
+                    <line x1="0" y1="56" x2="320" y2="56" stroke="#d9e3f2" stroke-width="1" stroke-dasharray="3 4"/>
+                    <path d="M0 44 C30 40 55 49 85 46 S150 36 180 41 S250 52 320 44" fill="none" stroke="#2e6cb5" stroke-width="2.25" stroke-linecap="round"/>
+                    <path d="M0 66 C40 64 70 62 100 60 S170 54 200 46 S270 34 320 28" fill="none" stroke="#2c747d" stroke-width="2.25" stroke-linecap="round"/>
+                    <path d="M0 26 C50 28 90 26 130 30 S210 48 250 54 S300 56 320 58" fill="none" stroke="#b5455a" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+                    <circle cx="252" cy="54" r="3.4" fill="#b5455a"/>
+                </svg>
+                <div class="flex justify-between text-[9px] text-ink-400 mt-0.5"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span></div>
+            </div>
+
+            {{# KPIs #}}
+            <div class="grid grid-cols-3 gap-1.5">
+                <div class="km-kpi">
+                    <p class="text-[15px] font-bold text-ink-900 leading-none">86%</p>
+                    <p class="text-[9px] text-ink-400 mt-0.5">days in fluid target</p>
+                </div>
+                <div class="km-kpi">
+                    <p class="text-[15px] font-bold text-ink-900 leading-none">4.2<span class="text-[9px] text-meds-deep font-semibold"> ▲</span></p>
+                    <p class="text-[9px] text-ink-400 mt-0.5">avg fatigue, was 3.4</p>
+                </div>
+                <div class="km-kpi">
+                    <p class="text-[15px] font-bold text-ink-900 leading-none">92%</p>
+                    <p class="text-[9px] text-ink-400 mt-0.5">check-ins done</p>
+                </div>
+            </div>
+
+            {{# Review flag #}}
+            <div class="rounded-lg border p-2.5" style="background:#fdeef0;border-color:rgb(197 79 98 / 0.3)">
+                <div class="flex items-start justify-between gap-2 flex-wrap">
+                    <div class="min-w-0">
+                        <p class="text-[10.5px] font-bold" style="color:#b5455a">⚑ Review flag · medication adherence</p>
+                        <p class="mt-0.5 text-[11px] font-semibold text-ink-900">Three missed evening doses in the last seven days.</p>
+                        <p class="mt-0.5 text-[9.5px] text-ink-600 leading-snug">Rule: ≥3 missed doses / 7 days vs a 90-day near-complete baseline. Surfaced for your review — no advice sent to the patient.</p>
+                    </div>
+                    <div class="flex gap-1 shrink-0">
+                        <span class="rounded-md bg-cobalt-500 text-white px-2.5 py-1 text-[10px] font-semibold">Review</span>
+                        <span class="rounded-md bg-white border border-cloud-200 px-2.5 py-1 text-[10px] font-semibold text-ink-400">Dismiss</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
