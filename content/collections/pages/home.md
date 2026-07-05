@@ -136,6 +136,7 @@ page_builder:
     text: Clinicians see organised summaries and flags, add their judgement, and decide what happens next. Always people, never software alone.
   footnote: This is the framework from our research, built into the product from day one.
 - type: feature_grid
+  background: mint
   heading: Built for the things you actually juggle
   mode: category
   category: track

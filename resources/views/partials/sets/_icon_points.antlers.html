@@ -21,11 +21,9 @@
                 {{ points }}
                     <div class="card-feature p-6 h-full" data-reveal style="--reveal-index: {{ index }}{{ if tint && tint != 'none' }}; --card-accent: color-mix(in srgb, var(--color-{{ tint }}-deep) 15%, transparent); --card-deep: var(--color-{{ tint }}-deep); --medallion-from: var(--color-{{ tint }}-deep); --medallion-to: color-mix(in srgb, var(--color-{{ tint }}-deep) 68%, #000){{ /if }}">
                         {{ if style == 'numbered' }}
-                            <span class="icon-medallion font-display font-semibold text-[1.1875rem]">{{ count }}</span>
+                            <span class="icon-medallion font-display font-semibold text-[1.1875rem]"><span>{{ count }}</span></span>
                         {{ else }}
-                            <span class="icon-medallion" aria-hidden="true">
-                                <span class="w-3.5 h-3.5 rounded-full bg-white/95"></span>
-                            </span>
+                            <span class="icon-medallion" aria-hidden="true">{{ partial:glyph :tint="tint" }}</span>
                         {{ /if }}
                         <h3 class="heading-sm mt-5 font-sans font-bold">{{ title }}</h3>
                         <p class="mt-2 text-[1.0625rem] text-ink-600">{{ text }}</p>

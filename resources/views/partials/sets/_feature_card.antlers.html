@@ -1,9 +1,7 @@
 {{# One feature card. Expects a feature entry in scope. #}}
 <div class="card-feature p-6 h-full flex flex-col" data-reveal style="--reveal-index: {{ index ?? 0 }}{{ if tint && tint != 'none' }}; --card-accent: color-mix(in srgb, var(--color-{{ tint }}-deep) 15%, transparent); --card-deep: var(--color-{{ tint }}-deep); --medallion-from: var(--color-{{ tint }}-deep); --medallion-to: color-mix(in srgb, var(--color-{{ tint }}-deep) 68%, #000){{ /if }}">
     <div class="flex items-start justify-between gap-3">
-        <span class="icon-medallion" aria-hidden="true">
-            <span class="w-3.5 h-3.5 rounded-full bg-white/95"></span>
-        </span>
+        <span class="icon-medallion" aria-hidden="true">{{ partial:glyph :tint="tint" }}</span>
         {{ if show_status !== false && build_status }}
             <span class="rounded-full px-3 py-1 text-[0.75rem] font-semibold ring-1
                 {{ if build_status == 'prototype' }}bg-sage-100 text-sage-700 ring-sage-500/20

@@ -17,5 +17,8 @@ fields:
       options:
         default: 'Cloud (default)'
         gradient: 'Soft gradient field'
+        mint: 'Mint gallery (blue to green)'
+        peach: 'Peach gallery (warm)'
+        lavender: 'Lavender gallery'
         solid: 'Solid white'
         deep: 'Deep cobalt'
